@@ -9,7 +9,22 @@
 import Foundation
 
 
-class HomeScreenViewModel{
+class HomeScreenViewModel: ViewModelType   {
+    func transform(input: HomeScreenViewModel.Input) -> HomeScreenViewModel.Output {
+        return Output()
+    }
     
+    struct Input {
+        
+    }
     
+    struct Output {
+        
+    }
+    
+    struct Dependencies {
+        
+    }
+    
+
 }
