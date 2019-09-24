@@ -64,6 +64,13 @@ class HomeScreenViewModelTest: QuickSpec {
                     expect(homeScreenViewModel.mainWeatherData?.daily.data.count).toEventually(equal(mainWeatherData.daily.data.count))
 
                 }
+                it("Check if function returns a good High and Low temperatures"){
+                    testScheduler.start()
+                    
+                    let temp = homeScreenViewModel.compareDayInData(weatherData: mainWeatherData)
+                    expect(temp.0).toEventually(equal(11.5))
+                    expect(temp.1).toEventually(equal(20.7))
+                }
             }
         }
     }
