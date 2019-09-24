@@ -29,6 +29,13 @@
 		5FE857ED233A1EB000E82BEE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE857EC233A1EB000E82BEE /* GradientView.swift */; };
 		5FE857F1233A3AED00E82BEE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE857F0233A3AED00E82BEE /* HomeScreenView.swift */; };
 		77B73DE5274BDDD10986BAF6 /* Pods_TeamWeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6695A9FA2B8F01991238D946 /* Pods_TeamWeatherAppTests.framework */; };
+		F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F66233A113E007DD635 /* AlamofireRepository.swift */; };
+		F06E7F69233A118A007DD635 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F68233A118A007DD635 /* AlamofireManager.swift */; };
+		F06E7F6B233A127A007DD635 /* MainWeatherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6A233A127A007DD635 /* MainWeatherClass.swift */; };
+		F06E7F6D233A15F9007DD635 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6C233A15F9007DD635 /* GeneratedMocks.swift */; };
+		F06E7F6F233A1607007DD635 /* HomeScreenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */; };
+		F06E7F71233A17E5007DD635 /* MainWeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = F06E7F70233A17E5007DD635 /* MainWeatherData.json */; };
+		F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +78,13 @@
 		7BA497E9F0077B6FC193D4BC /* Pods-TeamWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9BD21D64F2A921E34389DE84 /* Pods_TeamWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38DD3B41E7A283E9FFE3940 /* Pods-TeamWeatherAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherAppTests.release.xcconfig"; path = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F06E7F66233A113E007DD635 /* AlamofireRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRepository.swift; sourceTree = "<group>"; };
+		F06E7F68233A118A007DD635 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		F06E7F6A233A127A007DD635 /* MainWeatherClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainWeatherClass.swift; path = TeamWeatherApp/Networking/Manager/MainWeatherClass.swift; sourceTree = SOURCE_ROOT; };
+		F06E7F6C233A15F9007DD635 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTest.swift; sourceTree = "<group>"; };
+		F06E7F70233A17E5007DD635 /* MainWeatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MainWeatherData.json; sourceTree = "<group>"; };
+		F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WriteToRealmEnum.swift; path = TeamWeatherAppTests/WriteToRealmEnum.swift; sourceTree = SOURCE_ROOT; };
 		F7C797105409950836E85045 /* Pods-TeamWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				5FC93308233A00D200D5B6C4 /* TeamWeatherAppTests.swift */,
+				F06E7F6C233A15F9007DD635 /* GeneratedMocks.swift */,
+				F06E7F70233A17E5007DD635 /* MainWeatherData.json */,
+				F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */,
 				5FC9330A233A00D200D5B6C4 /* Info.plist */,
 			);
 			path = TeamWeatherAppTests;
@@ -175,6 +192,8 @@
 		5FC93315233A04DB00D5B6C4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F06E7F65233A10E6007DD635 /* Repository */,
+				F06E7F64233A10E0007DD635 /* Manager */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -189,6 +208,7 @@
 		5FC93317233A04E100D5B6C4 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -196,6 +216,7 @@
 		5FC93318233A04E300D5B6C4 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				F06E7F6A233A127A007DD635 /* MainWeatherClass.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -290,6 +311,22 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
+		F06E7F64233A10E0007DD635 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F06E7F68233A118A007DD635 /* AlamofireManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F06E7F65233A10E6007DD635 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F06E7F66233A113E007DD635 /* AlamofireRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +354,7 @@
 			buildConfigurationList = 5FC93310233A00D200D5B6C4 /* Build configuration list for PBXNativeTarget "TeamWeatherAppTests" */;
 			buildPhases = (
 				0139AD4B148E6533849E455F /* [CP] Check Pods Manifest.lock */,
+				F06E7F63233A0E68007DD635 /* ShellScript */,
 				5FC93300233A00D100D5B6C4 /* Sources */,
 				5FC93301233A00D100D5B6C4 /* Frameworks */,
 				5FC93302233A00D100D5B6C4 /* Resources */,
@@ -386,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06E7F71233A17E5007DD635 /* MainWeatherData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +492,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F06E7F63233A0E68007DD635 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PROJECT_DIR}/${PROJECT_NAME}/Networking/Repository/AlamofireRepository.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+		};
 		FA061C685CDED36E7D744C69 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,10 +536,14 @@
 			files = (
 				5FC93327233A067300D5B6C4 /* HomeScreenCoordinator.swift in Sources */,
 				5FC9332E233A114E00D5B6C4 /* TemperatureView.swift in Sources */,
+				F06E7F69233A118A007DD635 /* AlamofireManager.swift in Sources */,
 				5FC93329233A068200D5B6C4 /* HomeScreenViewModel.swift in Sources */,
 				5FE857ED233A1EB000E82BEE /* GradientView.swift in Sources */,
 				5FC93321233A058A00D5B6C4 /* ViewModelType.swift in Sources */,
+				F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */,
 				5FC9331D233A056800D5B6C4 /* AppCoordinator.swift in Sources */,
+				F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */,
+				F06E7F6B233A127A007DD635 /* MainWeatherClass.swift in Sources */,
 				5FC932F2233A00D100D5B6C4 /* AppDelegate.swift in Sources */,
 				5FE857E9233A14D100E82BEE /* BackgroundView.swift in Sources */,
 				5FC93334233A119800D5B6C4 /* SearchAndSettingsView.swift in Sources */,
@@ -499,7 +560,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06E7F6F233A1607007DD635 /* HomeScreenViewModelTest.swift in Sources */,
 				5FC93309233A00D200D5B6C4 /* TeamWeatherAppTests.swift in Sources */,
+				F06E7F6D233A15F9007DD635 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
