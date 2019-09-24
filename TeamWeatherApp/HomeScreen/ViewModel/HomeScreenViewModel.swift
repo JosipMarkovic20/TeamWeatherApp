@@ -108,12 +108,7 @@ class HomeScreenViewModel: ViewModelType   {
         .flatMap({ enumType -> Observable<Bool> in
             switch enumType {
             case let .location(bool):
-                if bool == true {
                     #warning("create novog objekta jer je prvo zapisivanje")
-                }
-                else {
-                    #warning("zapisivanje uredenog objekta")
-                }
                 return Observable.just(bool)
             case let .settings(bool):
                 if bool == true {
@@ -134,5 +129,21 @@ class HomeScreenViewModel: ViewModelType   {
         .subscribe(onNext: {bool in
         })
     }
+    
+    func compareDayInData(weatherData: MainWeatherClass) -> (Double, Double) {
+        var temperature = (0.9, 1.1)
+        let calendar = Calendar.current
+        let currentDay = calendar.component(.day, from: NSDate(timeIntervalSince1970: Double(weatherData.currently.time)) as Date)
+        
+        for day in weatherData.daily.data {
+            let searchDay = calendar.component(.day, from: NSDate(timeIntervalSince1970: Double(day.time)) as Date)
+            if currentDay == searchDay {
+                temperature.0 = ((day.temperatureLow * 10).rounded() / 10)
+                temperature.1 = ((day.temperatureHigh * 10).rounded() / 10)
+            }
+        }
+        return temperature
+    }
+    
 
 }

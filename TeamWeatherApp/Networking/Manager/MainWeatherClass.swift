@@ -30,4 +30,5 @@ struct Daily: Decodable {
 struct DailyData: Decodable {
     let temperatureHigh: Double
     let temperatureLow: Double
+    let time: Int
 }
