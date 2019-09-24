@@ -16,7 +16,7 @@ class LocationMinAndMaxView: UIView{
     let locationLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "GothamRounded-Book", size: 36)
-        label.text = "Osijek"
+        label.text = "Virovitica"
         label.textAlignment = .center
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
