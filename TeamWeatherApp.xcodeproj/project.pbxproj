@@ -3,17 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1F53155007221A54463932D6 /* Pods_TeamWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD21D64F2A921E34389DE84 /* Pods_TeamWeatherApp.framework */; };
 		5FC932F2233A00D100D5B6C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC932F1233A00D100D5B6C4 /* AppDelegate.swift */; };
-		5FC932F6233A00D100D5B6C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC932F5233A00D100D5B6C4 /* ViewController.swift */; };
-		5FC932F9233A00D100D5B6C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC932F7233A00D100D5B6C4 /* Main.storyboard */; };
 		5FC932FB233A00D100D5B6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC932FA233A00D100D5B6C4 /* Assets.xcassets */; };
 		5FC932FE233A00D100D5B6C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC932FC233A00D100D5B6C4 /* LaunchScreen.storyboard */; };
 		5FC93309233A00D200D5B6C4 /* TeamWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC93308233A00D200D5B6C4 /* TeamWeatherAppTests.swift */; };
+		5FC9331D233A056800D5B6C4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9331C233A056800D5B6C4 /* AppCoordinator.swift */; };
+		5FC9331F233A057700D5B6C4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9331E233A057700D5B6C4 /* Coordinator.swift */; };
+		5FC93321233A058A00D5B6C4 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC93320233A058A00D5B6C4 /* ViewModelType.swift */; };
+		5FC93327233A067300D5B6C4 /* HomeScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC93326233A067300D5B6C4 /* HomeScreenCoordinator.swift */; };
+		5FC93329233A068200D5B6C4 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC93328233A068200D5B6C4 /* HomeScreenViewModel.swift */; };
+		5FC9332B233A069100D5B6C4 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9332A233A069100D5B6C4 /* HomeScreenViewController.swift */; };
 		77B73DE5274BDDD10986BAF6 /* Pods_TeamWeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6695A9FA2B8F01991238D946 /* Pods_TeamWeatherAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,14 +35,18 @@
 		2AE10593DBD719AFDD04B6C3 /* Pods-TeamWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.release.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		5FC932EE233A00D100D5B6C4 /* TeamWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC932F1233A00D100D5B6C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5FC932F5233A00D100D5B6C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5FC932F8233A00D100D5B6C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FC932FA233A00D100D5B6C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FC932FD233A00D100D5B6C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FC932FF233A00D100D5B6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC93304233A00D100D5B6C4 /* TeamWeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamWeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC93308233A00D200D5B6C4 /* TeamWeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamWeatherAppTests.swift; sourceTree = "<group>"; };
 		5FC9330A233A00D200D5B6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FC9331C233A056800D5B6C4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		5FC9331E233A057700D5B6C4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5FC93320233A058A00D5B6C4 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		5FC93326233A067300D5B6C4 /* HomeScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenCoordinator.swift; sourceTree = "<group>"; };
+		5FC93328233A068200D5B6C4 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
+		5FC9332A233A069100D5B6C4 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		6695A9FA2B8F01991238D946 /* Pods_TeamWeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamWeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA497E9F0077B6FC193D4BC /* Pods-TeamWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9BD21D64F2A921E34389DE84 /* Pods_TeamWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +82,6 @@
 				F7C797105409950836E85045 /* Pods-TeamWeatherAppTests.debug.xcconfig */,
 				C38DD3B41E7A283E9FFE3940 /* Pods-TeamWeatherAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,9 +117,15 @@
 		5FC932F0233A00D100D5B6C4 /* TeamWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				5FC932F1233A00D100D5B6C4 /* AppDelegate.swift */,
-				5FC932F5233A00D100D5B6C4 /* ViewController.swift */,
-				5FC932F7233A00D100D5B6C4 /* Main.storyboard */,
+				5FC93322233A05A800D5B6C4 /* Fonts */,
+				5FC9331B233A04EA00D5B6C4 /* Utils */,
+				5FC9331A233A04E800D5B6C4 /* Coordinator */,
+				5FC93319233A04E500D5B6C4 /* Delegates */,
+				5FC93318233A04E300D5B6C4 /* DataModels */,
+				5FC93317233A04E100D5B6C4 /* Enums */,
+				5FC93316233A04DD00D5B6C4 /* Persistence */,
+				5FC93315233A04DB00D5B6C4 /* Networking */,
+				5FC93314233A04D900D5B6C4 /* HomeScreen */,
 				5FC932FA233A00D100D5B6C4 /* Assets.xcassets */,
 				5FC932FC233A00D100D5B6C4 /* LaunchScreen.storyboard */,
 				5FC932FF233A00D100D5B6C4 /* Info.plist */,
@@ -127,6 +140,100 @@
 				5FC9330A233A00D200D5B6C4 /* Info.plist */,
 			);
 			path = TeamWeatherAppTests;
+			sourceTree = "<group>";
+		};
+		5FC93314233A04D900D5B6C4 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5FC93325233A064500D5B6C4 /* UI */,
+				5FC93324233A064300D5B6C4 /* ViewModel */,
+				5FC93323233A063E00D5B6C4 /* Coordinator */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		5FC93315233A04DB00D5B6C4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5FC93316233A04DD00D5B6C4 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		5FC93317233A04E100D5B6C4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		5FC93318233A04E300D5B6C4 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		5FC93319233A04E500D5B6C4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				5FC932F1233A00D100D5B6C4 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		5FC9331A233A04E800D5B6C4 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5FC9331C233A056800D5B6C4 /* AppCoordinator.swift */,
+				5FC9331E233A057700D5B6C4 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5FC9331B233A04EA00D5B6C4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5FC93320233A058A00D5B6C4 /* ViewModelType.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5FC93322233A05A800D5B6C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5FC93323233A063E00D5B6C4 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5FC93326233A067300D5B6C4 /* HomeScreenCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5FC93324233A064300D5B6C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FC93328233A068200D5B6C4 /* HomeScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FC93325233A064500D5B6C4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5FC9332A233A069100D5B6C4 /* HomeScreenViewController.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +323,6 @@
 			files = (
 				5FC932FE233A00D100D5B6C4 /* LaunchScreen.storyboard in Resources */,
 				5FC932FB233A00D100D5B6C4 /* Assets.xcassets in Resources */,
-				5FC932F9233A00D100D5B6C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,8 +421,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FC932F6233A00D100D5B6C4 /* ViewController.swift in Sources */,
+				5FC93327233A067300D5B6C4 /* HomeScreenCoordinator.swift in Sources */,
+				5FC93329233A068200D5B6C4 /* HomeScreenViewModel.swift in Sources */,
+				5FC93321233A058A00D5B6C4 /* ViewModelType.swift in Sources */,
+				5FC9331D233A056800D5B6C4 /* AppCoordinator.swift in Sources */,
 				5FC932F2233A00D100D5B6C4 /* AppDelegate.swift in Sources */,
+				5FC9331F233A057700D5B6C4 /* Coordinator.swift in Sources */,
+				5FC9332B233A069100D5B6C4 /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,14 +450,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5FC932F7233A00D100D5B6C4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5FC932F8233A00D100D5B6C4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5FC932FC233A00D100D5B6C4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
