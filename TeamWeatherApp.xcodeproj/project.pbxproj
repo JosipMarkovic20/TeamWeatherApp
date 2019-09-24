@@ -28,6 +28,7 @@
 		5FE857EB233A1E9200E82BEE /* GradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE857EA233A1E9200E82BEE /* GradientColors.swift */; };
 		5FE857ED233A1EB000E82BEE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE857EC233A1EB000E82BEE /* GradientView.swift */; };
 		5FE857F1233A3AED00E82BEE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE857F0233A3AED00E82BEE /* HomeScreenView.swift */; };
+		5FFB2E8C233A55AD0038387A /* ScreenSetupEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB2E8B233A55AD0038387A /* ScreenSetupEnum.swift */; };
 		77B73DE5274BDDD10986BAF6 /* Pods_TeamWeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6695A9FA2B8F01991238D946 /* Pods_TeamWeatherAppTests.framework */; };
 		F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F66233A113E007DD635 /* AlamofireRepository.swift */; };
 		F06E7F69233A118A007DD635 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F68233A118A007DD635 /* AlamofireManager.swift */; };
@@ -74,6 +75,7 @@
 		5FE857EA233A1E9200E82BEE /* GradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColors.swift; sourceTree = "<group>"; };
 		5FE857EC233A1EB000E82BEE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5FE857F0233A3AED00E82BEE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		5FFB2E8B233A55AD0038387A /* ScreenSetupEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSetupEnum.swift; sourceTree = "<group>"; };
 		6695A9FA2B8F01991238D946 /* Pods_TeamWeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamWeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA497E9F0077B6FC193D4BC /* Pods-TeamWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9BD21D64F2A921E34389DE84 /* Pods_TeamWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */,
+				5FFB2E8B233A55AD0038387A /* ScreenSetupEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				5FC9331D233A056800D5B6C4 /* AppCoordinator.swift in Sources */,
 				F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */,
 				F06E7F6B233A127A007DD635 /* MainWeatherClass.swift in Sources */,
+				5FFB2E8C233A55AD0038387A /* ScreenSetupEnum.swift in Sources */,
 				5FC932F2233A00D100D5B6C4 /* AppDelegate.swift in Sources */,
 				5FE857E9233A14D100E82BEE /* BackgroundView.swift in Sources */,
 				5FC93334233A119800D5B6C4 /* SearchAndSettingsView.swift in Sources */,

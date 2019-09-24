@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import RxSwift
 
 class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
@@ -23,10 +23,15 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     //MARK: Properties
     let viewModel: HomeScreenViewModel
-    
+    let disposeBag = DisposeBag()
     
     init(viewModel: HomeScreenViewModel){
         self.viewModel = viewModel
+        let input = HomeScreenViewModel.Input(getSettingsSubject: ReplaySubject.create(bufferSize: 1), getDataSubject: ReplaySubject.create(bufferSize: 1), getLocationsSubject: ReplaySubject.create(bufferSize: 1), writeToRealmSubject: PublishSubject())
+        let output = viewModel.transform(input: input)
+        for disposable in output.disposables{
+            disposable.disposed(by: disposeBag)
+        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -35,7 +40,9 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     }
     
     override func viewDidLoad() {
+        setupSubscriptions()
         setupUI()
+        getData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -93,5 +100,43 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     @objc func openSettingsScreen(){
         print("Open this boi")
+    }
+    
+    //MARK: Get data
+    
+    func getData(){
+        viewModel.input.getDataSubject.onNext(true)
+    }
+    
+    //MARK: Setup screen
+    
+    func setupScreenData(){
+        
+        guard let weatherData = viewModel.mainWeatherData else { return }
+        
+        homeScreenView.temperatureView.temperatureLabel.text = String(weatherData.currently.temperature)
+        homeScreenView.temperatureView.summaryLabel.text = weatherData.currently.summary
+        
+        let minAndMax: (Double, Double) = viewModel.compareDayInData(weatherData: weatherData)
+        homeScreenView.locationMinAndMaxView.minTempLabel.text = "\(minAndMax.0)°C"
+        homeScreenView.locationMinAndMaxView.maxTempLabel.text = "\(minAndMax.1)°C"
+        
+        homeScreenView.conditionsView.humidityLabel.text = "\(weatherData.currently.humidity)%"
+        homeScreenView.conditionsView.windLabel.text = "\(weatherData.currently.windSpeed) km/h"
+        homeScreenView.conditionsView.pressureLabel.text = "\(Int(weatherData.currently.pressure)) hpa"
+        
+    }
+    
+    
+    //MARK: Subscriptions
+    
+    func setupSubscriptions(){
+        
+        viewModel.output.dataIsReadySubject
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .subscribe(onNext: {[unowned self] (bool) in
+                self.setupScreenData()
+            }).disposed(by: disposeBag)
     }
 }

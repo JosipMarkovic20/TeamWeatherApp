@@ -68,9 +68,7 @@ class HomeScreenViewModel: ViewModelType   {
             .subscribe(onNext: {[unowned self]  bool in
                 self.output.dataIsReadySubject.onNext(true)
                 self.mainWeatherData = bool
-            }
-        )
-        
+            })
     }
     
     func getSettings(subject: ReplaySubject<Bool>) -> Disposable {
@@ -119,7 +117,6 @@ class HomeScreenViewModel: ViewModelType   {
                 }
                 return Observable.just(bool)
             }
-            
         })
         .observeOn(MainScheduler.instance)
         .subscribeOn(dependencies.scheduler)
