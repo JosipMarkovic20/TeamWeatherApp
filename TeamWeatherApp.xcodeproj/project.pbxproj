@@ -25,6 +25,7 @@
 		F06E7F6D233A15F9007DD635 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6C233A15F9007DD635 /* GeneratedMocks.swift */; };
 		F06E7F6F233A1607007DD635 /* HomeScreenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */; };
 		F06E7F71233A17E5007DD635 /* MainWeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = F06E7F70233A17E5007DD635 /* MainWeatherData.json */; };
+		F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F06E7F6C233A15F9007DD635 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTest.swift; sourceTree = "<group>"; };
 		F06E7F70233A17E5007DD635 /* MainWeatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MainWeatherData.json; sourceTree = "<group>"; };
+		F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WriteToRealmEnum.swift; path = TeamWeatherAppTests/WriteToRealmEnum.swift; sourceTree = SOURCE_ROOT; };
 		F7C797105409950836E85045 /* Pods-TeamWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 		5FC93317233A04E100D5B6C4 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				F06E7F69233A118A007DD635 /* AlamofireManager.swift in Sources */,
 				5FC93329233A068200D5B6C4 /* HomeScreenViewModel.swift in Sources */,
 				5FC93321233A058A00D5B6C4 /* ViewModelType.swift in Sources */,
+				F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */,
 				5FC9331D233A056800D5B6C4 /* AppCoordinator.swift in Sources */,
 				F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */,
 				F06E7F6B233A127A007DD635 /* MainWeatherClass.swift in Sources */,

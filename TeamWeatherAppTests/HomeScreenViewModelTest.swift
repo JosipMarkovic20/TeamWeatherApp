@@ -41,7 +41,7 @@ class HomeScreenViewModelTest: QuickSpec {
                     
                     homeScreenViewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
                     
-                    let output = homeScreenViewModel.transform(input: HomeScreenViewModel.Input(requestSettingsSubject: ReplaySubject<Bool>.create(bufferSize: 1), getDataSubject: ReplaySubject<Bool>.create(bufferSize: 1)))
+                    let output = homeScreenViewModel.transform(input: HomeScreenViewModel.Input(getSettingsSubject: ReplaySubject<Bool>.create(bufferSize: 1), getDataSubject: ReplaySubject<Bool>.create(bufferSize: 1), getLocationsSubject: ReplaySubject<Bool>.create(bufferSize: 1), writeToRealmSubject: PublishSubject<WriteToRealmEnum>()))
                     
                     for disposable in output.disposables {
                         disposable.disposed(by: disposeBag)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 
 class HomeScreenCoordinator: Coordinator{
@@ -18,7 +19,8 @@ class HomeScreenCoordinator: Coordinator{
     let viewController: HomeScreenViewController
     
     init(){
-        self.viewModel = HomeScreenViewModel()
+        self.viewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
+            
         self.viewController = HomeScreenViewController(viewModel: viewModel)
     }
     

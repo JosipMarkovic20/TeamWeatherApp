@@ -22,6 +22,8 @@ class HomeScreenViewModel: ViewModelType   {
         self.input = input
         
         disposables.append(getData(subject: input.getDataSubject))
+        disposables.append(getSettings(subject: input.getSettingsSubject))
+        disposables.append(getLocation(subject: input.getLocationsSubject))
         
         self.output = Output(dataIsReadySubject: PublishSubject(), locationIsMissingSubject: PublishSubject(), disposables: disposables)
         
@@ -29,8 +31,10 @@ class HomeScreenViewModel: ViewModelType   {
     }
     
     struct Input {
-        var requestSettingsSubject: ReplaySubject<Bool>
+        var getSettingsSubject: ReplaySubject<Bool>
         var getDataSubject: ReplaySubject<Bool>
+        var getLocationsSubject: ReplaySubject<Bool>
+        var writeToRealmSubject: PublishSubject<WriteToRealmEnum>
     }
     
     struct Output {
@@ -67,6 +71,68 @@ class HomeScreenViewModel: ViewModelType   {
             }
         )
         
+    }
+    
+    func getSettings(subject: ReplaySubject<Bool>) -> Disposable {
+        return subject
+            .flatMap({ bool -> Observable<Bool> in
+                return Observable.just(bool)
+            })
+        .observeOn(MainScheduler.instance)
+        .subscribeOn(dependencies.scheduler)
+            .map({ bool in
+                #warning("Ako postoje settingsi, nastavi, inace triggeraj subject za kreaciju istih")
+                print("mapSettings")
+            })
+        .subscribe(onNext: {bool in
+        })
+    }
+    
+    func getLocation(subject: ReplaySubject<Bool>) -> Disposable {
+        return subject
+            .flatMap({ bool -> Observable<Bool> in
+                return Observable.just(bool)
+            })
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(dependencies.scheduler)
+            .map({ bool in
+                #warning("Ako postoje locationi, nastavi, inace triggeraj subject za kreaciju istih")
+                print("mapLocations")
+            })
+            .subscribe(onNext: {bool in
+            })
+    }
+    
+    func writeToRealm(subject: PublishSubject<WriteToRealmEnum>) -> Disposable {
+        return subject
+        .flatMap({ enumType -> Observable<Bool> in
+            switch enumType {
+            case let .location(bool):
+                if bool == true {
+                    #warning("create novog objekta jer je prvo zapisivanje")
+                }
+                else {
+                    #warning("zapisivanje uredenog objekta")
+                }
+                return Observable.just(bool)
+            case let .settings(bool):
+                if bool == true {
+                    #warning("create novog objekta jer je prvo zapisivanje")
+                }
+                else {
+                    #warning("zapisivanje uredenog objekta")
+                }
+                return Observable.just(bool)
+            }
+            
+        })
+        .observeOn(MainScheduler.instance)
+        .subscribeOn(dependencies.scheduler)
+        .map({ bool in
+            print("mapLocations")
+        })
+        .subscribe(onNext: {bool in
+        })
     }
 
 }
