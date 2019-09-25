@@ -25,6 +25,11 @@ target 'WeatherAppSettings' do
   pods
 end
 
+target 'WeatherAppSearch' do
+  project 'WeatherAppSearch/WeatherAppSearch.project'
+  pods
+end
+
 target 'TeamWeatherApp' do
   pods
 end

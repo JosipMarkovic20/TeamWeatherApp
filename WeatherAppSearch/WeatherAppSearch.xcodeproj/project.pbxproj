@@ -12,7 +12,6 @@
 		F0B665C1233B4F8900EDF892 /* WeatherAppSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B665C0233B4F8900EDF892 /* WeatherAppSearchTests.swift */; };
 		F0B665C3233B4F8900EDF892 /* WeatherAppSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = F0B665B5233B4F8900EDF892 /* WeatherAppSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0B665CD233B4FDB00EDF892 /* SearchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B665CC233B4FDB00EDF892 /* SearchScreenCoordinator.swift */; };
-		F0B665CF233B503A00EDF892 /* Pods_TeamWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B665CE233B503A00EDF892 /* Pods_TeamWeatherApp.framework */; };
 		F0B665D0233B503A00EDF892 /* Pods_TeamWeatherApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0B665CE233B503A00EDF892 /* Pods_TeamWeatherApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -59,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0B665CF233B503A00EDF892 /* Pods_TeamWeatherApp.framework in Frameworks */,
 				6AC684B85086D2ACF63C06D6 /* Pods_WeatherAppSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,7 +86,6 @@
 		8FE8893E8BD6382739FE4D9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F0B665CE233B503A00EDF892 /* Pods_TeamWeatherApp.framework */,
 				DB99AB4D02F3FCE94F501188 /* Pods_WeatherAppSearch.framework */,
 			);
 			name = Frameworks;
