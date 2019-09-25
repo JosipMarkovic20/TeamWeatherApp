@@ -15,9 +15,11 @@ public class WeatherTableViewCell: UITableViewCell {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
-        view.textColor = .clear
-        view.text = "Letter"
-        view.font = UIFont.boldSystemFont(ofSize: 20)
+        view.textColor = .black
+        view.text = "L"
+        view.textAlignment = .center
+        view.numberOfLines = 1
+        view.font = UIFont.boldSystemFont(ofSize: 40)
         return view
     }()
     
@@ -39,15 +41,18 @@ public class WeatherTableViewCell: UITableViewCell {
     }
     
     func setupConstraints(){
+        contentView.addSubview(letterLabel)
+        contentView.addSubview(locationLabel)
+        
         NSLayoutConstraint.activate([
             letterLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             letterLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            letterLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
+            letterLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            letterLabel.widthAnchor.constraint(equalToConstant: 49),
             
-            locationLabel.leadingAnchor.constraint(equalTo: letterLabel.trailingAnchor, constant: 10),
-            locationLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            locationLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
-            locationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            locationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            locationLabel.leadingAnchor.constraint(equalTo: letterLabel.trailingAnchor, constant: 5),
+            locationLabel.centerYAnchor.constraint(equalTo: letterLabel.centerYAnchor)
         ])
     }
 }

@@ -25,6 +25,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     let viewModel: HomeScreenViewModel
     let disposeBag = DisposeBag()
     var openSettingsDelegate: OpenSettingsDelegate?
+    var openSearchDelegate: OpenSearchDelegate?
     
     init(viewModel: HomeScreenViewModel){
         self.viewModel = viewModel
@@ -75,7 +76,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     }
 
     func openSearchScreen(){
-        print("Open that boi")
+        openSearchDelegate?.openSearch()
     }
     
     func setupSearchBar(){
