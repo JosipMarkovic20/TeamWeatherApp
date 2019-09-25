@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SnapKit
 
 
 class UnitsView: UIView{
@@ -86,27 +86,34 @@ class UnitsView: UIView{
     
     //MARK: Constraints
     func setupConstraints(){
-        unitsLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        unitsLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
-        imperialCheckBox.topAnchor.constraint(equalTo: unitsLabel.bottomAnchor, constant: UIScreen.main.bounds.height * 0.02).isActive = true
-        imperialCheckBox.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-        imperialCheckBox.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        imperialCheckBox.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        unitsLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.snp.top)
+            make.centerX.equalTo(self.snp.centerX)
+        }
         
-        imperialLabel.topAnchor.constraint(equalTo: imperialCheckBox.topAnchor).isActive = true
-        imperialLabel.leadingAnchor.constraint(equalTo: imperialCheckBox.trailingAnchor, constant: 10).isActive = true
-        imperialLabel.bottomAnchor.constraint(equalTo: imperialCheckBox.bottomAnchor).isActive = true
+        imperialCheckBox.snp.makeConstraints { (make) in
+            make.topMargin.equalTo(unitsLabel.snp.bottom).offset(UIScreen.main.bounds.height * 0.02)
+            make.leading.equalTo(self.snp.leading).offset(10)
+            make.width.height.equalTo(40)
+        }
         
-        metricCheckBox.topAnchor.constraint(equalTo: imperialCheckBox.bottomAnchor).isActive = true
-        metricCheckBox.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-        metricCheckBox.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        metricCheckBox.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        imperialLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(imperialCheckBox.snp.top)
+            make.leading.equalTo(imperialCheckBox.snp.trailing).offset(10)
+            make.bottom.equalTo(imperialCheckBox.snp.bottom)
+        }
         
-        metricLabel.topAnchor.constraint(equalTo: metricCheckBox.topAnchor).isActive = true
-        metricLabel.leadingAnchor.constraint(equalTo: metricCheckBox.trailingAnchor, constant: 10).isActive = true
-        metricLabel.bottomAnchor.constraint(equalTo: metricCheckBox.bottomAnchor).isActive = true
+        metricCheckBox.snp.makeConstraints { (make) in
+            make.top.equalTo(imperialCheckBox.snp.bottom)
+            make.leading.equalTo(self.snp.leading).offset(10)
+            make.width.height.equalTo(40)
+        }
         
-        
+        metricLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(metricCheckBox.snp.top)
+            make.leading.equalTo(metricCheckBox.snp.trailing).offset(10)
+            make.bottom.equalTo(metricCheckBox.snp.bottom)
+        }   
     }
 }

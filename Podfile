@@ -11,6 +11,7 @@ def pods
   pod 'RxCocoa'
   pod 'Hue'
   pod 'SwiftLocation'
+  pod 'SnapKit'
 end
 
 def testing_pods
