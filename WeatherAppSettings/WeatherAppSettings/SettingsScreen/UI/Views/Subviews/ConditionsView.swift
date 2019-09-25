@@ -108,7 +108,7 @@ class ConditionsView: UIView{
         return conditionsView
     }()
     
-
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()

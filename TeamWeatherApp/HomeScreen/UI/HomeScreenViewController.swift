@@ -29,6 +29,8 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     let loader = LoaderViewController()
     var openSearchDelegate: OpenSearchDelegate?
     
+    
+    //MARK: Init
     init(viewModel: HomeScreenViewModel){
         self.viewModel = viewModel
         let input = HomeScreenViewModel.Input(getSettingsSubject: ReplaySubject.create(bufferSize: 1), getDataSubject: ReplaySubject.create(bufferSize: 1), getLocationsSubject: ReplaySubject.create(bufferSize: 1), writeToRealmSubject: PublishSubject())
@@ -43,6 +45,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Lifecycle methods
     override func viewDidLoad() {
         setupSubscriptions()
         setupUI()

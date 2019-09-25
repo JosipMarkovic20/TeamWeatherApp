@@ -90,6 +90,8 @@ class LocationMinAndMaxView: UIView{
         return stackView
     }()
     
+    
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()

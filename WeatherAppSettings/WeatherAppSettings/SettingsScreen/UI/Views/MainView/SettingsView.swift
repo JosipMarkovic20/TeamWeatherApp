@@ -36,7 +36,7 @@ class SettingsView: UIView{
         return button
     }()
     
-    
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()

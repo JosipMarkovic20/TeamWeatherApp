@@ -31,6 +31,8 @@ class TemperatureView: UIView{
         return label
     }()
     
+    
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
