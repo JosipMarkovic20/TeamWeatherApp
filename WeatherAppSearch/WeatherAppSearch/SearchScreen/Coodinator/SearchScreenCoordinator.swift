@@ -17,9 +17,9 @@ public class SearchScreenCoordinator: Coordinator   {
     let viewController: SearchViewController!
     
     
-    public init(presenter: UINavigationController) {
+    public init(presenter: UINavigationController, searchBar: UISearchBar) {
         self.viewModel = SearchViewModel()
-        self.viewController = SearchViewController(viewModel: viewModel)
+        self.viewController = SearchViewController(viewModel: viewModel, searchBar: searchBar)
         self.presenter = presenter
     }
     
