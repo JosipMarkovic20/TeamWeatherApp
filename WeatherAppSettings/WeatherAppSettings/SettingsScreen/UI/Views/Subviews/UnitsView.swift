@@ -16,7 +16,7 @@ class UnitsView: UIView{
     //MARK: UI Elements
     let unitsLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "GothamRounded-Light", size: 24)
+        label.font = UIFont(name: "GothamRounded-Book", size: 24)
         label.text = "Units"
         label.textAlignment = .center
         label.textColor = .white
