@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public class AlamofireRepository {
+class AlamofireRepository {
     
     let url = "https://api.darksky.net/forecast/eed19b0a0b89a80e38d4ae15b1f24130/"
     

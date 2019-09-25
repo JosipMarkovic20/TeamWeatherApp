@@ -16,6 +16,10 @@
 		5F642FF5233B7915000E1C83 /* OpenSettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F642FF4233B7915000E1C83 /* OpenSettingsDelegate.swift */; };
 		5F642FFE233B7C5B000E1C83 /* Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F642FFB233B7C4F000E1C83 /* Book.otf */; };
 		5F642FFF233B7C5E000E1C83 /* Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F642FFC233B7C4F000E1C83 /* Light.otf */; };
+		5F64300B233B82EA000E1C83 /* WeatherAppSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F64300A233B82EA000E1C83 /* WeatherAppSearch.framework */; };
+		5F64300C233B82EA000E1C83 /* WeatherAppSearch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F64300A233B82EA000E1C83 /* WeatherAppSearch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F64301A233B84F8000E1C83 /* MainWeatherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F643019233B84F8000E1C83 /* MainWeatherClass.swift */; };
+		5F64301C233B851F000E1C83 /* WriteToRealmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F64301B233B851F000E1C83 /* WriteToRealmEnum.swift */; };
 		5FC932F2233A00D100D5B6C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC932F1233A00D100D5B6C4 /* AppDelegate.swift */; };
 		5FC932FB233A00D100D5B6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC932FA233A00D100D5B6C4 /* Assets.xcassets */; };
 		5FC932FE233A00D100D5B6C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC932FC233A00D100D5B6C4 /* LaunchScreen.storyboard */; };
@@ -35,14 +39,10 @@
 		5FFB2E8C233A55AD0038387A /* ScreenSetupEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB2E8B233A55AD0038387A /* ScreenSetupEnum.swift */; };
 		F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F66233A113E007DD635 /* AlamofireRepository.swift */; };
 		F06E7F69233A118A007DD635 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F68233A118A007DD635 /* AlamofireManager.swift */; };
-		F06E7F6B233A127A007DD635 /* MainWeatherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6A233A127A007DD635 /* MainWeatherClass.swift */; };
 		F06E7F6D233A15F9007DD635 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6C233A15F9007DD635 /* GeneratedMocks.swift */; };
 		F06E7F6F233A1607007DD635 /* HomeScreenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */; };
 		F06E7F71233A17E5007DD635 /* MainWeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = F06E7F70233A17E5007DD635 /* MainWeatherData.json */; };
-		F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */; };
 		F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B665D2233B530300EDF892 /* UnitsEnum.swift */; };
-		F0B6682A233B6C8000EDF892 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B66829233B6C8000EDF892 /* ViewModelType.swift */; };
-		F0B6682C233B6CBE00EDF892 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6682B233B6CBE00EDF892 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +63,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5F642FEF233B773B000E1C83 /* WeatherAppSettings.framework in Embed Frameworks */,
+				5F64300C233B82EA000E1C83 /* WeatherAppSearch.framework in Embed Frameworks */,
 				5F642FED233B773B000E1C83 /* Shared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -76,6 +77,9 @@
 		5F642FF4233B7915000E1C83 /* OpenSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsDelegate.swift; sourceTree = "<group>"; };
 		5F642FFB233B7C4F000E1C83 /* Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book.otf; sourceTree = "<group>"; };
 		5F642FFC233B7C4F000E1C83 /* Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Light.otf; sourceTree = "<group>"; };
+		5F64300A233B82EA000E1C83 /* WeatherAppSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherAppSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F643019233B84F8000E1C83 /* MainWeatherClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWeatherClass.swift; sourceTree = "<group>"; };
+		5F64301B233B851F000E1C83 /* WriteToRealmEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteToRealmEnum.swift; sourceTree = "<group>"; };
 		5FC932EE233A00D100D5B6C4 /* TeamWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC932F1233A00D100D5B6C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC932FA233A00D100D5B6C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,11 +106,9 @@
 		EA781D20A5632B07A2A54A5A /* Pods-TeamWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F06E7F66233A113E007DD635 /* AlamofireRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRepository.swift; sourceTree = "<group>"; };
 		F06E7F68233A118A007DD635 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
-		F06E7F6A233A127A007DD635 /* MainWeatherClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainWeatherClass.swift; path = TeamWeatherApp/Networking/Manager/MainWeatherClass.swift; sourceTree = SOURCE_ROOT; };
 		F06E7F6C233A15F9007DD635 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTest.swift; sourceTree = "<group>"; };
 		F06E7F70233A17E5007DD635 /* MainWeatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MainWeatherData.json; sourceTree = "<group>"; };
-		F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WriteToRealmEnum.swift; path = TeamWeatherAppTests/WriteToRealmEnum.swift; sourceTree = SOURCE_ROOT; };
 		F0B665D2233B530300EDF892 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
 		F61D742E8BDC400828594F41 /* Pods-TeamWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.release.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		FB6506008278123330F6925B /* Pods_TeamWeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamWeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F642FEE233B773B000E1C83 /* WeatherAppSettings.framework in Frameworks */,
+				5F64300B233B82EA000E1C83 /* WeatherAppSearch.framework in Frameworks */,
 				281C015A4D1E745FFA9A1320 /* Pods_TeamWeatherApp.framework in Frameworks */,
 				5F642FEC233B773B000E1C83 /* Shared.framework in Frameworks */,
 			);
@@ -149,6 +152,7 @@
 		2C902235C096BF0BE64B3BA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F64300A233B82EA000E1C83 /* WeatherAppSearch.framework */,
 				5F642FEA233B773B000E1C83 /* Shared.framework */,
 				5F642FEB233B773B000E1C83 /* WeatherAppSettings.framework */,
 				FD267312CC600C344518513D /* Pods_TeamWeatherApp.framework */,
@@ -247,7 +251,7 @@
 		5FC93317233A04E100D5B6C4 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */,
+				5F64301B233B851F000E1C83 /* WriteToRealmEnum.swift */,
 				F0B665D2233B530300EDF892 /* UnitsEnum.swift */,
 				5FFB2E8B233A55AD0038387A /* ScreenSetupEnum.swift */,
 			);
@@ -257,7 +261,7 @@
 		5FC93318233A04E300D5B6C4 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				F06E7F6A233A127A007DD635 /* MainWeatherClass.swift */,
+				5F643019233B84F8000E1C83 /* MainWeatherClass.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -283,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				5FE857EA233A1E9200E82BEE /* GradientColors.swift */,
-				F0B66829233B6C8000EDF892 /* ViewModelType.swift */,
 				5FE857EC233A1EB000E82BEE /* GradientView.swift */,
 			);
 			path = Utils;
@@ -568,14 +571,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC93327233A067300D5B6C4 /* HomeScreenCoordinator.swift in Sources */,
+				5F64301C233B851F000E1C83 /* WriteToRealmEnum.swift in Sources */,
 				5FC9332E233A114E00D5B6C4 /* TemperatureView.swift in Sources */,
 				F06E7F69233A118A007DD635 /* AlamofireManager.swift in Sources */,
 				5FC93329233A068200D5B6C4 /* HomeScreenViewModel.swift in Sources */,
 				5FE857ED233A1EB000E82BEE /* GradientView.swift in Sources */,
-				F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */,
 				5FC9331D233A056800D5B6C4 /* AppCoordinator.swift in Sources */,
 				F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */,
-				F06E7F6B233A127A007DD635 /* MainWeatherClass.swift in Sources */,
 				5FFB2E8C233A55AD0038387A /* ScreenSetupEnum.swift in Sources */,
 				5FC932F2233A00D100D5B6C4 /* AppDelegate.swift in Sources */,
 				5FE857E9233A14D100E82BEE /* BackgroundView.swift in Sources */,
@@ -584,6 +586,7 @@
 				5FC93330233A116D00D5B6C4 /* LocationMinAndMaxView.swift in Sources */,
 				5FE857F1233A3AED00E82BEE /* HomeScreenView.swift in Sources */,
 				5FC9332B233A069100D5B6C4 /* HomeScreenViewController.swift in Sources */,
+				5F64301A233B84F8000E1C83 /* MainWeatherClass.swift in Sources */,
 				5FE857EB233A1E9200E82BEE /* GradientColors.swift in Sources */,
 				F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */,
 				5F642FF5233B7915000E1C83 /* OpenSettingsDelegate.swift in Sources */,
