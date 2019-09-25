@@ -17,6 +17,8 @@
 		F0B66812233B6A0000EDF892 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B66811233B6A0000EDF892 /* SearchViewModel.swift */; };
 		F0B66819233B6AA800EDF892 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B66818233B6AA800EDF892 /* SearchViewController.swift */; };
 		F0B6682E233B6D0200EDF892 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6682D233B6D0200EDF892 /* Coordinator.swift */; };
+		F0B66830233B77BB00EDF892 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6682F233B77BB00EDF892 /* SearchView.swift */; };
+		F0B66832233B793900EDF892 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B66831233B793900EDF892 /* WeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -545,6 +547,8 @@
 		F0B66811233B6A0000EDF892 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F0B66818233B6AA800EDF892 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F0B6682D233B6D0200EDF892 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F0B6682F233B77BB00EDF892 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F0B66831233B793900EDF892 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1097,11 +1101,11 @@
 		F0B665B4233B4F8900EDF892 /* WeatherAppSearch */ = {
 			isa = PBXGroup;
 			children = (
-				F0B665B5233B4F8900EDF892 /* WeatherAppSearch.h */,
 				F0B665D4233B551400EDF892 /* Networking */,
 				F0B665D5233B551700EDF892 /* SearchScreen */,
-				F0B665B6233B4F8900EDF892 /* Info.plist */,
 				F0B66815233B6A7900EDF892 /* Utils */,
+				F0B665B6233B4F8900EDF892 /* Info.plist */,
+				F0B665B5233B4F8900EDF892 /* WeatherAppSearch.h */,
 			);
 			path = WeatherAppSearch;
 			sourceTree = "<group>";
@@ -1160,6 +1164,7 @@
 		F0B665D9233B555400EDF892 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F0B6682F233B77BB00EDF892 /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1168,6 +1173,7 @@
 			isa = PBXGroup;
 			children = (
 				F0B6682D233B6D0200EDF892 /* Coordinator.swift */,
+				F0B66831233B793900EDF892 /* WeatherTableViewCell.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1309,6 +1315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0B66832233B793900EDF892 /* WeatherTableViewCell.swift in Sources */,
+				F0B66830233B77BB00EDF892 /* SearchView.swift in Sources */,
 				F0B6682E233B6D0200EDF892 /* Coordinator.swift in Sources */,
 				F0B66819233B6AA800EDF892 /* SearchViewController.swift in Sources */,
 				F0B66812233B6A0000EDF892 /* SearchViewModel.swift in Sources */,
@@ -1386,7 +1394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1443,7 +1451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

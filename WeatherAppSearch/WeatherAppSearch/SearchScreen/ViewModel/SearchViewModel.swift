@@ -26,4 +26,5 @@ class SearchViewModel {
     func transform(input: SearchViewModel.Input) -> SearchViewModel.Output {
         return Output()
     }
+    
 }
