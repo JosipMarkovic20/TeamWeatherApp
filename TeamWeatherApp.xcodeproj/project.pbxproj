@@ -37,6 +37,7 @@
 		F06E7F6F233A1607007DD635 /* HomeScreenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */; };
 		F06E7F71233A17E5007DD635 /* MainWeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = F06E7F70233A17E5007DD635 /* MainWeatherData.json */; };
 		F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */; };
+		F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B665D2233B530300EDF892 /* UnitsEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,19 @@
 			remoteInfo = TeamWeatherApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0B66364233B4B7500EDF892 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5FC932EE233A00D100D5B6C4 /* TeamWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +102,8 @@
 		F61D742E8BDC400828594F41 /* Pods-TeamWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.release.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		FB6506008278123330F6925B /* Pods_TeamWeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamWeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD267312CC600C344518513D /* Pods_TeamWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B665D2233B530300EDF892 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
+		F7C797105409950836E85045 /* Pods-TeamWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */,
+				F0B665D2233B530300EDF892 /* UnitsEnum.swift */,
 				5FFB2E8B233A55AD0038387A /* ScreenSetupEnum.swift */,
 			);
 			path = Enums;
@@ -342,6 +359,7 @@
 				5FC932EB233A00D100D5B6C4 /* Frameworks */,
 				5FC932EC233A00D100D5B6C4 /* Resources */,
 				5C620BEEF45D743A67B72513 /* [CP] Embed Pods Frameworks */,
+				F0B66364233B4B7500EDF892 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -557,6 +575,7 @@
 				5FE857F1233A3AED00E82BEE /* HomeScreenView.swift in Sources */,
 				5FC9332B233A069100D5B6C4 /* HomeScreenViewController.swift in Sources */,
 				5FE857EB233A1E9200E82BEE /* GradientColors.swift in Sources */,
+				F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
