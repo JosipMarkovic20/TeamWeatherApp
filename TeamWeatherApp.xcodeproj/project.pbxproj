@@ -37,6 +37,7 @@
 		F06E7F6F233A1607007DD635 /* HomeScreenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */; };
 		F06E7F71233A17E5007DD635 /* MainWeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = F06E7F70233A17E5007DD635 /* MainWeatherData.json */; };
 		F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */; };
+		F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B665D2233B530300EDF892 /* UnitsEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTest.swift; sourceTree = "<group>"; };
 		F06E7F70233A17E5007DD635 /* MainWeatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MainWeatherData.json; sourceTree = "<group>"; };
 		F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WriteToRealmEnum.swift; path = TeamWeatherAppTests/WriteToRealmEnum.swift; sourceTree = SOURCE_ROOT; };
+		F0B665D2233B530300EDF892 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
 		F7C797105409950836E85045 /* Pods-TeamWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */,
+				F0B665D2233B530300EDF892 /* UnitsEnum.swift */,
 				5FFB2E8B233A55AD0038387A /* ScreenSetupEnum.swift */,
 			);
 			path = Enums;
@@ -571,6 +574,7 @@
 				5FE857F1233A3AED00E82BEE /* HomeScreenView.swift in Sources */,
 				5FC9332B233A069100D5B6C4 /* HomeScreenViewController.swift in Sources */,
 				5FE857EB233A1E9200E82BEE /* GradientColors.swift in Sources */,
+				F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

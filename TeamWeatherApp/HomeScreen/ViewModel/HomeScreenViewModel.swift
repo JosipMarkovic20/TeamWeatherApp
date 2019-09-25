@@ -56,7 +56,7 @@ class HomeScreenViewModel: ViewModelType   {
     var output: Output!
     var mainWeatherData: MainWeatherClass?
     
-    let units: String = "si"
+    let units: UnitsEnum = .metric
     let location: String = "45.82176,17.39763"
     
     
@@ -64,7 +64,7 @@ class HomeScreenViewModel: ViewModelType   {
     func getData(subject: ReplaySubject<Bool>) -> Disposable  {
         return subject
             .flatMap({[unowned self] bool -> Observable<MainWeatherClass> in
-                return self.dependencies.alamofireRepository.alamofireRequest(self.units, self.location)
+                return self.dependencies.alamofireRepository.alamofireRequest(self.units.rawValue, self.location)
             })
             .observeOn(MainScheduler.instance)
             .subscribeOn(dependencies.scheduler)
@@ -181,11 +181,11 @@ class HomeScreenViewModel: ViewModelType   {
     }
     
     //MARK: Returns units dependent on settings
-    func unitSettings(currentUnits: String) -> (speedUnit: String, temperatureUnit: String){
+    func unitSettings(currentUnits: UnitsEnum) -> (speedUnit: String, temperatureUnit: String){
         switch currentUnits {
-        case "si":
+        case .metric:
             return ("km/h", "°C")
-        default:
+        case .imperial:
             return ("mph", "°F")
         }
     }
