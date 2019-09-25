@@ -17,6 +17,7 @@ class HomeScreenViewModel: ViewModelType   {
         self.dependencies = dependencies
     }
     
+    //MARK: Transform
     func transform(input: HomeScreenViewModel.Input) -> HomeScreenViewModel.Output {
         var disposables = [Disposable]()
         self.input = input
@@ -29,6 +30,8 @@ class HomeScreenViewModel: ViewModelType   {
         
         return output
     }
+    
+    //MARK: Defining Structs
     
     struct Input {
         var getSettingsSubject: ReplaySubject<Bool>
@@ -57,6 +60,7 @@ class HomeScreenViewModel: ViewModelType   {
     let location: String = "45.82176,17.39763"
     
     
+    //MARK: Get Data
     func getData(subject: ReplaySubject<Bool>) -> Disposable  {
         return subject
             .flatMap({[unowned self] bool -> Observable<MainWeatherClass> in
@@ -69,7 +73,7 @@ class HomeScreenViewModel: ViewModelType   {
                 self.setupCurrentWeatherState(weatherDataIcon: bool.currently.icon)
             })
     }
-    
+    //MARK: Get Settings
     func getSettings(subject: ReplaySubject<Bool>) -> Disposable {
         return subject
             .flatMap({ bool -> Observable<Bool> in
@@ -84,7 +88,7 @@ class HomeScreenViewModel: ViewModelType   {
         .subscribe(onNext: {bool in
         })
     }
-    
+    //MARK: Get Location
     func getLocation(subject: ReplaySubject<Bool>) -> Disposable {
         return subject
             .flatMap({ bool -> Observable<Bool> in
@@ -99,7 +103,7 @@ class HomeScreenViewModel: ViewModelType   {
             .subscribe(onNext: {bool in
             })
     }
-    
+    //MARK: Write To Realm
     func writeToRealm(subject: PublishSubject<WriteToRealmEnum>) -> Disposable {
         return subject
         .flatMap({ enumType -> Observable<Bool> in
@@ -125,7 +129,7 @@ class HomeScreenViewModel: ViewModelType   {
         .subscribe(onNext: {bool in
         })
     }
-    
+    //MARK: Compare Day In Data
     func compareDayInData(weatherData: MainWeatherClass) -> (Double, Double) {
         var temperature = (0.9, 1.1)
         let calendar = Calendar.current
@@ -141,6 +145,8 @@ class HomeScreenViewModel: ViewModelType   {
         return temperature
     }
     
+    
+    //MARK: Setup Current Weather State
     func setupCurrentWeatherState(weatherDataIcon: String) {
         switch weatherDataIcon {
         case "clear-day":
@@ -172,6 +178,21 @@ class HomeScreenViewModel: ViewModelType   {
         default:
             output.dataIsReadySubject.onNext(.clearDay)
         }
+    }
+    
+    //MARK: Returns units dependent on settings
+    func unitSettings(currentUnits: String) -> (String, String){
+        switch currentUnits {
+        case "si":
+            return ("km/h", "°C")
+        default:
+            return ("mph", "°F")
+        }
+    }
+    //MARK: Data rounding correction
+    func roundingCorrection(weatherData: MainWeatherClass) -> (Int, Int){
+        let currentWeather = weatherData.currently
+        return (Int(currentWeather.humidity*100), Int(currentWeather.temperature))
     }
 
 }

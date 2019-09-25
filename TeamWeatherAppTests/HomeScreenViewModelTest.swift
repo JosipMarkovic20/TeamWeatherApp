@@ -119,6 +119,27 @@ class HomeScreenViewModelTest: QuickSpec {
                     expect(dataReadySubject.events[13].value.element).toEventually(equal(.clearDay))
                     
                 }
+                it("check if function is returning good units"){
+                    testScheduler.start()
+                    
+                    let metric = homeScreenViewModel.unitSettings(currentUnits: "si")
+                    
+                    let imperial = homeScreenViewModel.unitSettings(currentUnits: "us")
+                    
+                    expect(metric.0).toEventually(equal("km/h"))
+                    expect(metric.1).toEventually(equal("°C"))
+                    
+                    expect(imperial.0).toEventually(equal("mph"))
+                    expect(imperial.1).toEventually(equal("°F"))
+                }
+                it("check if function is returning good format"){
+                    testScheduler.start()
+                    
+                    let formatTest = homeScreenViewModel.roundingCorrection(weatherData: mainWeatherData)
+                    
+                    expect(formatTest.0).toEventually(equal(86))
+                    expect(formatTest.1).toEventually(equal(14))
+                }
             }
         }
     }
