@@ -36,6 +36,7 @@ class HomeScreenViewModelTest: QuickSpec {
             }
             context("Initialize HomeScreenViewModel"){
                 var dataReadySubject: TestableObserver<LayoutSetupEnum>!
+                var loaderSubject: TestableObserver<Bool>!
                 beforeEach {
                     testScheduler = TestScheduler(initialClock: 0)
                     
@@ -48,15 +49,20 @@ class HomeScreenViewModelTest: QuickSpec {
                     }
                     
                     dataReadySubject = testScheduler.createObserver(LayoutSetupEnum.self)
+                    
+                    loaderSubject = testScheduler.createObserver(Bool.self)
                     homeScreenViewModel.output.dataIsReadySubject.subscribe(dataReadySubject).disposed(by: disposeBag)
                     
+                    homeScreenViewModel.output.loaderSubject.subscribe(loaderSubject).disposed(by: disposeBag)
                 }
+                //MARK: Data Ready subject test
                 it("Check if dataReady subject is triggered"){
                     testScheduler.start()
                     
                     homeScreenViewModel.input.getDataSubject.onNext(true)
                 expect(dataReadySubject.events.count).toEventually(equal(1))
                 }
+                //MARK: Data test
                 it("Check if viewModel is getting correct Data"){
                     testScheduler.start()
                     homeScreenViewModel.input.getDataSubject.onNext(true)
@@ -64,6 +70,7 @@ class HomeScreenViewModelTest: QuickSpec {
                     expect(homeScreenViewModel.mainWeatherData?.daily.data.count).toEventually(equal(mainWeatherData.daily.data.count))
 
                 }
+                //MARK: High and low temps Test
                 it("Check if function returns a good High and Low temperatures"){
                     testScheduler.start()
                     
@@ -71,6 +78,7 @@ class HomeScreenViewModelTest: QuickSpec {
                     expect(temp.0).toEventually(equal(11.5))
                     expect(temp.1).toEventually(equal(20.7))
                 }
+                //MARK: Background Image function test
                 it("Check the state function"){
                     testScheduler.start()
                     
@@ -119,6 +127,7 @@ class HomeScreenViewModelTest: QuickSpec {
                     expect(dataReadySubject.events[13].value.element).toEventually(equal(.clearDay))
                     
                 }
+                //MARK: Correct units test
                 it("check if function is returning good units"){
                     testScheduler.start()
                     
@@ -132,6 +141,7 @@ class HomeScreenViewModelTest: QuickSpec {
                     expect(imperial.0).toEventually(equal("mph"))
                     expect(imperial.1).toEventually(equal("°F"))
                 }
+                //MARK: Format for view test
                 it("check if function is returning good format"){
                     testScheduler.start()
                     
@@ -139,6 +149,18 @@ class HomeScreenViewModelTest: QuickSpec {
                     
                     expect(formatTest.0).toEventually(equal(86))
                     expect(formatTest.1).toEventually(equal(14))
+                }
+                //MARK: Loader Subject test
+                it("check if loaderSubject is working"){
+                    testScheduler.start()
+                    
+                    homeScreenViewModel.input.getDataSubject.onNext(true)
+                    
+                    expect(loaderSubject.events.count).toEventually(equal(2))
+                    
+                    expect(loaderSubject.events[0].value.element).toEventually(equal(true))
+                    
+                    expect(loaderSubject.events[1].value.element).toEventually(equal(false))
                 }
             }
         }

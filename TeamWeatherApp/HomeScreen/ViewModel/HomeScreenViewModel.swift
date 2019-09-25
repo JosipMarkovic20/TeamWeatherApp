@@ -26,7 +26,7 @@ class HomeScreenViewModel: ViewModelType   {
         disposables.append(getSettings(subject: input.getSettingsSubject))
         disposables.append(getLocation(subject: input.getLocationsSubject))
         
-        self.output = Output(dataIsReadySubject: PublishSubject(), locationIsMissingSubject: PublishSubject(), disposables: disposables)
+        self.output = Output(dataIsReadySubject: PublishSubject(), locationIsMissingSubject: PublishSubject(),loaderSubject:  PublishSubject(),disposables: disposables)
         
         return output
     }
@@ -43,6 +43,7 @@ class HomeScreenViewModel: ViewModelType   {
     struct Output {
         var dataIsReadySubject: PublishSubject<LayoutSetupEnum>
         var locationIsMissingSubject: PublishSubject<Bool>
+        var loaderSubject: PublishSubject<Bool>
         var disposables: [Disposable]
     }
     
@@ -64,6 +65,7 @@ class HomeScreenViewModel: ViewModelType   {
     func getData(subject: ReplaySubject<Bool>) -> Disposable  {
         return subject
             .flatMap({[unowned self] bool -> Observable<MainWeatherClass> in
+                self.output.loaderSubject.onNext(true)
                 return self.dependencies.alamofireRepository.alamofireRequest(self.units.rawValue, self.location)
             })
             .observeOn(MainScheduler.instance)
@@ -71,6 +73,7 @@ class HomeScreenViewModel: ViewModelType   {
             .subscribe(onNext: {[unowned self]  bool in
                 self.mainWeatherData = bool
                 self.setupCurrentWeatherState(weatherDataIcon: bool.currently.icon)
+                self.output.loaderSubject.onNext(false)
             })
     }
     //MARK: Get Settings

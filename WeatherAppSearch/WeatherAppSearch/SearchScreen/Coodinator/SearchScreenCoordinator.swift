@@ -7,10 +7,16 @@
 //
 
 import Foundation
-import RxSwift
-import TeamWeatherApp
+import UIKit
 
-class SearchScreenCoordinator{
+class SearchScreenCoordinator: Coordinator   {
+    var childCoordinators: [Coordinator] = []
     
-    
+    func start() {
+        
+    }
+
+    init() {
+        
+    }
 }
