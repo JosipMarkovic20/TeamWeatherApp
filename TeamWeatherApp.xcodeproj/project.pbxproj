@@ -41,6 +41,8 @@
 		F06E7F71233A17E5007DD635 /* MainWeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = F06E7F70233A17E5007DD635 /* MainWeatherData.json */; };
 		F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */; };
 		F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B665D2233B530300EDF892 /* UnitsEnum.swift */; };
+		F0B6682A233B6C8000EDF892 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B66829233B6C8000EDF892 /* ViewModelType.swift */; };
+		F0B6682C233B6CBE00EDF892 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6682B233B6CBE00EDF892 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				5FE857EA233A1E9200E82BEE /* GradientColors.swift */,
+				F0B66829233B6C8000EDF892 /* ViewModelType.swift */,
 				5FE857EC233A1EB000E82BEE /* GradientView.swift */,
 			);
 			path = Utils;
