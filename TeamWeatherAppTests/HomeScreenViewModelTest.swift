@@ -115,6 +115,9 @@ class HomeScreenViewModelTest: QuickSpec {
                     homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "tornado")
                     expect(dataReadySubject.events[12].value.element).toEventually(equal(.tornado))
                     
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "test Defaulta")
+                    expect(dataReadySubject.events[13].value.element).toEventually(equal(.clearDay))
+                    
                 }
             }
         }
