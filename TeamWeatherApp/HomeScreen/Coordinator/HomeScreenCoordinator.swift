@@ -11,6 +11,7 @@ import RxSwift
 import UIKit
 import Shared
 import WeatherAppSettings
+import WeatherAppSearch
 
 class HomeScreenCoordinator: Coordinator{
     
@@ -27,6 +28,7 @@ class HomeScreenCoordinator: Coordinator{
         self.viewController = HomeScreenViewController(viewModel: viewModel)
         self.presenter = presenter
         self.viewController.openSettingsDelegate = self
+        self.viewController.openSearchDelegate = self
     }
     
     
@@ -44,4 +46,12 @@ extension HomeScreenCoordinator: OpenSettingsDelegate{
         settingsCoordinator.start()
     }
 
+}
+
+extension HomeScreenCoordinator: OpenSearchDelegate{
+    func openSearch() {
+        let searchCoordinator = SearchScreenCoordinator(presenter: presenter)
+        searchCoordinator.start()
+    }
+    
 }

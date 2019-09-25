@@ -10,14 +10,23 @@ import Foundation
 import UIKit
 import Shared
 
-class SearchScreenCoordinator: Coordinator   {
-    var childCoordinators: [Coordinator] = []
+public class SearchScreenCoordinator: Coordinator   {
+    public var childCoordinators: [Coordinator] = []
+    let presenter: UINavigationController!
+    let viewModel: SearchViewModel!
+    let viewController: SearchViewController!
     
-    func start() {
-        
+    
+    public init(presenter: UINavigationController) {
+        self.viewModel = SearchViewModel()
+        self.viewController = SearchViewController(viewModel: viewModel)
+        self.presenter = presenter
+    }
+    
+    public func start() {
+        viewController.modalPresentationStyle = .overCurrentContext
+        presenter.present(viewController, animated: true)
     }
 
-    init() {
-        
-    }
+   
 }

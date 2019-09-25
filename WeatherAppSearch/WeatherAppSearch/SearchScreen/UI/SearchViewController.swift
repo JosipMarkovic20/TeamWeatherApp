@@ -47,6 +47,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        view.addSubview(tableView)
+        
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "da")
         
         
