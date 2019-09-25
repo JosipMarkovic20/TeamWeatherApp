@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Shared
 
-class SearchViewModel {
+class SearchViewModel: ViewModelType {
     
     
     struct Input {

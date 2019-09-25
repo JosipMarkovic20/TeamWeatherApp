@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Shared
 
 class SearchScreenCoordinator: Coordinator   {
     var childCoordinators: [Coordinator] = []

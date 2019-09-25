@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Shared
 
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

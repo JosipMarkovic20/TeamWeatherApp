@@ -24,6 +24,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: Properties
     let viewModel: HomeScreenViewModel
     let disposeBag = DisposeBag()
+    var openSettingsDelegate: OpenSettingsDelegate?
     
     init(viewModel: HomeScreenViewModel){
         self.viewModel = viewModel
@@ -99,7 +100,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: Settings screen methods
     
     @objc func openSettingsScreen(){
-        print("Open this boi")
+        openSettingsDelegate?.openSettings()
     }
     
     //MARK: Get data
@@ -110,21 +111,24 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     //MARK: Setup screen
     
-    func setupScreenData(){
-        
+    func setupScreenData(enumCase: LayoutSetupEnum){
+
         guard let weatherData = viewModel.mainWeatherData else { return }
+        let roundedVaules = viewModel.roundingCorrection(weatherData: weatherData)
+        let units = viewModel.unitSettings(currentUnits: viewModel.units)
         
-        homeScreenView.temperatureView.temperatureLabel.text = String(weatherData.currently.temperature)
+        homeScreenView.temperatureView.temperatureLabel.text = "\(roundedVaules.temperatureValue)°"
         homeScreenView.temperatureView.summaryLabel.text = weatherData.currently.summary
         
         let minAndMax: (Double, Double) = viewModel.compareDayInData(weatherData: weatherData)
-        homeScreenView.locationMinAndMaxView.minTempLabel.text = "\(minAndMax.0)°C"
-        homeScreenView.locationMinAndMaxView.maxTempLabel.text = "\(minAndMax.1)°C"
+        homeScreenView.locationMinAndMaxView.minTempLabel.text = "\(minAndMax.0)\(units.temperatureUnit)"
+        homeScreenView.locationMinAndMaxView.maxTempLabel.text = "\(minAndMax.1)\(units.temperatureUnit)"
         
-        homeScreenView.conditionsView.humidityLabel.text = "\(weatherData.currently.humidity)%"
-        homeScreenView.conditionsView.windLabel.text = "\(weatherData.currently.windSpeed) km/h"
+        homeScreenView.conditionsView.humidityLabel.text = "\(roundedVaules.humidityValue)%"
+        homeScreenView.conditionsView.windLabel.text = "\(weatherData.currently.windSpeed) \(units.speedUnit)"
         homeScreenView.conditionsView.pressureLabel.text = "\(Int(weatherData.currently.pressure)) hpa"
         
+        homeScreenView.setupBackground(enumCase: enumCase)
     }
     
     
@@ -135,8 +139,8 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
         viewModel.output.dataIsReadySubject
             .observeOn(MainScheduler.instance)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .subscribe(onNext: {[unowned self] (bool) in
-                self.setupScreenData()
+            .subscribe(onNext: {[unowned self] (enumCase) in
+                self.setupScreenData(enumCase: enumCase)
             }).disposed(by: disposeBag)
     }
 }
