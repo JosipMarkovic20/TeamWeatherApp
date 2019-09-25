@@ -1,5 +1,5 @@
 //
-//  SearchScreenCoordinator.swift
+//  SearchViewController.swift
 //  WeatherAppSearch
 //
 //  Created by Matej Hetzel on 25/09/2019.
@@ -7,10 +7,7 @@
 //
 
 import Foundation
-import RxSwift
-import TeamWeatherApp
+import UIKit
 
-class SearchScreenCoordinator{
-    
-    
-}
+
+class SearchViewController{}

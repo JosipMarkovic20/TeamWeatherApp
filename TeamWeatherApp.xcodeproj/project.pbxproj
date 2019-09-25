@@ -13,8 +13,6 @@
 		5FC932FE233A00D100D5B6C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FC932FC233A00D100D5B6C4 /* LaunchScreen.storyboard */; };
 		5FC93309233A00D200D5B6C4 /* TeamWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC93308233A00D200D5B6C4 /* TeamWeatherAppTests.swift */; };
 		5FC9331D233A056800D5B6C4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9331C233A056800D5B6C4 /* AppCoordinator.swift */; };
-		5FC9331F233A057700D5B6C4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9331E233A057700D5B6C4 /* Coordinator.swift */; };
-		5FC93321233A058A00D5B6C4 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC93320233A058A00D5B6C4 /* ViewModelType.swift */; };
 		5FC93327233A067300D5B6C4 /* HomeScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC93326233A067300D5B6C4 /* HomeScreenCoordinator.swift */; };
 		5FC93329233A068200D5B6C4 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC93328233A068200D5B6C4 /* HomeScreenViewModel.swift */; };
 		5FC9332B233A069100D5B6C4 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9332A233A069100D5B6C4 /* HomeScreenViewController.swift */; };
@@ -38,6 +36,8 @@
 		F06E7F71233A17E5007DD635 /* MainWeatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = F06E7F70233A17E5007DD635 /* MainWeatherData.json */; };
 		F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */; };
 		F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B665D2233B530300EDF892 /* UnitsEnum.swift */; };
+		F0B6682A233B6C8000EDF892 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B66829233B6C8000EDF892 /* ViewModelType.swift */; };
+		F0B6682C233B6CBE00EDF892 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B6682B233B6CBE00EDF892 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +74,6 @@
 		5FC93308233A00D200D5B6C4 /* TeamWeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamWeatherAppTests.swift; sourceTree = "<group>"; };
 		5FC9330A233A00D200D5B6C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC9331C233A056800D5B6C4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		5FC9331E233A057700D5B6C4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		5FC93320233A058A00D5B6C4 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		5FC93326233A067300D5B6C4 /* HomeScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenCoordinator.swift; sourceTree = "<group>"; };
 		5FC93328233A068200D5B6C4 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		5FC9332A233A069100D5B6C4 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +100,8 @@
 		F06E7F70233A17E5007DD635 /* MainWeatherData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MainWeatherData.json; sourceTree = "<group>"; };
 		F06E7F72233A2CC7007DD635 /* WriteToRealmEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WriteToRealmEnum.swift; path = TeamWeatherAppTests/WriteToRealmEnum.swift; sourceTree = SOURCE_ROOT; };
 		F0B665D2233B530300EDF892 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
+		F0B66829233B6C8000EDF892 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		F0B6682B233B6CBE00EDF892 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F7C797105409950836E85045 /* Pods-TeamWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC9331C233A056800D5B6C4 /* AppCoordinator.swift */,
-				5FC9331E233A057700D5B6C4 /* Coordinator.swift */,
+				F0B6682B233B6CBE00EDF892 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -260,8 +260,8 @@
 		5FC9331B233A04EA00D5B6C4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5FC93320233A058A00D5B6C4 /* ViewModelType.swift */,
 				5FE857EA233A1E9200E82BEE /* GradientColors.swift */,
+				F0B66829233B6C8000EDF892 /* ViewModelType.swift */,
 				5FE857EC233A1EB000E82BEE /* GradientView.swift */,
 			);
 			path = Utils;
@@ -559,7 +559,6 @@
 				F06E7F69233A118A007DD635 /* AlamofireManager.swift in Sources */,
 				5FC93329233A068200D5B6C4 /* HomeScreenViewModel.swift in Sources */,
 				5FE857ED233A1EB000E82BEE /* GradientView.swift in Sources */,
-				5FC93321233A058A00D5B6C4 /* ViewModelType.swift in Sources */,
 				F06E7F73233A2CC7007DD635 /* WriteToRealmEnum.swift in Sources */,
 				5FC9331D233A056800D5B6C4 /* AppCoordinator.swift in Sources */,
 				F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */,
@@ -569,12 +568,13 @@
 				5FE857E9233A14D100E82BEE /* BackgroundView.swift in Sources */,
 				5FC93334233A119800D5B6C4 /* SearchAndSettingsView.swift in Sources */,
 				5FC93332233A118700D5B6C4 /* ConditionsView.swift in Sources */,
-				5FC9331F233A057700D5B6C4 /* Coordinator.swift in Sources */,
 				5FC93330233A116D00D5B6C4 /* LocationMinAndMaxView.swift in Sources */,
 				5FE857F1233A3AED00E82BEE /* HomeScreenView.swift in Sources */,
 				5FC9332B233A069100D5B6C4 /* HomeScreenViewController.swift in Sources */,
 				5FE857EB233A1E9200E82BEE /* GradientColors.swift in Sources */,
 				F0B665D3233B530300EDF892 /* UnitsEnum.swift in Sources */,
+				F0B6682A233B6C8000EDF892 /* ViewModelType.swift in Sources */,
+				F0B6682C233B6CBE00EDF892 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
