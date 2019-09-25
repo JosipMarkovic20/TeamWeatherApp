@@ -10,7 +10,7 @@ import Foundation
 
 
 class MainWeatherClass: Decodable {
-    let currently: Currently
+    var currently: Currently
     let daily: Daily
 }
 
@@ -19,7 +19,7 @@ struct Currently: Decodable {
     let summary: String
     let icon: String
     let temperature: Double
-    let humidity: Double
+    var humidity: Double
     let pressure: Double
     let windSpeed: Double
 }
