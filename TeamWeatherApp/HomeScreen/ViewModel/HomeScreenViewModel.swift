@@ -130,7 +130,7 @@ class HomeScreenViewModel: ViewModelType   {
         })
     }
     //MARK: Compare Day In Data
-    func compareDayInData(weatherData: MainWeatherClass) -> (Double, Double) {
+    func compareDayInData(weatherData: MainWeatherClass) -> (temperatureLow: Double, temperatureHigh: Double) {
         var temperature = (0.9, 1.1)
         let calendar = Calendar.current
         let currentDay = calendar.component(.day, from: NSDate(timeIntervalSince1970: Double(weatherData.currently.time)) as Date)
@@ -181,7 +181,7 @@ class HomeScreenViewModel: ViewModelType   {
     }
     
     //MARK: Returns units dependent on settings
-    func unitSettings(currentUnits: String) -> (String, String){
+    func unitSettings(currentUnits: String) -> (speedUnit: String, temperatureUnit: String){
         switch currentUnits {
         case "si":
             return ("km/h", "°C")
@@ -190,7 +190,7 @@ class HomeScreenViewModel: ViewModelType   {
         }
     }
     //MARK: Data rounding correction
-    func roundingCorrection(weatherData: MainWeatherClass) -> (Int, Int){
+    func roundingCorrection(weatherData: MainWeatherClass) -> (humidityValue: Int, temperatureValue: Int){
         let currentWeather = weatherData.currently
         return (Int(currentWeather.humidity*100), Int(currentWeather.temperature))
     }

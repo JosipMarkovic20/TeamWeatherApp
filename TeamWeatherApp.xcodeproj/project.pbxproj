@@ -49,6 +49,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F0B66364233B4B7500EDF892 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2AE10593DBD719AFDD04B6C3 /* Pods-TeamWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.release.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		5FC932EE233A00D100D5B6C4 /* TeamWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,6 +355,7 @@
 				5FC932EB233A00D100D5B6C4 /* Frameworks */,
 				5FC932EC233A00D100D5B6C4 /* Resources */,
 				63012B0F40242BA1AFC87298 /* [CP] Embed Pods Frameworks */,
+				F0B66364233B4B7500EDF892 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:WeatherAppSearch/WeatherAppSearch.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TeamWeatherApp.xcodeproj">
    </FileRef>
    <FileRef
