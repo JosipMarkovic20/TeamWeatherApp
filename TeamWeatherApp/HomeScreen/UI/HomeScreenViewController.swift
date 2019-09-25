@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import RxSwift
+import Shared
 
 class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
@@ -25,6 +26,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     let viewModel: HomeScreenViewModel
     let disposeBag = DisposeBag()
     var openSettingsDelegate: OpenSettingsDelegate?
+    let loader = LoaderViewController()
     
     init(viewModel: HomeScreenViewModel){
         self.viewModel = viewModel
@@ -53,7 +55,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: UI Setup
     func setupUI(){
         self.view.addSubview(homeScreenView)
-
+        
         homeScreenView.searchAndSettingsView.searchBar.delegate = self
         setupConstraints()
     }
@@ -64,16 +66,16 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
         homeScreenView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         homeScreenView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         homeScreenView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-
+        
     }
-
-
+    
+    
     //MARK: Search bar methods
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         openSearchScreen()
         return false
     }
-
+    
     func openSearchScreen(){
         print("Open that boi")
     }
@@ -112,7 +114,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: Setup screen
     
     func setupScreenData(enumCase: LayoutSetupEnum){
-
+        
         guard let weatherData = viewModel.mainWeatherData else { return }
         let roundedVaules = viewModel.roundingCorrection(weatherData: weatherData)
         let units = viewModel.unitSettings(currentUnits: viewModel.units)
@@ -141,6 +143,23 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .subscribe(onNext: {[unowned self] (enumCase) in
                 self.setupScreenData(enumCase: enumCase)
+            }).disposed(by: disposeBag)
+        
+        viewModel.output.loaderSubject
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)).subscribe(onNext: { [unowned self] (bool) in
+                if bool{
+                    self.addChild(self.loader)
+                    self.loader.view.frame = self.view.frame
+                    self.view.addSubview(self.loader.view)
+                    self.loader.didMove(toParent: self)
+                }else{
+                    self.loader.willMove(toParent: nil)
+                    self.loader.view.removeFromSuperview()
+                    self.loader.removeFromParent()
+                }
+                }, onError: { (error) in
+                    print("Error displaying loader ", error)
             }).disposed(by: disposeBag)
     }
 }
