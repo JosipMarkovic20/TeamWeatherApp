@@ -26,7 +26,7 @@ class SettingsScreenViewController: UIViewController{
     }
     
     override func viewDidLoad() {
-        view.backgroundColor = .yellow
+        view.backgroundColor = .blue
     }
     
 }
