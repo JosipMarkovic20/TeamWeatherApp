@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Hue
 
 
 class SettingsView: UIView{
@@ -19,7 +20,21 @@ class SettingsView: UIView{
         return view
     }()
     
+    let conditionsView: ConditionsView = {
+        let view = ConditionsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
+    let doneButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Done", for: .normal)
+        button.setTitleColor(UIColor(hex: "#6DA133"), for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 20
+        return button
+    }()
     
     
     override init(frame: CGRect) {
@@ -35,16 +50,28 @@ class SettingsView: UIView{
     //MARK: UI Setup
     func setupUI(){
         self.addSubview(unitsView)
+        self.addSubview(conditionsView)
+        self.addSubview(doneButton)
         
         setupConstraints()
     }
     
     //MARK: Constraints
     func setupConstraints(){
-        unitsView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        unitsView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
         unitsView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         unitsView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        unitsView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        unitsView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        conditionsView.topAnchor.constraint(equalTo: unitsView.bottomAnchor, constant: 30).isActive = true
+        conditionsView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        conditionsView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        conditionsView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        doneButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        doneButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        doneButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
     }
     

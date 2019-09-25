@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2EFD56891CE857DECD2B503D /* Pods_WeatherAppSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA64459EEFC78A70D8DF25C /* Pods_WeatherAppSettings.framework */; };
+		5F47E839233B9E8500C215B4 /* SettingsScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47E838233B9E8500C215B4 /* SettingsScreenHeader.swift */; };
+		5F47E83B233B9F7200C215B4 /* ConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F47E83A233B9F7200C215B4 /* ConditionsView.swift */; };
 		5F642FF1233B774B000E1C83 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F642FF0233B774B000E1C83 /* Shared.framework */; };
 		5F642FF2233B774B000E1C83 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F642FF0233B774B000E1C83 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F82CE88233B934100BD8F08 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82CE87233B934100BD8F08 /* SettingsView.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F47E838233B9E8500C215B4 /* SettingsScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenHeader.swift; sourceTree = "<group>"; };
+		5F47E83A233B9F7200C215B4 /* ConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsView.swift; sourceTree = "<group>"; };
 		5F642FA2233B662E000E1C83 /* Pods_TeamWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TeamWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F642FF0233B774B000E1C83 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F82CE87233B934100BD8F08 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F47E837233B9E7200C215B4 /* SettingsScreenHeader */ = {
+			isa = PBXGroup;
+			children = (
+				5F47E838233B9E8500C215B4 /* SettingsScreenHeader.swift */,
+			);
+			path = SettingsScreenHeader;
+			sourceTree = "<group>";
+		};
 		5F82CE82233B930E00BD8F08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				5F82CE89233B948600BD8F08 /* UnitsView.swift */,
+				5F47E83A233B9F7200C215B4 /* ConditionsView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -177,6 +190,7 @@
 		5FFB2EB5233B3CCB0038387A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5F47E837233B9E7200C215B4 /* SettingsScreenHeader */,
 				5F82CE82233B930E00BD8F08 /* Views */,
 				5FFB2EB6233B3CFC0038387A /* SettingsScreenViewController.swift */,
 			);
@@ -343,8 +357,10 @@
 				5F82CE88233B934100BD8F08 /* SettingsView.swift in Sources */,
 				5FFB2EB7233B3CFC0038387A /* SettingsScreenViewController.swift in Sources */,
 				5F82CE8A233B948600BD8F08 /* UnitsView.swift in Sources */,
+				5F47E83B233B9F7200C215B4 /* ConditionsView.swift in Sources */,
 				5FFB2EB9233B3D110038387A /* SettingsScreenViewModel.swift in Sources */,
 				5FFB2EBB233B3D280038387A /* SettingsScreenCoordinator.swift in Sources */,
+				5F47E839233B9E8500C215B4 /* SettingsScreenHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

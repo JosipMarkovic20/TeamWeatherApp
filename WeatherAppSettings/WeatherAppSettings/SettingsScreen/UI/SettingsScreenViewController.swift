@@ -55,8 +55,16 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(SettingsScreenHeader.self, forHeaderFooterViewReuseIdentifier: "Header")
         
+        settingsView.doneButton.addTarget(self, action: #selector(dismissSettings), for: .touchUpInside)
         setupConstraints()
+    }
+    
+    
+    //MARK: Screen dismiss
+    @objc func dismissSettings(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Blurred background
@@ -74,7 +82,7 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
         tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        tableView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.28).isActive = true
+        tableView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.30).isActive = true
         
         settingsView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 5).isActive = true
         settingsView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
@@ -84,7 +92,6 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     
     //MARK: TableView
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -93,8 +100,15 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? WeatherTableViewCell  else {
             fatalError("The dequeued cell is not an instance of WeatherTableViewCell.")
         }
-
+        cell.backgroundColor = .clear
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as? SettingsScreenHeader else {
+            return nil
+        }
+        return headerView
     }
     
 }
