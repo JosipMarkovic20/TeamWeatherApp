@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
 protocol OpenSearchDelegate {
-    func openSearch()
+    func openSearch(searchBar: UISearchBar)
 }

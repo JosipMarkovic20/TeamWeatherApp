@@ -8,16 +8,18 @@
 
 import Foundation
 import Shared
+import RxSwift
 
 class SearchViewModel: ViewModelType {
     
     
     struct Input {
-    
+        var getDataSubject: ReplaySubject<Bool>
     }
     
     struct Output {
-        
+        var dataReadySubject: PublishSubject<Bool>
+        var disposables: [Disposable]
     }
     
     struct Dependencies {
@@ -25,7 +27,9 @@ class SearchViewModel: ViewModelType {
     }
     
     func transform(input: SearchViewModel.Input) -> SearchViewModel.Output {
-        return Output()
+        var disposables = [Disposable]()
+        
+        return Output(dataReadySubject: PublishSubject<Bool>(), disposables: disposables)
     }
     
 }
