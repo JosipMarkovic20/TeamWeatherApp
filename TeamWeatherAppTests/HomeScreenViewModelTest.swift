@@ -35,7 +35,7 @@ class HomeScreenViewModelTest: QuickSpec {
                 }
             }
             context("Initialize HomeScreenViewModel"){
-                var dataReadySubject: TestableObserver<Bool>!
+                var dataReadySubject: TestableObserver<LayoutSetupEnum>!
                 beforeEach {
                     testScheduler = TestScheduler(initialClock: 0)
                     
@@ -47,7 +47,7 @@ class HomeScreenViewModelTest: QuickSpec {
                         disposable.disposed(by: disposeBag)
                     }
                     
-                    dataReadySubject = testScheduler.createObserver(Bool.self)
+                    dataReadySubject = testScheduler.createObserver(LayoutSetupEnum.self)
                     homeScreenViewModel.output.dataIsReadySubject.subscribe(dataReadySubject).disposed(by: disposeBag)
                     
                 }
@@ -70,6 +70,51 @@ class HomeScreenViewModelTest: QuickSpec {
                     let temp = homeScreenViewModel.compareDayInData(weatherData: mainWeatherData)
                     expect(temp.0).toEventually(equal(11.5))
                     expect(temp.1).toEventually(equal(20.7))
+                }
+                it("Check the state function"){
+                    testScheduler.start()
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: mainWeatherData.currently.icon)
+                    
+                    expect(dataReadySubject.events[0].value.element).toEventually(equal(.rain))
+                    expect(dataReadySubject.events.count).toEventually(equal(1))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "clear-day")
+                    expect(dataReadySubject.events[1].value.element).toEventually(equal(.clearDay))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "clear-night")
+                    expect(dataReadySubject.events[2].value.element).toEventually(equal(.clearNight))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "snow")
+                    expect(dataReadySubject.events[3].value.element).toEventually(equal(.snow))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "sleet")
+                    expect(dataReadySubject.events[4].value.element).toEventually(equal(.sleet))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "wind")
+                    expect(dataReadySubject.events[5].value.element).toEventually(equal(.wind))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "fog")
+                    expect(dataReadySubject.events[6].value.element).toEventually(equal(.fog))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "cloudy")
+                    expect(dataReadySubject.events[7].value.element).toEventually(equal(.cloudy))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "partly-cloudy-day")
+                    expect(dataReadySubject.events[8].value.element).toEventually(equal(.partlyCloudyDay))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "partly-cloudy-night")
+                    expect(dataReadySubject.events[9].value.element).toEventually(equal(.partlyCloudyNight))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "hail")
+                    expect(dataReadySubject.events[10].value.element).toEventually(equal(.hail))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "thunderstorm")
+                    expect(dataReadySubject.events[11].value.element).toEventually(equal(.thunderstorm))
+                    
+                    homeScreenViewModel.setupCurrentWeatherState(weatherDataIcon: "tornado")
+                    expect(dataReadySubject.events[12].value.element).toEventually(equal(.tornado))
+                    
                 }
             }
         }

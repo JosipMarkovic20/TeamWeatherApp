@@ -38,7 +38,7 @@ class HomeScreenViewModel: ViewModelType   {
     }
     
     struct Output {
-        var dataIsReadySubject: PublishSubject<Bool>
+        var dataIsReadySubject: PublishSubject<LayoutSetupEnum>
         var locationIsMissingSubject: PublishSubject<Bool>
         var disposables: [Disposable]
     }
@@ -66,8 +66,8 @@ class HomeScreenViewModel: ViewModelType   {
             .observeOn(MainScheduler.instance)
             .subscribeOn(dependencies.scheduler)
             .subscribe(onNext: {[unowned self]  bool in
-                self.output.dataIsReadySubject.onNext(true)
                 self.mainWeatherData = bool
+                self.setupCurrentWeatherState(weatherDataIcon: bool.currently.icon)
             })
     }
     
@@ -142,5 +142,37 @@ class HomeScreenViewModel: ViewModelType   {
         return temperature
     }
     
+    func setupCurrentWeatherState(weatherDataIcon: String) {
+        switch weatherDataIcon {
+        case "clear-day":
+            output.dataIsReadySubject.onNext(.clearDay)
+        case "clear-night":
+            output.dataIsReadySubject.onNext(.clearNight)
+        case "rain":
+            output.dataIsReadySubject.onNext(.rain)
+        case "snow":
+            output.dataIsReadySubject.onNext(.snow)
+        case "sleet":
+            output.dataIsReadySubject.onNext(.sleet)
+        case "wind":
+            output.dataIsReadySubject.onNext(.wind)
+        case "fog":
+            output.dataIsReadySubject.onNext(.fog)
+        case "cloudy":
+            output.dataIsReadySubject.onNext(.cloudy)
+        case "partly-cloudy-day":
+            output.dataIsReadySubject.onNext(.partlyCloudyDay)
+        case "partly-cloudy-night":
+            output.dataIsReadySubject.onNext(.partlyCloudyNight)
+        case "hail":
+            output.dataIsReadySubject.onNext(.hail)
+        case "thunderstorm":
+            output.dataIsReadySubject.onNext(.thunderstorm)
+        case "tornado":
+            output.dataIsReadySubject.onNext(.tornado)
+        default:
+            output.dataIsReadySubject.onNext(.clearDay)
+        }
+    }
 
 }
