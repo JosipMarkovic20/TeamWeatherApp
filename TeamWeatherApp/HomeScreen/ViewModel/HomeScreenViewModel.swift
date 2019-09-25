@@ -56,7 +56,7 @@ class HomeScreenViewModel: ViewModelType   {
     var output: Output!
     var mainWeatherData: MainWeatherClass?
     
-    let units: String = "si"
+    let units: UnitsEnum = .metric
     let location: String = "45.82176,17.39763"
     
     
@@ -64,7 +64,7 @@ class HomeScreenViewModel: ViewModelType   {
     func getData(subject: ReplaySubject<Bool>) -> Disposable  {
         return subject
             .flatMap({[unowned self] bool -> Observable<MainWeatherClass> in
-                return self.dependencies.alamofireRepository.alamofireRequest(self.units, self.location)
+                return self.dependencies.alamofireRepository.alamofireRequest(self.units.rawValue, self.location)
             })
             .observeOn(MainScheduler.instance)
             .subscribeOn(dependencies.scheduler)
@@ -130,7 +130,7 @@ class HomeScreenViewModel: ViewModelType   {
         })
     }
     //MARK: Compare Day In Data
-    func compareDayInData(weatherData: MainWeatherClass) -> (Double, Double) {
+    func compareDayInData(weatherData: MainWeatherClass) -> (temperatureLow: Double, temperatureHigh: Double) {
         var temperature = (0.9, 1.1)
         let calendar = Calendar.current
         let currentDay = calendar.component(.day, from: NSDate(timeIntervalSince1970: Double(weatherData.currently.time)) as Date)
@@ -181,16 +181,16 @@ class HomeScreenViewModel: ViewModelType   {
     }
     
     //MARK: Returns units dependent on settings
-    func unitSettings(currentUnits: String) -> (String, String){
+    func unitSettings(currentUnits: UnitsEnum) -> (speedUnit: String, temperatureUnit: String){
         switch currentUnits {
-        case "si":
+        case .metric:
             return ("km/h", "°C")
-        default:
+        case .imperial:
             return ("mph", "°F")
         }
     }
     //MARK: Data rounding correction
-    func roundingCorrection(weatherData: MainWeatherClass) -> (Int, Int){
+    func roundingCorrection(weatherData: MainWeatherClass) -> (humidityValue: Int, temperatureValue: Int){
         let currentWeather = weatherData.currently
         return (Int(currentWeather.humidity*100), Int(currentWeather.temperature))
     }

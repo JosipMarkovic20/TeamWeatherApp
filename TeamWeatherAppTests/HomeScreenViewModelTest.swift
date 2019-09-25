@@ -122,9 +122,9 @@ class HomeScreenViewModelTest: QuickSpec {
                 it("check if function is returning good units"){
                     testScheduler.start()
                     
-                    let metric = homeScreenViewModel.unitSettings(currentUnits: "si")
+                    let metric = homeScreenViewModel.unitSettings(currentUnits: .metric)
                     
-                    let imperial = homeScreenViewModel.unitSettings(currentUnits: "us")
+                    let imperial = homeScreenViewModel.unitSettings(currentUnits: .imperial)
                     
                     expect(metric.0).toEventually(equal("km/h"))
                     expect(metric.1).toEventually(equal("°C"))
