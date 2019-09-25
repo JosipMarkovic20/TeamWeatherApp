@@ -5,6 +5,9 @@
       location = "group:TeamWeatherApp.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:WeatherAppSettings/WeatherAppSettings.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
