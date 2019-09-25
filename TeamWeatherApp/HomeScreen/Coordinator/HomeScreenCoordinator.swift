@@ -8,7 +8,9 @@
 
 import Foundation
 import RxSwift
-
+import UIKit
+import Shared
+import WeatherAppSettings
 
 class HomeScreenCoordinator: Coordinator{
     
@@ -17,17 +19,29 @@ class HomeScreenCoordinator: Coordinator{
     var childCoordinators: [Coordinator] = []
     let viewModel: HomeScreenViewModel
     let viewController: HomeScreenViewController
+    let presenter: UINavigationController
     
-    init(){
+    init(presenter: UINavigationController){
         self.viewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
             
         self.viewController = HomeScreenViewController(viewModel: viewModel)
+        self.presenter = presenter
+        self.viewController.openSettingsDelegate = self
     }
     
     
     func start() {
-        
+        presenter.navigationBar.barStyle = .black
+        presenter.pushViewController(viewController, animated: true)
     }
+}
+
+
+extension HomeScreenCoordinator: OpenSettingsDelegate{
     
- 
+    func openSettings() {
+        let settingsCoordinator = SettingsScreenCoordinator(presenter: presenter)
+        settingsCoordinator.start()
+    }
+
 }

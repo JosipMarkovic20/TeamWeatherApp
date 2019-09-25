@@ -1,8 +1,8 @@
 //
 //  ViewModelType.swift
-//  TeamWeatherApp
+//  Shared
 //
-//  Created by Josip Marković on 24/09/2019.
+//  Created by Josip Marković on 25/09/2019.
 //  Copyright © 2019 Josip Marković. All rights reserved.
 //
 

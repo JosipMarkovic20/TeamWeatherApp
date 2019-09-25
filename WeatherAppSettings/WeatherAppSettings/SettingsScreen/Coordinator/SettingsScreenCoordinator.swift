@@ -7,3 +7,27 @@
 //
 
 import Foundation
+import UIKit
+import Shared
+
+public class SettingsScreenCoordinator: Coordinator{
+    
+    public var childCoordinators: [Coordinator] = []
+    let viewController: SettingsScreenViewController
+    let viewModel: SettingsScreenViewModel
+    let presenter: UINavigationController
+    
+    public init(presenter: UINavigationController){
+        self.viewModel = SettingsScreenViewModel(dependencies: SettingsScreenViewModel.Dependencies())
+        self.viewController = SettingsScreenViewController(viewModel: self.viewModel)
+        self.presenter = presenter
+    }
+    
+    
+    
+    public func start() {
+        viewController.modalPresentationStyle = .overCurrentContext
+        presenter.present(viewController, animated: true)
+    }
+
+}

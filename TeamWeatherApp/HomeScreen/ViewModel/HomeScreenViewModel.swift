@@ -9,9 +9,9 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Shared
 
-
-class HomeScreenViewModel: ViewModelType   {
+class HomeScreenViewModel: ViewModelType{
     
     init(dependencies: HomeScreenViewModel.Dependencies){
         self.dependencies = dependencies

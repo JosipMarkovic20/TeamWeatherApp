@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Shared
 
 //AppCoordinator which creates our main screen coordinator and sets it as root viewController
 class AppCoordinator: Coordinator{
@@ -15,20 +16,23 @@ class AppCoordinator: Coordinator{
     var childCoordinators: [Coordinator] = []
     var window: UIWindow
     var homeScreenCoordinator: HomeScreenCoordinator?
+    let presenter: UINavigationController
     
     
     init(window: UIWindow){
         self.window = window
+        self.presenter = UINavigationController()
     }
     
     
     func start() {
-        self.homeScreenCoordinator = HomeScreenCoordinator()
-        window.rootViewController = homeScreenCoordinator?.viewController
+        self.homeScreenCoordinator = HomeScreenCoordinator(presenter: self.presenter)
+        window.rootViewController = presenter
         window.makeKeyAndVisible()
         
         guard let homeScreenCoordinator = self.homeScreenCoordinator else { return }
         self.store(coordinator: homeScreenCoordinator)
+        presenter.navigationBar.isHidden = true
         homeScreenCoordinator.start()
     }
 }
