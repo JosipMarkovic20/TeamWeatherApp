@@ -73,12 +73,12 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     //MARK: Search bar methods
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        openSearchScreen()
+        openSearchScreen(searchBar)
         return false
     }
     
-    func openSearchScreen(){
-        openSearchDelegate?.openSearch()
+    func openSearchScreen(_ searchBar: UISearchBar){
+        openSearchDelegate?.openSearch(searchBar: searchBar)
     }
     
     func setupSearchBar(){
