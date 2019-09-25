@@ -60,8 +60,7 @@ class HomeScreenViewModel: ViewModelType   {
     func getData(subject: ReplaySubject<Bool>) -> Disposable  {
         return subject
             .flatMap({[unowned self] bool -> Observable<MainWeatherClass> in
-                let af = AlamofireRepository()
-                return af.alamofireRequest(self.units, self.location)
+                return self.dependencies.alamofireRepository.alamofireRequest(self.units, self.location)
             })
             .observeOn(MainScheduler.instance)
             .subscribeOn(dependencies.scheduler)
