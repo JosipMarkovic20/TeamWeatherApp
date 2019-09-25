@@ -113,15 +113,17 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     func setupScreenData(){
         
         guard let weatherData = viewModel.mainWeatherData else { return }
+        let roundedVaules = viewModel.roundingCorrection(weatherData: weatherData)
         
-        homeScreenView.temperatureView.temperatureLabel.text = String(weatherData.currently.temperature)
+        
+        homeScreenView.temperatureView.temperatureLabel.text = "\(roundedVaules.temperature)°"
         homeScreenView.temperatureView.summaryLabel.text = weatherData.currently.summary
         
         let minAndMax: (Double, Double) = viewModel.compareDayInData(weatherData: weatherData)
         homeScreenView.locationMinAndMaxView.minTempLabel.text = "\(minAndMax.0)°C"
         homeScreenView.locationMinAndMaxView.maxTempLabel.text = "\(minAndMax.1)°C"
         
-        homeScreenView.conditionsView.humidityLabel.text = "\(weatherData.currently.humidity)%"
+        homeScreenView.conditionsView.humidityLabel.text = "\(roundedVaules.humidity)%"
         homeScreenView.conditionsView.windLabel.text = "\(weatherData.currently.windSpeed) km/h"
         homeScreenView.conditionsView.pressureLabel.text = "\(Int(weatherData.currently.pressure)) hpa"
         

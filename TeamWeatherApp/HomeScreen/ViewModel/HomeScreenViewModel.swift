@@ -190,7 +190,7 @@ class HomeScreenViewModel: ViewModelType   {
         }
     }
     //MARK: Data rounding correction
-    func roundingCorrection(weatherData: MainWeatherClass) -> (Int, Int){
+    func roundingCorrection(weatherData: MainWeatherClass) -> (humidity: Int, temperature: Int){
         let currentWeather = weatherData.currently
         return (Int(currentWeather.humidity*100), Int(currentWeather.temperature))
     }
