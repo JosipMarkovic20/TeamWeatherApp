@@ -10,10 +10,18 @@ import Foundation
 import UIKit
 
 
-class LoaderViewController: UIViewController {
+public class LoaderViewController: UIViewController {
     var loader  = UIActivityIndicatorView(style: .whiteLarge)
     
-    override func loadView() {
+    public init(){
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override public func loadView() {
         view = UIView()
         view.backgroundColor = UIColor(white: 0, alpha: 0.7)
         
