@@ -162,6 +162,12 @@ class HomeScreenViewModelTest: QuickSpec {
                     
                     expect(loaderSubject.events[1].value.element).toEventually(equal(false))
                 }
+                //MARK: Unit Conversion Function
+                it("check if function is returning good values"){
+                    testScheduler.start()
+                    let outputMetric = homeScreenViewModel.convertUnits(unitType: .metric, data: mainWeatherData)
+                    let outputImperial = homeScreenViewModel.convertUnits(unitType: .imperial, data: mainWeatherData)
+                }
             }
         }
     }

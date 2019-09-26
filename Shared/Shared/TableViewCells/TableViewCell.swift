@@ -55,4 +55,8 @@ public class WeatherTableViewCell: UITableViewCell {
             locationLabel.centerYAnchor.constraint(equalTo: letterLabel.centerYAnchor)
         ])
     }
+    public func setupCell(letter: String, location: String){
+        self.letterLabel.text = letter
+        self.locationLabel.text = location
+    }
 }

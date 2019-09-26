@@ -183,19 +183,20 @@ class HomeScreenViewModel: ViewModelType{
         }
     }
     
-    //MARK: Returns units dependent on settings
-    func unitSettings(currentUnits: UnitsEnum) -> (speedUnit: String, temperatureUnit: String){
-        switch currentUnits {
-        case .metric:
-            return ("km/h", "°C")
+    //MARK: Unit Coversion function
+    func convertUnits(unitType: UnitsEnum, data: MainWeatherClass) -> (currentTemperature: String, lowTemperature: String, highTemperature: String, windSpeed: String){
+        let lowAndHighTemp = compareDayInData(weatherData: data)
+        switch unitType {
         case .imperial:
-            return ("mph", "°F")
+            let currentTemperature = Double(Int((data.currently.temperature * 1.8 + 32)))
+            let lowTemperature = (((lowAndHighTemp.temperatureLow * 1.8 + 32) * 10).rounded() / 10)
+            let highTemperature = (((lowAndHighTemp.temperatureHigh * 1.8 + 32) * 10).rounded() / 10)
+            let windSpeed = ((((data.currently.windSpeed) * 1.6 ) * 10).rounded() / 10)
+            
+            
+            return ("\(currentTemperature)°F", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph")
+        default:
+            return ("\(Double(Int((data.currently.temperature))))°C", "\(lowAndHighTemp.temperatureLow)°C", "\(lowAndHighTemp.temperatureHigh)°C", "\(data.currently.windSpeed) km/h")
         }
     }
-    //MARK: Data rounding correction
-    func roundingCorrection(weatherData: MainWeatherClass) -> (humidityValue: Int, temperatureValue: Int){
-        let currentWeather = weatherData.currently
-        return (Int(currentWeather.humidity*100), Int(currentWeather.temperature))
-    }
-
 }

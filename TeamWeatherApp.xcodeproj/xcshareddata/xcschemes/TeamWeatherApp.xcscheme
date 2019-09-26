@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4CAB3FBB6AE4C3BA077BAB185A5B424E"
-               BuildableName = "Pods_WeatherAppSearch.framework"
-               BlueprintName = "Pods-WeatherAppSearch"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "5FC932ED233A00D100D5B6C4"
+               BuildableName = "TeamWeatherApp.app"
+               BlueprintName = "TeamWeatherApp"
+               ReferencedContainer = "container:TeamWeatherApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5FC93303233A00D100D5B6C4"
+               BuildableName = "TeamWeatherAppTests.xctest"
+               BlueprintName = "TeamWeatherAppTests"
+               ReferencedContainer = "container:TeamWeatherApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -40,6 +50,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5FC932ED233A00D100D5B6C4"
+            BuildableName = "TeamWeatherApp.app"
+            BlueprintName = "TeamWeatherApp"
+            ReferencedContainer = "container:TeamWeatherApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +67,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5FC932ED233A00D100D5B6C4"
+            BuildableName = "TeamWeatherApp.app"
+            BlueprintName = "TeamWeatherApp"
+            ReferencedContainer = "container:TeamWeatherApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

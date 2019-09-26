@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F5C9BB43EEC3F66BD71FD6BC8F46AF19"
-               BuildableName = "Pods_TeamWeatherApp.framework"
-               BlueprintName = "Pods-TeamWeatherApp"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "F0B665B1233B4F8900EDF892"
+               BuildableName = "WeatherAppSearch.framework"
+               BlueprintName = "WeatherAppSearch"
+               ReferencedContainer = "container:WeatherAppSearch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F0B665BA233B4F8900EDF892"
+               BuildableName = "WeatherAppSearchTests.xctest"
+               BlueprintName = "WeatherAppSearchTests"
+               ReferencedContainer = "container:WeatherAppSearch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -47,6 +57,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F0B665B1233B4F8900EDF892"
+            BuildableName = "WeatherAppSearch.framework"
+            BlueprintName = "WeatherAppSearch"
+            ReferencedContainer = "container:WeatherAppSearch.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

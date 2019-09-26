@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Shared
+import RxSwift
 
 public class SearchScreenCoordinator: Coordinator   {
     public var childCoordinators: [Coordinator] = []
@@ -18,7 +19,7 @@ public class SearchScreenCoordinator: Coordinator   {
     
     
     public init(presenter: UINavigationController, searchBar: UISearchBar) {
-        self.viewModel = SearchViewModel()
+        self.viewModel = SearchViewModel(dependencies: SearchViewModel.Dependencies(alamofireManager: LocationRepository(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
         self.viewController = SearchViewController(viewModel: viewModel, searchBar: searchBar)
         self.presenter = presenter
     }

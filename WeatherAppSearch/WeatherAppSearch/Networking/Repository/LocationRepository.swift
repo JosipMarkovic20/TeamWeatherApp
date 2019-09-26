@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import RxSwift
+class LocationRepository {
+    let url = "http://api.geonames.org/searchJSON?q="
+    let username = "&maxRows=10&username=myCRObaM"
+    
+    func alamofireRequest(_ location: String) -> Observable<SearchDataModel> {
+        let alamofireManager = LocationAlamofireManager()
+        let currentURL = url + location + username
+        return alamofireManager.requestLocation(url: currentURL)
+    }
+}
