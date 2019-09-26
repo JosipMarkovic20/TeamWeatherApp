@@ -197,5 +197,16 @@ class HomeScreenViewModel: ViewModelType{
         let currentWeather = weatherData.currently
         return (Int(currentWeather.humidity*100), Int(currentWeather.temperature))
     }
+    
+    //MARK: Unit Coversion function
+    func convertUnits(unitType: UnitsEnum, data: MainWeatherClass) -> (currentTemperature: Double, lowTemperature: Double, highTemperature: Double, windSpeed: Double){
+        let lowAndHighTemp = compareDayInData(weatherData: data)
+        switch unitType {
+        case .imperial:
+            return (Double(Int((data.currently.temperature * 1.8 + 32))), (((lowAndHighTemp.temperatureLow * 1.8 + 32) * 10).rounded() / 10), (((lowAndHighTemp.temperatureHigh * 1.8 + 32) * 10).rounded() / 10), ((((data.currently.windSpeed) * 1.6 ) * 10).rounded() / 10))
+        default:
+            return (Double(Int((data.currently.temperature))), lowAndHighTemp.temperatureLow, lowAndHighTemp.temperatureHigh, (data.currently.windSpeed))
+        }
+    }
 
 }
