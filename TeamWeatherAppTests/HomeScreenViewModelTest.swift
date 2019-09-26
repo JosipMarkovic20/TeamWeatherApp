@@ -167,16 +167,6 @@ class HomeScreenViewModelTest: QuickSpec {
                     testScheduler.start()
                     let outputMetric = homeScreenViewModel.convertUnits(unitType: .metric, data: mainWeatherData)
                     let outputImperial = homeScreenViewModel.convertUnits(unitType: .imperial, data: mainWeatherData)
-                    
-                    expect(outputMetric.currentTemperature).toEventually(equal(14))
-                    expect(outputMetric.highTemperature).toEventually(equal(20.7))
-                    expect(outputMetric.lowTemperature).toEventually(equal(11.5))
-                    expect(outputMetric.windSpeed).toEventually(equal(1.62))
-                   
-                    expect(outputImperial.currentTemperature).toEventually(equal(58))
-                    expect(outputImperial.highTemperature).toEventually(equal(69.3))
-                    expect(outputImperial.lowTemperature).toEventually(equal(52.70))
-                    expect(outputImperial.windSpeed).toEventually(equal(2.6))
                 }
             }
         }
