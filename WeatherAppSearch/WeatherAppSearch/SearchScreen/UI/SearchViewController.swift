@@ -13,7 +13,7 @@ import RxSwift
 
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    //MARK: TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.dataForView?.geonames.count ?? 0
     }
@@ -28,7 +28,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return UITableViewCell()
     }
     
-    
+    //MARK: Variables
     let viewModel: SearchViewModel
     var customView: SearchView!
     let searchBar: UISearchBar!
@@ -41,7 +41,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return view
     }()
     
-    
+    //MARK: init
     init(viewModel: SearchViewModel, searchBar: UISearchBar) {
         self.viewModel = viewModel
         self.searchBar = searchBar
@@ -51,7 +51,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -71,7 +71,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         viewModel.input.getDataSubject.onNext("virovitica")
     }
-    
+    //MARK: UISettings
     func setupUI(){
         
         tableView.delegate = self
@@ -110,7 +110,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ])
         
     }
-    
+    //MARK: Refresh Table View
     func refreshTableView(subject: PublishSubject<Bool>) -> Disposable{
         
         return subject
