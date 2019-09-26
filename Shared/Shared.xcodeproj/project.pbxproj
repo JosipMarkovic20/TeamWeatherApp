@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F5502EC233CD597009CD610 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5502EB233CD597009CD610 /* SettingsData.swift */; };
+		5F5502EE233CD5CB009CD610 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5502ED233CD5CB009CD610 /* SearchDataModel.swift */; };
 		5F642FD2233B763F000E1C83 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F642FC8233B763F000E1C83 /* Shared.framework */; };
 		5F642FD7233B763F000E1C83 /* SharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F642FD6233B763F000E1C83 /* SharedTests.swift */; };
 		5F642FD9233B763F000E1C83 /* Shared.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F642FCB233B763F000E1C83 /* Shared.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F5502EB233CD597009CD610 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
+		5F5502ED233CD5CB009CD610 /* SearchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
 		5F642FC8233B763F000E1C83 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F642FCB233B763F000E1C83 /* Shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared.h; sourceTree = "<group>"; };
 		5F642FCC233B763F000E1C83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F5502EA233CD586009CD610 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				5F5502EB233CD597009CD610 /* SettingsData.swift */,
+				5F5502ED233CD5CB009CD610 /* SearchDataModel.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		5F642FBE233B763F000E1C83 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +104,7 @@
 		5F642FCA233B763F000E1C83 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5F5502EA233CD586009CD610 /* DataModels */,
 				5FA1DE9F233CAACD002A1C61 /* Persistence */,
 				5FA1DE96233CA22F002A1C61 /* Enums */,
 				5F643007233B815B000E1C83 /* Coordinator */,
@@ -291,7 +305,9 @@
 			files = (
 				5FA1DEA5233CAAFD002A1C61 /* RealmLocation.swift in Sources */,
 				5FA1DEA3233CAAEE002A1C61 /* RealmSettings.swift in Sources */,
+				5F5502EC233CD597009CD610 /* SettingsData.swift in Sources */,
 				5FA1DEA9233CAB26002A1C61 /* RealmManager.swift in Sources */,
+				5F5502EE233CD5CB009CD610 /* SearchDataModel.swift in Sources */,
 				5FA1DEA7233CAB11002A1C61 /* LastRealmLocation.swift in Sources */,
 				5F643009233B8170000E1C83 /* Coordinator.swift in Sources */,
 				5FA1DE98233CA23D002A1C61 /* UnitsEnum.swift in Sources */,

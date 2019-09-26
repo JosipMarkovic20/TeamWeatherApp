@@ -14,7 +14,6 @@
 		5F64301F233B855C000E1C83 /* Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F64301D233B855C000E1C83 /* Light.otf */; };
 		5F643020233B855C000E1C83 /* Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F64301E233B855C000E1C83 /* Book.otf */; };
 		6AC684B85086D2ACF63C06D6 /* Pods_WeatherAppSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB99AB4D02F3FCE94F501188 /* Pods_WeatherAppSearch.framework */; };
-		F067BD19233C9EB00022D8A4 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067BD18233C9EB00022D8A4 /* SearchDataModel.swift */; };
 		F067BD1C233CA0750022D8A4 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067BD1B233CA0750022D8A4 /* GeneratedMocks.swift */; };
 		F067BD1E233CA18C0022D8A4 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067BD1D233CA18C0022D8A4 /* SearchViewModelTest.swift */; };
 		F067BD20233CA5570022D8A4 /* SearchData.json in Resources */ = {isa = PBXBuildFile; fileRef = F067BD1F233CA5570022D8A4 /* SearchData.json */; };
@@ -66,7 +65,6 @@
 		6256E1E28BEE92D48524CDA7 /* Pods_WeatherAppSearch_WeatherAppSearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppSearch_WeatherAppSearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD45FE536BB5C411CCA6DE98 /* Pods-WeatherAppSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppSearch.debug.xcconfig"; path = "Target Support Files/Pods-WeatherAppSearch/Pods-WeatherAppSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		DB99AB4D02F3FCE94F501188 /* Pods_WeatherAppSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F067BD18233C9EB00022D8A4 /* SearchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
 		F067BD1B233CA0750022D8A4 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		F067BD1D233CA18C0022D8A4 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
 		F067BD1F233CA5570022D8A4 /* SearchData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchData.json; sourceTree = "<group>"; };
@@ -169,14 +167,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F067BD17233C9E9B0022D8A4 /* DataModels */ = {
-			isa = PBXGroup;
-			children = (
-				F067BD18233C9EB00022D8A4 /* SearchDataModel.swift */,
-			);
-			path = DataModels;
-			sourceTree = "<group>";
-		};
 		F0B665A8233B4F8900EDF892 = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				5F643018233B8417000E1C83 /* Fonts */,
-				F067BD17233C9E9B0022D8A4 /* DataModels */,
 				5F643010233B839D000E1C83 /* Networking */,
 				F0B665D5233B551700EDF892 /* SearchScreen */,
 				F0B665B6233B4F8900EDF892 /* Info.plist */,
@@ -472,7 +461,6 @@
 				5F643017233B83D9000E1C83 /* LocationAlamofireManager.swift in Sources */,
 				F0B66812233B6A0000EDF892 /* SearchViewModel.swift in Sources */,
 				F0B665CD233B4FDB00EDF892 /* SearchScreenCoordinator.swift in Sources */,
-				F067BD19233C9EB00022D8A4 /* SearchDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
