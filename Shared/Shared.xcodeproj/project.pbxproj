@@ -17,6 +17,10 @@
 		5FA1DE98233CA23D002A1C61 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DE97233CA23D002A1C61 /* UnitsEnum.swift */; };
 		5FA1DE9B233CA510002A1C61 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DE9A233CA510002A1C61 /* SettingsData.swift */; };
 		5FA1DE9E233CA60B002A1C61 /* SetupSettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DE9D233CA60B002A1C61 /* SetupSettingsDelegate.swift */; };
+		5FA1DEA3233CAAEE002A1C61 /* RealmSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA2233CAAEE002A1C61 /* RealmSettings.swift */; };
+		5FA1DEA5233CAAFD002A1C61 /* RealmLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA4233CAAFD002A1C61 /* RealmLocation.swift */; };
+		5FA1DEA7233CAB11002A1C61 /* LastRealmLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA6233CAB11002A1C61 /* LastRealmLocation.swift */; };
+		5FA1DEA9233CAB26002A1C61 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA8233CAB26002A1C61 /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 		5FA1DE97233CA23D002A1C61 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
 		5FA1DE9A233CA510002A1C61 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		5FA1DE9D233CA60B002A1C61 /* SetupSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSettingsDelegate.swift; sourceTree = "<group>"; };
+		5FA1DEA2233CAAEE002A1C61 /* RealmSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSettings.swift; sourceTree = "<group>"; };
+		5FA1DEA4233CAAFD002A1C61 /* RealmLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLocation.swift; sourceTree = "<group>"; };
+		5FA1DEA6233CAB11002A1C61 /* LastRealmLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRealmLocation.swift; sourceTree = "<group>"; };
+		5FA1DEA8233CAB26002A1C61 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 		5F642FCA233B763F000E1C83 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5FA1DE9F233CAACD002A1C61 /* Persistence */,
 				5FA1DE9C233CA5F5002A1C61 /* Delegates */,
 				5FA1DE99233CA500002A1C61 /* DataModels */,
 				5FA1DE96233CA22F002A1C61 /* Enums */,
@@ -153,6 +162,33 @@
 				5FA1DE9D233CA60B002A1C61 /* SetupSettingsDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		5FA1DE9F233CAACD002A1C61 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1DEA1233CAADE002A1C61 /* DataModel */,
+				5FA1DEA0233CAAD8002A1C61 /* Manager */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		5FA1DEA0233CAAD8002A1C61 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1DEA8233CAB26002A1C61 /* RealmManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		5FA1DEA1233CAADE002A1C61 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1DEA2233CAAEE002A1C61 /* RealmSettings.swift */,
+				5FA1DEA4233CAAFD002A1C61 /* RealmLocation.swift */,
+				5FA1DEA6233CAB11002A1C61 /* LastRealmLocation.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA1DEA5233CAAFD002A1C61 /* RealmLocation.swift in Sources */,
+				5FA1DEA3233CAAEE002A1C61 /* RealmSettings.swift in Sources */,
+				5FA1DEA9233CAB26002A1C61 /* RealmManager.swift in Sources */,
+				5FA1DEA7233CAB11002A1C61 /* LastRealmLocation.swift in Sources */,
 				5F643009233B8170000E1C83 /* Coordinator.swift in Sources */,
 				5FA1DE98233CA23D002A1C61 /* UnitsEnum.swift in Sources */,
 				5FA1DE9B233CA510002A1C61 /* SettingsData.swift in Sources */,

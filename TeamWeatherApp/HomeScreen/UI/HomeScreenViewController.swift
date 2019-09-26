@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import Shared
+import SnapKit
 
 class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
@@ -66,11 +67,13 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     //MARK: Constraints
     func setupConstraints(){
-        homeScreenView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        homeScreenView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        homeScreenView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        homeScreenView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
+        homeScreenView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view)
+            make.leading.equalTo(self.view)
+            make.trailing.equalTo(self.view)
+            make.bottom.equalTo(self.view)
+        }
     }
     
     
@@ -168,7 +171,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     }
 }
 
-
+//MARK: Settings delegate
 extension HomeScreenViewController: SetupSettingsDelegate{
     
     func setupScreenBasedOn(settings: SettingsData) {

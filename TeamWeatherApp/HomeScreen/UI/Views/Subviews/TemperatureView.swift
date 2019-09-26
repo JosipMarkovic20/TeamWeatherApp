@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class TemperatureView: UIView{
     //MARK: UI Elements
@@ -50,10 +51,15 @@ class TemperatureView: UIView{
     }
     //MARK: Constraints
     func setupConstraints(){
-        temperatureLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        temperatureLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
-        summaryLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        summaryLabel.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor).isActive = true
+        temperatureLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self)
+            make.top.equalTo(self)
+        }
+        
+        summaryLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self)
+            make.top.equalTo(temperatureLabel.snp.bottom)
+        }
     }
 }
