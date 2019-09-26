@@ -57,7 +57,7 @@ class HomeScreenViewModel: ViewModelType{
     var output: Output!
     var mainWeatherData: MainWeatherClass?
     
-    let units: UnitsEnum = .metric
+    var units: UnitsEnum = .metric
     let location: String = "45.82176,17.39763"
     
     
@@ -184,19 +184,19 @@ class HomeScreenViewModel: ViewModelType{
     }
     
     //MARK: Unit Coversion function
-    func convertUnits(unitType: UnitsEnum, data: MainWeatherClass) -> (currentTemperature: String, lowTemperature: String, highTemperature: String, windSpeed: String){
+    func convertUnits(unitType: UnitsEnum, data: MainWeatherClass) -> (currentTemperature: String, lowTemperature: String, highTemperature: String, windSpeed: String, humidity: String, pressure: String){
         let lowAndHighTemp = compareDayInData(weatherData: data)
         switch unitType {
         case .imperial:
-            let currentTemperature = Double(Int((data.currently.temperature * 1.8 + 32)))
+            let currentTemperature = Double((data.currently.temperature * 1.8 + 32))
             let lowTemperature = (((lowAndHighTemp.temperatureLow * 1.8 + 32) * 10).rounded() / 10)
             let highTemperature = (((lowAndHighTemp.temperatureHigh * 1.8 + 32) * 10).rounded() / 10)
             let windSpeed = ((((data.currently.windSpeed) * 1.6 ) * 10).rounded() / 10)
             
             
-            return ("\(currentTemperature)°F", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph")
+            return ("\(Int(currentTemperature))°", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph", "\(data.currently.humidity * 100)%", "\(Int(data.currently.pressure)) hpa")
         default:
-            return ("\(Double(Int((data.currently.temperature))))°C", "\(lowAndHighTemp.temperatureLow)°C", "\(lowAndHighTemp.temperatureHigh)°C", "\(data.currently.windSpeed) km/h")
+            return ("\(Int((data.currently.temperature)))°", "\(lowAndHighTemp.temperatureLow)°C", "\(lowAndHighTemp.temperatureHigh)°C", "\(data.currently.windSpeed) km/h", "\(data.currently.humidity * 100)%", "\(Int(data.currently.pressure)) hpa")
         }
     }
 }
