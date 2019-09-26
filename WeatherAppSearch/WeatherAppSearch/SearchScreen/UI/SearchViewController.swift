@@ -9,18 +9,20 @@
 import Foundation
 import UIKit
 import Shared
+import RxSwift
 
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel.dataForView?.geonames.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = viewModel.dataForView!.geonames[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "da") as? WeatherTableViewCell {
             cell.backgroundColor = .clear
-            
+            cell.setupCell(letter: data.name.first?.uppercased() ?? "s", location: data.name)
             return cell
         }
         return UITableViewCell()
@@ -30,6 +32,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let viewModel: SearchViewModel
     var customView: SearchView!
     let searchBar: UISearchBar!
+    let disposeBag = DisposeBag()
     
     var tableView: UITableView = {
         let view = UITableView()
@@ -52,7 +55,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        prepareForViewModel()
     }
+    
+    func prepareForViewModel(){
+        let input = SearchViewModel.Input(getDataSubject: ReplaySubject<String>.create(bufferSize: 1))
+        
+        let output = viewModel.transform(input: input)
+        
+        for disposable in output.disposables {
+            disposable.disposed(by: disposeBag)
+        }
+        
+        refreshTableView(subject: output.dataReadySubject).disposed(by: disposeBag)
+        
+        viewModel.input.getDataSubject.onNext("virovitica")
+    }
+    
     func setupUI(){
         
         tableView.delegate = self
@@ -90,5 +109,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
         
+    }
+    
+    func refreshTableView(subject: PublishSubject<Bool>) -> Disposable{
+        
+        return subject
+        .observeOn(MainScheduler.instance)
+            .subscribeOn(viewModel.dependencies.scheduler)
+        .subscribe(onNext: {[unowned self]  bool in
+            self.tableView.reloadData()
+        })
     }
 }
