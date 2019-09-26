@@ -167,3 +167,14 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
             }).disposed(by: disposeBag)
     }
 }
+
+
+extension HomeScreenViewController: SetupSettingsDelegate{
+    
+    func setupScreenBasedOn(settings: SettingsData) {
+        self.homeScreenView.conditionsView.humidityView.isHidden = !settings.displayHumidity
+        self.homeScreenView.conditionsView.windView.isHidden = !settings.displayWind
+        self.homeScreenView.conditionsView.pressureView.isHidden = !settings.displayPressure
+    }
+    
+}

@@ -11,7 +11,7 @@ import UIKit
 import RxSwift
 import Shared
 
-class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+public class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     //MARK: UI Elements
     let tableView: UITableView = {
@@ -31,10 +31,13 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     
     let viewModel: SettingsScreenViewModel
+    var settings: SettingsData
+    public var settingsDelegate: SetupSettingsDelegate?
     
     
-    init(viewModel: SettingsScreenViewModel){
+    init(viewModel: SettingsScreenViewModel, settings: SettingsData = SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric)){
         self.viewModel = viewModel
+        self.settings = settings
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -42,8 +45,9 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         setupUI()
+        addTargets()
     }
     
     //MARK: UI Setup
@@ -51,7 +55,7 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
         setupBlur()
         self.view.addSubview(settingsView)
         self.view.addSubview(tableView)
-      
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -64,6 +68,8 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     //MARK: Screen dismiss
     @objc func dismissSettings(){
+        self.settings = saveSettings()
+        self.settingsDelegate?.setupScreenBasedOn(settings: self.settings)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -92,11 +98,11 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
     
     
     //MARK: TableView
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
-     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? WeatherTableViewCell  else {
             fatalError("The dequeued cell is not an instance of WeatherTableViewCell.")
         }
@@ -104,11 +110,54 @@ class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as? SettingsScreenHeader else {
             return nil
         }
         return headerView
     }
+    
+    //MARK: Add targets
+    func addTargets(){
+        settingsView.unitsView.metricCheckBox.addTarget(self, action: #selector(switchButtonState), for: .touchUpInside)
+        settingsView.unitsView.imperialCheckBox.addTarget(self, action: #selector(switchButtonState), for: .touchUpInside)
+        settingsView.conditionsView.humidityButton.addTarget(self, action: #selector(switchButtonState), for: .touchUpInside)
+        settingsView.conditionsView.windButton.addTarget(self, action: #selector(switchButtonState), for: .touchUpInside)
+        settingsView.conditionsView.pressureButton.addTarget(self, action: #selector(switchButtonState), for: .touchUpInside)
+    }
+    
+    //MARK: Button control
+    @objc func switchButtonState(button: UIButton){
+        if button.tag == 0{
+            settingsView.unitsView.metricCheckBox.isSelected = !settingsView.unitsView.metricCheckBox.isSelected
+            settingsView.unitsView.imperialCheckBox.isSelected = !settingsView.unitsView.imperialCheckBox.isSelected
+        }else if button.tag == 1{
+            settingsView.unitsView.imperialCheckBox.isSelected = !settingsView.unitsView.imperialCheckBox.isSelected
+            settingsView.unitsView.metricCheckBox.isSelected = !settingsView.unitsView.metricCheckBox.isSelected
+        }else if button.tag == 2{
+            settingsView.conditionsView.humidityButton.isSelected = !settingsView.conditionsView.humidityButton.isSelected
+        }else if button.tag == 3{
+            settingsView.conditionsView.windButton.isSelected = !settingsView.conditionsView.windButton.isSelected
+        }else if button.tag == 4{
+            settingsView.conditionsView.pressureButton.isSelected = !settingsView.conditionsView.pressureButton.isSelected
+        }
+    }
+    
+    //MARK: SaveSettings
+    func saveSettings() -> SettingsData{
+        var units = UnitsEnum.metric
+        if settingsView.unitsView.metricCheckBox.isSelected {
+            units = .metric
+        }else{
+            units = .imperial
+        }
+        let settingsData = SettingsData(displayHumidity: settingsView.conditionsView.humidityButton.isSelected,
+                                        displayWind: settingsView.conditionsView.windButton.isSelected,
+                                        displayPressure: settingsView.conditionsView.pressureButton.isSelected,
+                                        unitsType: units)
+        return settingsData
+    }
+    
+    
     
 }

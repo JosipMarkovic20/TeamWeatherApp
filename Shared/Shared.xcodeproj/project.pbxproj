@@ -14,6 +14,9 @@
 		5F642FE7233B76F8000E1C83 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F642FE6233B76F8000E1C83 /* Loader.swift */; };
 		5F643002233B7D7A000E1C83 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F643001233B7D7A000E1C83 /* TableViewCell.swift */; };
 		5F643009233B8170000E1C83 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F643008233B8170000E1C83 /* Coordinator.swift */; };
+		5FA1DE98233CA23D002A1C61 /* UnitsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DE97233CA23D002A1C61 /* UnitsEnum.swift */; };
+		5FA1DE9B233CA510002A1C61 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DE9A233CA510002A1C61 /* SettingsData.swift */; };
+		5FA1DE9E233CA60B002A1C61 /* SetupSettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DE9D233CA60B002A1C61 /* SetupSettingsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		5F642FE6233B76F8000E1C83 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		5F643001233B7D7A000E1C83 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		5F643008233B8170000E1C83 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5FA1DE97233CA23D002A1C61 /* UnitsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsEnum.swift; sourceTree = "<group>"; };
+		5FA1DE9A233CA510002A1C61 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
+		5FA1DE9D233CA60B002A1C61 /* SetupSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSettingsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 		5F642FCA233B763F000E1C83 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5FA1DE9C233CA5F5002A1C61 /* Delegates */,
+				5FA1DE99233CA500002A1C61 /* DataModels */,
+				5FA1DE96233CA22F002A1C61 /* Enums */,
 				5F643007233B815B000E1C83 /* Coordinator */,
 				5F643000233B7D5F000E1C83 /* TableViewCells */,
 				5F642FE3233B76A2000E1C83 /* Utils */,
@@ -120,6 +129,30 @@
 				5F643008233B8170000E1C83 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5FA1DE96233CA22F002A1C61 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1DE97233CA23D002A1C61 /* UnitsEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		5FA1DE99233CA500002A1C61 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1DE9A233CA510002A1C61 /* SettingsData.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		5FA1DE9C233CA5F5002A1C61 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1DE9D233CA60B002A1C61 /* SetupSettingsDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F643009233B8170000E1C83 /* Coordinator.swift in Sources */,
+				5FA1DE98233CA23D002A1C61 /* UnitsEnum.swift in Sources */,
+				5FA1DE9B233CA510002A1C61 /* SettingsData.swift in Sources */,
 				5F642FE7233B76F8000E1C83 /* Loader.swift in Sources */,
+				5FA1DE9E233CA60B002A1C61 /* SetupSettingsDelegate.swift in Sources */,
 				5F643002233B7D7A000E1C83 /* TableViewCell.swift in Sources */,
 				5F642FE5233B76ED000E1C83 /* ViewModelType.swift in Sources */,
 			);
