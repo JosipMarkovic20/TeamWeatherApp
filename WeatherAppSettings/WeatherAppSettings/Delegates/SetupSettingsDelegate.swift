@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Shared
 
 public protocol SetupSettingsDelegate{
     func setupScreenBasedOn(settings: SettingsData)
