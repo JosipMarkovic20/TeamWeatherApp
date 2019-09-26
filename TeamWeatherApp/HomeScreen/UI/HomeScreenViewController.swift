@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import Shared
 import SnapKit
+import WeatherAppSettings
 
 class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     

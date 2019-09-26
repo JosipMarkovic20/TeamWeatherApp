@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import Shared
+import SnapKit
 
 public class SettingsScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -85,15 +86,20 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     
     //MARK: Constraints
     func setupConstraints(){
-        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        tableView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.30).isActive = true
         
-        settingsView.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 5).isActive = true
-        settingsView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        settingsView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        settingsView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.leading.equalTo(self.view)
+            make.trailing.equalTo(self.view)
+            make.height.equalTo(UIScreen.main.bounds.height * 0.30)
+        }
+        
+        settingsView.snp.makeConstraints { (make) in
+            make.top.equalTo(tableView.snp.bottom).offset(5)
+            make.leading.equalTo(self.view)
+            make.trailing.equalTo(self.view)
+            make.bottom.equalTo(self.view)
+        }
     }
     
     
