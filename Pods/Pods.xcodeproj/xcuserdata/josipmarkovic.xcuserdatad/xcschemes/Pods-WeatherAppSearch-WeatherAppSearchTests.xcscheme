@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4CAB3FBB6AE4C3BA077BAB185A5B424E"
-               BuildableName = "Pods_WeatherAppSearch.framework"
-               BlueprintName = "Pods-WeatherAppSearch"
+               BlueprintIdentifier = "6AA9183584AEB8E43A3327E62DA5C72D"
+               BuildableName = "Pods_WeatherAppSearch_WeatherAppSearchTests.framework"
+               BlueprintName = "Pods-WeatherAppSearch-WeatherAppSearchTests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

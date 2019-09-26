@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SnapKit
 
 
 
@@ -57,17 +57,24 @@ class BackgroundView: UIView{
     
     //MARK: Constraints
     func setupConstraints(){
-        backgroundGradient.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        backgroundGradient.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        backgroundGradient.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        backgroundGradient.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        bodyImage.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        bodyImage.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        bodyImage.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        backgroundGradient.snp.makeConstraints { (make) in
+            make.top.equalTo(self)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+            make.bottom.equalTo(self)
+        }
+
+        bodyImage.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+        }
         
-        headerImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-        headerImage.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        headerImage.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        headerImage.snp.makeConstraints { (make) in
+            make.top.equalTo(self.safeAreaLayoutGuide)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+        }
     }
 }

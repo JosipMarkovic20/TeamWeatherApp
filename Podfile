@@ -32,6 +32,9 @@ end
 target 'WeatherAppSearch' do
   project 'WeatherAppSearch/WeatherAppSearch.project'
   pods
+  target 'WeatherAppSearchTests' do
+    testing_pods
+  end
 end
 
 target 'TeamWeatherApp' do

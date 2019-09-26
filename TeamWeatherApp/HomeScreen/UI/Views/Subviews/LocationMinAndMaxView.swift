@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SnapKit
 
 class LocationMinAndMaxView: UIView{
     
@@ -115,34 +115,47 @@ class LocationMinAndMaxView: UIView{
     }
     //MARK: Constraints
     func setupMinAndMax(){
-        minTempLabel.topAnchor.constraint(equalTo: minView.topAnchor).isActive = true
-        minTempLabel.centerXAnchor.constraint(equalTo: minView.centerXAnchor).isActive = true
         
-        minLabel.centerXAnchor.constraint(equalTo: minView.centerXAnchor).isActive = true
-        minLabel.bottomAnchor.constraint(equalTo: minView.bottomAnchor).isActive = true
+        minTempLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(minView)
+            make.centerX.equalTo(minView)
+        }
         
-        maxTempLabel.topAnchor.constraint(equalTo: maxView.topAnchor).isActive = true
-        maxTempLabel.centerXAnchor.constraint(equalTo: maxView.centerXAnchor).isActive = true
+        minLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(minView)
+            make.bottom.equalTo(minView)
+        }
         
-        maxLabel.centerXAnchor.constraint(equalTo: maxView.centerXAnchor).isActive = true
-        maxLabel.bottomAnchor.constraint(equalTo: maxView.bottomAnchor).isActive = true
+        maxTempLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(maxView)
+            make.centerX.equalTo(maxView)
+        }
         
-        divider.centerXAnchor.constraint(equalTo: temperatureStack.centerXAnchor).isActive = true
-        divider.topAnchor.constraint(equalTo: temperatureStack.topAnchor).isActive = true
-        divider.bottomAnchor.constraint(equalTo: temperatureStack.bottomAnchor).isActive = true
-        divider.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        divider.widthAnchor.constraint(equalToConstant: 3).isActive = true
+        maxLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(maxView)
+            make.bottom.equalTo(maxView)
+        }
+        
+        divider.snp.makeConstraints { (make) in
+            make.centerX.equalTo(temperatureStack)
+            make.top.equalTo(temperatureStack)
+            make.bottom.equalTo(temperatureStack)
+            make.height.equalTo(60)
+            make.width.equalTo(3)
+        }
     }
     
     func setupConstraints(){
-        locationLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        locationLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
-        temperatureStack.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: UIScreen.main.bounds.height * 0.05).isActive = true
-        temperatureStack.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        temperatureStack.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        locationLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self)
+            make.centerX.equalTo(self)
+        }
+        
+        temperatureStack.snp.makeConstraints { (make) in
+            make.top.equalTo(locationLabel.snp.bottom).offset(UIScreen.main.bounds.height * 0.05)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+        }
     }
-    
-    
-    
 }

@@ -200,7 +200,6 @@
 				5FC93319233A04E500D5B6C4 /* Delegates */,
 				5FC93318233A04E300D5B6C4 /* DataModels */,
 				5FC93317233A04E100D5B6C4 /* Enums */,
-				5FC93316233A04DD00D5B6C4 /* Persistence */,
 				5FC93315233A04DB00D5B6C4 /* Networking */,
 				5FC93314233A04D900D5B6C4 /* HomeScreen */,
 				5FC932FA233A00D100D5B6C4 /* Assets.xcassets */,
@@ -239,13 +238,6 @@
 				F06E7F64233A10E0007DD635 /* Manager */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		5FC93316233A04DD00D5B6C4 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Persistence;
 			sourceTree = "<group>";
 		};
 		5FC93317233A04E100D5B6C4 /* Enums */ = {
