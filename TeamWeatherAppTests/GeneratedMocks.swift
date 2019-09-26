@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TeamWeatherApp/Networking/Repository/AlamofireRepository.swift at 2019-09-26 10:15:48 +0000
+// MARK: - Mocks generated from file: TeamWeatherApp/Networking/Repository/AlamofireRepository.swift at 2019-09-26 12:54:33 +0000
 
 //
 //  AlamofireRepository.swift

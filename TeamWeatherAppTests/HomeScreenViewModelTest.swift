@@ -127,29 +127,6 @@ class HomeScreenViewModelTest: QuickSpec {
                     expect(dataReadySubject.events[13].value.element).toEventually(equal(.clearDay))
                     
                 }
-                //MARK: Correct units test
-                it("check if function is returning good units"){
-                    testScheduler.start()
-                    
-                    let metric = homeScreenViewModel.unitSettings(currentUnits: .metric)
-                    
-                    let imperial = homeScreenViewModel.unitSettings(currentUnits: .imperial)
-                    
-                    expect(metric.0).toEventually(equal("km/h"))
-                    expect(metric.1).toEventually(equal("°C"))
-                    
-                    expect(imperial.0).toEventually(equal("mph"))
-                    expect(imperial.1).toEventually(equal("°F"))
-                }
-                //MARK: Format for view test
-                it("check if function is returning good format"){
-                    testScheduler.start()
-                    
-                    let formatTest = homeScreenViewModel.roundingCorrection(weatherData: mainWeatherData)
-                    
-                    expect(formatTest.0).toEventually(equal(86))
-                    expect(formatTest.1).toEventually(equal(14))
-                }
                 //MARK: Loader Subject test
                 it("check if loaderSubject is working"){
                     testScheduler.start()
@@ -167,6 +144,19 @@ class HomeScreenViewModelTest: QuickSpec {
                     testScheduler.start()
                     let outputMetric = homeScreenViewModel.convertUnits(unitType: .metric, data: mainWeatherData)
                     let outputImperial = homeScreenViewModel.convertUnits(unitType: .imperial, data: mainWeatherData)
+                    
+                    expect(outputImperial.currentTemperature).toEventually(equal("58°"))
+                    expect(outputImperial.lowTemperature).toEventually(equal("52.7°F"))
+                    expect(outputImperial.highTemperature).toEventually(equal("69.3°F"))
+                    expect(outputImperial.windSpeed).toEventually(equal("2.6 mph"))
+                    expect(outputImperial.pressure).toEventually(equal("1015 hpa"))
+                    
+                    expect(outputMetric.currentTemperature).toEventually(equal("14°"))
+                    expect(outputMetric.lowTemperature).toEventually(equal("11.5°C"))
+                    expect(outputMetric.highTemperature).toEventually(equal("20.7°C"))
+                    expect(outputMetric.windSpeed).toEventually(equal("1.62 km/h"))
+                    expect(outputMetric.pressure).toEventually(equal("1015 hpa"))
+                    
                 }
             }
         }
