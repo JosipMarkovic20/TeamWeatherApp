@@ -58,20 +58,29 @@ class SettingsView: UIView{
     
     //MARK: Constraints
     func setupConstraints(){
-        unitsView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
-        unitsView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        unitsView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        unitsView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
-        conditionsView.topAnchor.constraint(equalTo: unitsView.bottomAnchor, constant: 30).isActive = true
-        conditionsView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        conditionsView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        conditionsView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        unitsView.snp.makeConstraints { (make) in
+            make.top.equalTo(self).offset(20)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+            make.height.equalTo(120)
+        }
+
+        conditionsView.snp.makeConstraints { (make) in
+            make.top.equalTo(unitsView.snp.bottom).offset(30)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+            make.height.equalTo(120)
+        }
         
-        doneButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-        doneButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
-        doneButton.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        doneButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        doneButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-10)
+            make.trailing.equalTo(self).offset(-10)
+            make.width.equalTo(90)
+            make.height.equalTo(40)
+        }
+        
+
         
     }
     

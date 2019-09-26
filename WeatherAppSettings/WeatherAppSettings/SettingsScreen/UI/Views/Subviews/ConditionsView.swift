@@ -135,39 +135,53 @@ class ConditionsView: UIView{
     func setupConstraints(){
         setupConditions()
         
-        conditionsLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        conditionsLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        conditionsLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self)
+            make.centerX.equalTo(self)
+        }
         
-        conditionsView.topAnchor.constraint(equalTo: conditionsLabel.bottomAnchor, constant: 10).isActive = true
-        conditionsView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        conditionsView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        conditionsView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        conditionsView.snp.makeConstraints { (make) in
+            make.top.equalTo(conditionsLabel.snp.bottom).offset(10)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+            make.bottom.equalTo(self)
+        }
+        
     }
     
     func setupConditions(){
-        wind.topAnchor.constraint(equalTo: windView.topAnchor).isActive = true
-        wind.centerXAnchor.constraint(equalTo: windView.centerXAnchor).isActive = true
         
-        windButton.centerXAnchor.constraint(equalTo: windView.centerXAnchor).isActive = true
-        windButton.bottomAnchor.constraint(equalTo: windView.bottomAnchor, constant: 10).isActive = true
-        windButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        windButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        wind.snp.makeConstraints { (make) in
+            make.top.equalTo(windView)
+            make.centerX.equalTo(windView)
+        }
         
-        humidity.topAnchor.constraint(equalTo: humidityView.topAnchor).isActive = true
-        humidity.centerXAnchor.constraint(equalTo: humidityView.centerXAnchor).isActive = true
+        windButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(windView)
+            make.bottom.equalTo(windView).offset(10)
+            make.width.height.equalTo(40)
+        }
         
-        humidityButton.bottomAnchor.constraint(equalTo: humidityView.bottomAnchor, constant: 10).isActive = true
-        humidityButton.centerXAnchor.constraint(equalTo: humidityView.centerXAnchor).isActive = true
-        humidityButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        humidityButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        humidity.snp.makeConstraints { (make) in
+            make.top.equalTo(humidityView)
+            make.centerX.equalTo(humidityView)
+        }
         
-        pressure.topAnchor.constraint(equalTo: pressureView.topAnchor).isActive = true
-        pressure.centerXAnchor.constraint(equalTo: pressureView.centerXAnchor).isActive = true
+        humidityButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(humidityView)
+            make.bottom.equalTo(humidityView).offset(10)
+            make.width.height.equalTo(40)
+        }
+
+        pressure.snp.makeConstraints { (make) in
+            make.top.equalTo(pressureView)
+            make.centerX.equalTo(pressureView)
+        }
         
-        pressureButton.bottomAnchor.constraint(equalTo: pressureView.bottomAnchor, constant: 10).isActive = true
-        pressureButton.centerXAnchor.constraint(equalTo: pressureView.centerXAnchor).isActive = true
-        pressureButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        pressureButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        pressureButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(pressureView)
+            make.bottom.equalTo(pressureView).offset(10)
+            make.width.height.equalTo(40)
+        }
     }
-    
 }

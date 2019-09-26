@@ -95,7 +95,7 @@
 		19A709589DB2B003F6B7A4F8A9C33923 /* RLMRealmConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = BCFB96E1FB6F2B864482429B303062F8 /* RLMRealmConfiguration.h */; };
 		19EFEE30A7D6F8F1E9C43ECDF688FCB5 /* RxPickerViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26B30B49D53ECD6DE49F03F469E5112 /* RxPickerViewAdapter.swift */; };
 		1A73743D0ACF79E17620444695C737D9 /* RxRelay-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 605C67CE39986FA0D034852D7430C236 /* RxRelay-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A8888BCCBD77A98C9A576CCFE2E8BF4 /* Pods-TeamWeatherAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C90B8AE146B9EBC69393AB960F821FB /* Pods-TeamWeatherAppTests-dummy.m */; };
+		1A8888BCCBD77A98C9A576CCFE2E8BF4 /* Pods-TeamWeatherAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F63BF174FF955429E5B35320BEF0475D /* Pods-TeamWeatherAppTests-dummy.m */; };
 		1AFB1E9136716C0B61D6C700FF1E60FD /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7427C31EC7C983A1A456D402D4BA90FF /* ConstraintLayoutGuide+Extensions.swift */; };
 		1B1BE17E1B96B571107D6CAF7F2440BB /* RLMResults.h in Headers */ = {isa = PBXBuildFile; fileRef = BF53477351DFCDC26E9DB5D162F25DDF /* RLMResults.h */; };
 		1B528B2591CB4191FF4FC3DA585EFA6A /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C649EC37A5DEA1B4C9ACD0D3FDD6BF18 /* Cancelable.swift */; };
@@ -110,7 +110,7 @@
 		2000FA83D6B92FF2D403C16AA474889F /* results.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 532B83C9F1FD7DDABB8D89B0A578BDE8 /* results.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		20C0B98517D8B674D83C95BEF7F1AAB7 /* UINavigationItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54495F7A333883A8069EEA739024A1E7 /* UINavigationItem+Rx.swift */; };
 		20C56C81504A6E759CCE0A0FE208BA4B /* UISearchBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F8DAC7ACD95A91B21E2C07D0A711E /* UISearchBar+Rx.swift */; };
-		217B6BF58AF64C172A7BEACCAF593B8D /* Pods-WeatherAppSettings-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE245C5ACC04CBC955385FBFF4C9D42 /* Pods-WeatherAppSettings-dummy.m */; };
+		217B6BF58AF64C172A7BEACCAF593B8D /* Pods-WeatherAppSettings-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AF0FB323A048F55BC0E3DD03A1631D /* Pods-WeatherAppSettings-dummy.m */; };
 		21A70E2B3D25D416C2B8208079C19F27 /* RLMNetworkClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = E47A8C6B5538C32643324011BE3224A6 /* RLMNetworkClient.mm */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		21AB1101BBE4D28D74ED4EDF0D59025A /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F65E2CE6512C32D2088CC4F2FF5499 /* ConstraintInsets.swift */; };
 		21E3D74F2B26FD2405D5E97FF1200D11 /* RLMProperty_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DBE662BE2E507B89A5F9F88E2B00A88 /* RLMProperty_Private.h */; };
@@ -162,6 +162,7 @@
 		2E1B0AC060EAA9E1BCE21C18F53542C5 /* StubFunctionThenCallRealImplementationTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D89E6EB522EDEDA88DFBA8D1FB2CE3 /* StubFunctionThenCallRealImplementationTrait.swift */; };
 		2E4FB5221A2873966BB00B9CA20715DC /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637B26AB3024D2A3B515E461780F69D /* Place.swift */; };
 		2EA8B4F77F25009885E315BF0902172D /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AE2671DB523B6005F9B9A8096FFF84 /* Callsite.swift */; };
+		2F020AD7450A7B3B982AEC32607CF878 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B546CD3794D6D9A0524F976D19FD48E4 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-dummy.m */; };
 		302579A888527F6AE3B2D0D6B37F716B /* Hue-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 10D93A2C7AAAA5811732207E4679769B /* Hue-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3106268F8316F5222052BFAF69C0622D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1DC316AF9949E69A9D8D2E6C8511D5 /* XCTest.framework */; };
 		31178C789D180A66D48BE5AA4499BF9C /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD9CF7132298DBD7FA34DF3B56B2569 /* Scan.swift */; };
@@ -227,7 +228,7 @@
 		422E6B56ABB317844D12D62944E54BAE /* Driver+Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59B9C4F793376AFDF5DC527659DD33D /* Driver+Subscription.swift */; };
 		428269FAE739F3BF98900D0A8F653435 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A67BD20E7F7F48EA2EE9662FD6F2D0 /* Utils.swift */; };
 		42F76698690916E0407F51610D829412 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799B880DF6FB86E6B7CA8D91C8B8031 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		435C0EAE910FEF4BFD89D93ED25CA055 /* Pods-TeamWeatherApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F27850B287F44BA51CCE4C7884E4F768 /* Pods-TeamWeatherApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		435C0EAE910FEF4BFD89D93ED25CA055 /* Pods-TeamWeatherApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A9E0766BCC1B6E82BD2AB9897304C4 /* Pods-TeamWeatherApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		436803A8CCC81A15C5EA20B71B444217 /* RealmSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F42D5685B88CB9DA44AAAA27FB45B435 /* RealmSwift-dummy.m */; };
 		43BA5EC8500B0ACE7F1AAA3A41FE58B1 /* ItemEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834997D1A47D1EC15BEA4010038FD0B1 /* ItemEvents.swift */; };
 		43CA51A0B9E74777A2701B8C3B6A35C3 /* sync_permission.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9030BC767950B7917F74B27BF7DDF581 /* sync_permission.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
@@ -316,7 +317,7 @@
 		5FC100AC963B72B3EDAF0079EE00B43B /* JSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4FDBF6A5F0E80B02B180B3EEC6A300 /* JSONOperation.swift */; };
 		602E3758C0EF64AF6B7FCEA05BF5B9B9 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D1C4DFA152B9EE22D3E52714E743F /* Expectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		6083C03F9B2DAAEB703217E632D07823 /* StubFunctionThenReturnTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12074DFAE64BED3D500B9BCA9C705C27 /* StubFunctionThenReturnTrait.swift */; };
-		60985C6C98D010B0803EF17D7208D45D /* Pods-WeatherAppSearch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 968089CB4F70A22A75F7B2BB5BE31C36 /* Pods-WeatherAppSearch-dummy.m */; };
+		60985C6C98D010B0803EF17D7208D45D /* Pods-WeatherAppSearch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE999508C0E1B9B492566FC14DA54D99 /* Pods-WeatherAppSearch-dummy.m */; };
 		60FCBD89DFF8D37AE1399FB6DAA20C21 /* Date+Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B941BC5B533DEE31961D49AA45D15 /* Date+Dispatch.swift */; };
 		612B3045C731B08436ABFE967B276D67 /* MockBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96751EA63EA0FE51C4DDB49360FC633D /* MockBuilder.swift */; };
 		618EE464AF3F5AE0E9F55A68B5AE2599 /* ParameterMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA22775BCBDF17CB07F975895134FA5C /* ParameterMatcher.swift */; };
@@ -346,7 +347,7 @@
 		6D2C87A1AA515757315A0BD87C3096F8 /* RLMSyncUtil_Private.h in Copy . Private Headers */ = {isa = PBXBuildFile; fileRef = AC5872E34E17DE82490712D875CBDF30 /* RLMSyncUtil_Private.h */; };
 		6DB0FB34801BEDB57672D95DE042D213 /* XCTest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2441BD147830F332C9E3015647124C0E /* XCTest+Rx.swift */; };
 		6E0EB9E7FAAEDBB7A73ECF3095F69C4A /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B714B21FCF8E3A1DD3C17F674E63C972 /* UILayoutSupport+Extensions.swift */; };
-		6F0A87CDF671D2AE042E5101452C3781 /* Pods-WeatherAppSettings-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36EEC3FE1E3E93195E9AFA2019593513 /* Pods-WeatherAppSettings-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F0A87CDF671D2AE042E5101452C3781 /* Pods-WeatherAppSettings-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E90268FFB4E4FDDD54A6A534C5DE6EA8 /* Pods-WeatherAppSettings-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F548DDDEE5E2ACE7EE8E11D25C59EE1 /* _RXDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AFF3F7AB2AA4FA607723441FB66A9C /* _RXDelegateProxy.m */; };
 		6FAD00B4A78E07C3324BCDFB1AE1731E /* BehaviorRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692A56DF3CB3677A1134BAF8CA56307 /* BehaviorRelay.swift */; };
 		6FB67096634215E867FDE9BB7CC4411D /* RLMCollection_Private.h in Copy . Private Headers */ = {isa = PBXBuildFile; fileRef = 3E694DD6C16B401BB9632F9B1BA1511C /* RLMCollection_Private.h */; };
@@ -427,7 +428,7 @@
 		87E4BE420171E747C5E7558B64EF18B0 /* StubFunctionThenDoNothingTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FAD0E1FDFBF0CBA7621951087A5580 /* StubFunctionThenDoNothingTrait.swift */; };
 		8814EE875AEBC7A3AC3EAD08A346D251 /* CLLocationManager+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BE61125E4B4B8A26FA7C0262EBDAB0 /* CLLocationManager+Extras.swift */; };
 		8911DDD5910AA1C6E099EBF768AFC8F7 /* QuickSpecBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 2108883304F57C0492513507DF224A55 /* QuickSpecBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		898B087B874918E74BB9034EF13DE267 /* Pods-TeamWeatherApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C199325507550B3830F717C494321415 /* Pods-TeamWeatherApp-dummy.m */; };
+		898B087B874918E74BB9034EF13DE267 /* Pods-TeamWeatherApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0506E7FF55F43EA09A79F61421211B62 /* Pods-TeamWeatherApp-dummy.m */; };
 		89EE4D6DBDB79963D65AA1E67B543B6D /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D8987B269AF9CA3E0DC712443B3C /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8A0EF19254BAC5DF0885D1FBA345E016 /* CwlMachBadInstructionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B104625F32083064B3E8E0E909AF93C5 /* CwlMachBadInstructionHandler.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8A4AC066E70DA811A15B73CD919E2628 /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B67A1088498A115F43C8BD5F3ABFCB /* Binder.swift */; };
@@ -506,7 +507,7 @@
 		A402A1B0DA338F5963E3EC8DB2BE2AC0 /* VerifyReadOnlyProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBA9AEC4CDE62459A57F4B2BE87FB2 /* VerifyReadOnlyProperty.swift */; };
 		A4DA80E143579C9912C234E04D772465 /* results_notifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F55B3EA1B32B558A6A5D0684D68F69D /* results_notifier.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		A54280C18DC89D580772F4A6458CD7B2 /* RxTextViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DADBA7DD38690044758038587AC61F3 /* RxTextViewDelegateProxy.swift */; };
-		A5C55B569B7901D61856991D62AD22E0 /* Pods-TeamWeatherAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1EA420E75D492E6956D8EFCF3C6E43C /* Pods-TeamWeatherAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5C55B569B7901D61856991D62AD22E0 /* Pods-TeamWeatherAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C218E729160F12EDEE6CA397696664 /* Pods-TeamWeatherAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A667CCB4A25405DB4F0A807333E0F458 /* RLMAccessor.h in Copy . Private Headers */ = {isa = PBXBuildFile; fileRef = 62D3317E8AA30F431C387A0B991E8AB1 /* RLMAccessor.h */; };
 		A66ED57B365A35434C5BAF4B990819B7 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FCFC3922627BF75C19C8EED5966041B0 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A735217C70939149D5640EB8A936ECF7 /* TakeUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40D89B6205D6916D7858CDC225BDAC0 /* TakeUntil.swift */; };
@@ -606,6 +607,7 @@
 		C5D58B25C641A7F82D3528CA7399455E /* sync_session.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 092264F8CC19F27A486705FA20500716 /* sync_session.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		C6800F9EE2CB0F3345BBE57CF3089ED2 /* RLMSyncUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 10E5E53FD394ED476C73A5CDBE695B5C /* RLMSyncUser.h */; };
 		C69B9F74D133DFF7A4B7E5EAF896CBEA /* Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45F044ADC82D5F294601B6D3FA2DDB6 /* Merge.swift */; };
+		C7603B0CA9D500B7E2088DE5418B9689 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473B6928F2C92A5B00BFC88852CEE0A1 /* Foundation.framework */; };
 		C7A7D103C235043EE25BBEA05025C00A /* RxCollectionViewDataSourcePrefetchingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B2FEF2F54E9F30F86EB10D7EB78F1 /* RxCollectionViewDataSourcePrefetchingProxy.swift */; };
 		C839B3C517155C12A52358875C47DDB8 /* Multicast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F1455729763F7711F602AB5B13AE10 /* Multicast.swift */; };
 		C86362A7223602D3F0871C20B91BC70B /* RxCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C79D6EF7D316A75F98E6F1A297BA0A2 /* RxCocoa.swift */; };
@@ -634,7 +636,7 @@
 		CF71144B8C2E4CB84A106BD73ADE4A26 /* ColdObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C12897C122FA0072F6FCFFA2F69B4F1 /* ColdObservable.swift */; };
 		CF9218FF56D8EE43681150A3E1635C9A /* ToSucceed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62883F5D69DABE3641F8E0029826C0C5 /* ToSucceed.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		CFCED42013D268A10D0E7D5441FF70A9 /* StubFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4C2D50CF1346B403D4DF3F1C44BB16 /* StubFunction.swift */; };
-		CFFCD7E3C961C06F5D322B3B10692FAF /* Pods-WeatherAppSearch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9629A0FB2DC5AED274D5FE2CF75B95FB /* Pods-WeatherAppSearch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFFCD7E3C961C06F5D322B3B10692FAF /* Pods-WeatherAppSearch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD350F4F8A55696596DD96D8313F24F0 /* Pods-WeatherAppSearch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D01E1AF1A0D38DB1F2DECA1FA43A7D58 /* SynchronizedOnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5879BBCAA046A8D1F3D2A69855F083CB /* SynchronizedOnType.swift */; };
 		D049DDDB6F0D019ABBC18DDA0B7BCA99 /* RLMProperty_Private.h in Copy . Private Headers */ = {isa = PBXBuildFile; fileRef = 9DBE662BE2E507B89A5F9F88E2B00A88 /* RLMProperty_Private.h */; };
 		D0F2E1AB8507BA499B94A4D32CF7E325 /* Dematerialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE4D23421DA84950556CF1F4E34BE6 /* Dematerialize.swift */; };
@@ -679,6 +681,7 @@
 		DCC8F44280CF1048E9AF09204FE96BDC /* StubbingProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6B94B8ACFFC476DC21A04C7C3A2D0 /* StubbingProxy.swift */; };
 		DCD198D49C0A198A09525B7688EE3BC9 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155D31B140FFB8CDE1F47F9C1F75CB1 /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DCDCBC1F75C74DFCD14CFB80F17A6BDA /* partial_sync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F45D6703141F025AB102ED02638BFCF /* partial_sync.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"3.18.0\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
+		DD2FA1123E80ABCCE7DEF8189D3912A9 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7148931F644040B2C9428F70EA549F82 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDD7A173A9EF096E43E681E66C93128E /* NotificationCenter+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87187F20AC0E2EC7B2CA0BF85B1CE7 /* NotificationCenter+Rx.swift */; };
 		DE07DAA4BBEF2D34B55D0ABD0C042D80 /* AddRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7016342D4E3E1944A85C2F2945D162A /* AddRef.swift */; };
 		DE9CD39694194F4742B2570B68B6C9E0 /* RLMSyncConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9440A77F23630DDC3C6261B3A30D6D38 /* RLMSyncConfiguration.h */; };
@@ -812,6 +815,13 @@
 			remoteGlobalIDString = C8D93C508E21FFD4EE60D335DD6C22E3;
 			remoteInfo = RxTest;
 		};
+		0F47EF5101B58B376643F070754C3C8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA9EA43B3B503823EE36C60D9C8A865F;
+			remoteInfo = RxSwift;
+		};
 		2241096BF52D154C2390A33A7C459082 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -861,12 +871,33 @@
 			remoteGlobalIDString = EA9EA43B3B503823EE36C60D9C8A865F;
 			remoteInfo = RxSwift;
 		};
+		3C3E34899024CE7EF5F2E1A20A821805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFCA8CA494372A14108299CE150648B8;
+			remoteInfo = Cuckoo;
+		};
 		3CA6183D4F91B91B876992B3E51069D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4622BFEF3DC16E8BD15EEFC30D4D0084;
 			remoteInfo = RxRelay;
+		};
+		3FA70D2074D3CB2B03E44454F9027964 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4622BFEF3DC16E8BD15EEFC30D4D0084;
+			remoteInfo = RxRelay;
+		};
+		40A754FFFD158EC87F1F9648EE38F54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68494F30B4A13F8E5E88BCCAEC25B0A4;
+			remoteInfo = Realm;
 		};
 		40DEC6C2E375FEFE31456B4D6784124B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -896,6 +927,13 @@
 			remoteGlobalIDString = 782725687624F8665247B84AB581BEB1;
 			remoteInfo = RealmSwift;
 		};
+		60ECF6D0783625992D6F678902A585F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C82891EAB7293DBEE916B21F57E8474D;
+			remoteInfo = Quick;
+		};
 		61B42076D3CBD7A5C83F2D623105AC2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -910,6 +948,20 @@
 			remoteGlobalIDString = A77DC3FBE3DFD1D1CA8D8812A6CF0776;
 			remoteInfo = SwiftLocation;
 		};
+		68469C9868914B34C0541F261A09E4FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A77DC3FBE3DFD1D1CA8D8812A6CF0776;
+			remoteInfo = SwiftLocation;
+		};
+		6DA02EAE48AC512656ABC9F9C91FBD48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
 		7328A18353E10E497755A013E0427AD3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -917,12 +969,26 @@
 			remoteGlobalIDString = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6;
 			remoteInfo = RxCocoa;
 		};
+		841BB3AE5E3BE04BDB6DF0F94FF2DFBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
+			remoteInfo = SnapKit;
+		};
 		84C2F41E0F25571C32F03FE473F2FAF7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
+		};
+		879F0A49776F3D581360251369066F16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 782725687624F8665247B84AB581BEB1;
+			remoteInfo = RealmSwift;
 		};
 		8B78EFF70BD1D5317C70AD7FC65F20CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -944,6 +1010,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4622BFEF3DC16E8BD15EEFC30D4D0084;
 			remoteInfo = RxRelay;
+		};
+		924CE8463B7EC70B7687865BB37AD00D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6;
+			remoteInfo = RxCocoa;
 		};
 		972DB0AD989CB1B23F6DEF822830CD8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -972,6 +1045,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 68494F30B4A13F8E5E88BCCAEC25B0A4;
 			remoteInfo = Realm;
+		};
+		A5D47196F133A73782ECFA4208D66BAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F13695E06195A78EA8A95F8C7ED0D2F;
+			remoteInfo = Nimble;
 		};
 		A7A7662E60180E578D4B981E0E928479 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1036,12 +1116,26 @@
 			remoteGlobalIDString = 00D9B51B84230E50370AC70ADCF7F8AA;
 			remoteInfo = Hue;
 		};
+		E68410F0F0C09BDE8CAB7C887A9B87E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8D93C508E21FFD4EE60D335DD6C22E3;
+			remoteInfo = RxTest;
+		};
 		F013D72E221E9F35708AD6296E40578A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CFCA8CA494372A14108299CE150648B8;
 			remoteInfo = Cuckoo;
+		};
+		F6A30CDBEC3613FB79B8413595D24640 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00D9B51B84230E50370AC70ADCF7F8AA;
+			remoteInfo = Hue;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1117,33 +1211,35 @@
 /* Begin PBXFileReference section */
 		00560CC61F0EA1FA1FC37075CBD69703 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/Nimble/Expression.swift; sourceTree = "<group>"; };
 		008509D0D580546264C802EEC332E018 /* CreateMock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreateMock.swift; path = Source/Initialization/CreateMock.swift; sourceTree = "<group>"; };
-		009B66F2624F158B0BF815B939FA3FD5 /* Pods-TeamWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		00B457EB894566EA4B85F686F3FCEF70 /* Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Support.swift; path = Sources/SwiftLocation/Support/Support.swift; sourceTree = "<group>"; };
 		013BF4F0FD5A2D6F2D522430037F236D /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		0155D31B140FFB8CDE1F47F9C1F75CB1 /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/Nimble/Matchers/Async.swift; sourceTree = "<group>"; };
+		018CE398112CEAA557B91EA1818DEAAC /* Pods-TeamWeatherAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TeamWeatherAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		01AD7C90D6E52D0968E3DE9E01B9606F /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
 		0255C476CC00B56A0139F8ABD61F1A57 /* ObservableConvertibleType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableConvertibleType.swift; path = RxSwift/ObservableConvertibleType.swift; sourceTree = "<group>"; };
 		02A082E2972D4ED502E2C0A6EB02BFAF /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Source/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		031893FD3D882E436EC541DF783B1276 /* RxTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RxTest.framework; path = RxTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03613D8666CCC541ECF96AABA1291540 /* UIImageView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Rx.swift"; path = "RxCocoa/iOS/UIImageView+Rx.swift"; sourceTree = "<group>"; };
+		0506E7FF55F43EA09A79F61421211B62 /* Pods-TeamWeatherApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TeamWeatherApp-dummy.m"; sourceTree = "<group>"; };
 		05133C669D69DA1565715ABE3D3BDD39 /* HeadingRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeadingRequest.swift; path = Sources/SwiftLocation/Heading/HeadingRequest.swift; sourceTree = "<group>"; };
 		0593C1A9306BB7B1A56D0CA4278B41C9 /* Aliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Aliases.swift; path = RealmSwift/Aliases.swift; sourceTree = "<group>"; };
 		05CF3F1CDD81FE8F84817B3C01B34B02 /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/NimbleObjectiveC/NMBExceptionCapture.m; sourceTree = "<group>"; };
 		0642B354424267A34CA99B35796919B8 /* RLMResults.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMResults.mm; path = Realm/RLMResults.mm; sourceTree = "<group>"; };
 		067312B35E996A2C51C6CAD3F9C9DDED /* Cuckoo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cuckoo-prefix.pch"; sourceTree = "<group>"; };
-		06889B5A74FAF89EEC813D1334076F03 /* Pods-TeamWeatherApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TeamWeatherApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		069EA43DFFF33757E0230C656666F7BD /* UIControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Rx.swift"; path = "RxCocoa/iOS/UIControl+Rx.swift"; sourceTree = "<group>"; };
+		06AF0FB323A048F55BC0E3DD03A1631D /* Pods-WeatherAppSettings-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherAppSettings-dummy.m"; sourceTree = "<group>"; };
 		06BBD3298EFC08D95EEFE526BDDCDBD1 /* Cuckoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cuckoo.framework; path = Cuckoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC3E9DA78342CB68E9DA2B14A88103 /* Sync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sync.swift; path = RealmSwift/Sync.swift; sourceTree = "<group>"; };
 		06FAE38DB07B1296A0BD932A39178992 /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+CurrentTestBundle.swift"; path = "Sources/Quick/NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
 		0711525436656C3219D663C3BE23A478 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		071DDA49DD20DA4494FBFAD9CA8F2EA1 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests-Info.plist"; sourceTree = "<group>"; };
 		076D1C4DFA152B9EE22D3E52714E743F /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
 		0783880E2B9DEBC8C081116EB723830D /* UISearchController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISearchController+Rx.swift"; path = "RxCocoa/iOS/UISearchController+Rx.swift"; sourceTree = "<group>"; };
 		07908E7A02ADC8E91BB73DC8F14E6587 /* ServiceRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = Sources/SwiftLocation/ServiceRequest.swift; sourceTree = "<group>"; };
 		07B020026F84EB5679F9FD63C2D722D1 /* RLMResults_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMResults_Private.h; path = include/RLMResults_Private.h; sourceTree = "<group>"; };
 		07DA373B2AFCC5FF841873B3CB3AC7EB /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
 		07E25A0AB75D032C07567150A6C072BE /* UIViewController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Rx.swift"; path = "RxCocoa/iOS/UIViewController+Rx.swift"; sourceTree = "<group>"; };
-		07F9FCC668680BD10BB763096794D9D1 /* Pods-TeamWeatherApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TeamWeatherApp.modulemap"; sourceTree = "<group>"; };
+		08856D6C4BF302B5E8EFCEA6AFA698FA /* Pods-WeatherAppSettings-WeatherAppSettingsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests.modulemap"; sourceTree = "<group>"; };
 		09102C2D6DC115F19C74A486D8B66900 /* OpenStreetGeocoderRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenStreetGeocoderRequest.swift; path = Sources/SwiftLocation/Geocoding/Services/OpenStreetGeocoderRequest.swift; sourceTree = "<group>"; };
 		092264F8CC19F27A486705FA20500716 /* sync_session.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_session.cpp; path = Realm/ObjectStore/src/sync/sync_session.cpp; sourceTree = "<group>"; };
 		098BCD437293C79D2D9CDB33817FFB2A /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
@@ -1159,7 +1255,6 @@
 		0D631E9908483F9525A6B3F36F16CC61 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quick.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6375FE863EEE9EE85F9AF69A22E85B /* RLMSwiftSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RLMSwiftSupport.m; path = Realm/RLMSwiftSupport.m; sourceTree = "<group>"; };
 		0D7DB679FAE1D1BE92BA78BC252719D9 /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
-		0D8E1499F4E05E75EA0BDDD4EE5B3E7E /* Pods-TeamWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		0E2D53981A0A2A3EC9A74E51A8A87C0D /* RLMSyncPermissionResults.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncPermissionResults.mm; path = Realm/RLMSyncPermissionResults.mm; sourceTree = "<group>"; };
 		0E419C4D4D3B9EABAE2DF119B8A65629 /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		0E5B941BC5B533DEE31961D49AA45D15 /* Date+Dispatch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Dispatch.swift"; path = "RxSwift/Date+Dispatch.swift"; sourceTree = "<group>"; };
@@ -1171,7 +1266,6 @@
 		10D93A2C7AAAA5811732207E4679769B /* Hue-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hue-umbrella.h"; sourceTree = "<group>"; };
 		10E5E53FD394ED476C73A5CDBE695B5C /* RLMSyncUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncUser.h; path = include/RLMSyncUser.h; sourceTree = "<group>"; };
 		1109AE30594F38568401C05E68EFC149 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Rx.swift"; path = "RxCocoa/iOS/UIScrollView+Rx.swift"; sourceTree = "<group>"; };
-		1158F2B1342ABC1DF03DCF2E2F1D5B06 /* Pods-WeatherAppSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSearch.release.xcconfig"; sourceTree = "<group>"; };
 		12074DFAE64BED3D500B9BCA9C705C27 /* StubFunctionThenReturnTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenReturnTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenReturnTrait.swift; sourceTree = "<group>"; };
 		1318BFF47CC624AA47853E8CC70EF086 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
 		131D70461BFD19D8B04CECDC7D589AC9 /* RLMRealmUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMRealmUtil.mm; path = Realm/RLMRealmUtil.mm; sourceTree = "<group>"; };
@@ -1180,11 +1274,11 @@
 		14ECB3E013B4D88C61E7AB01CF53D69E /* Matchable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Matchable.swift; path = Source/Matching/Matchable.swift; sourceTree = "<group>"; };
 		150803202EE74E6585380BBCF5934BF1 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
 		1580856755BBA282570DB890C192CB8E /* RxCocoa-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-umbrella.h"; sourceTree = "<group>"; };
+		15B3C1EA0F2C763300E3B8963086D78F /* Pods-WeatherAppSettings-WeatherAppSettingsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		15CA3C2DBEEC64AE4F5F76227252CB43 /* RxTableViewDataSourcePrefetchingProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewDataSourcePrefetchingProxy.swift; path = RxCocoa/iOS/Proxies/RxTableViewDataSourcePrefetchingProxy.swift; sourceTree = "<group>"; };
 		15EB47249F703926CC0F9893A19DCDEC /* weak_realm_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = weak_realm_notifier.cpp; path = Realm/ObjectStore/src/impl/weak_realm_notifier.cpp; sourceTree = "<group>"; };
 		1692A56DF3CB3677A1134BAF8CA56307 /* BehaviorRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BehaviorRelay.swift; path = RxRelay/BehaviorRelay.swift; sourceTree = "<group>"; };
 		170BCB6E5AC410529B5727CDE05CF5C2 /* RLMSyncSubscription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncSubscription.h; path = include/RLMSyncSubscription.h; sourceTree = "<group>"; };
-		17626436DC5319954BB177B323F37AFF /* Pods-TeamWeatherApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamWeatherApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		1770EAF4F8C94631196C38E58A01748B /* RxTabBarDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTabBarDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTabBarDelegateProxy.swift; sourceTree = "<group>"; };
 		1799B880DF6FB86E6B7CA8D91C8B8031 /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
 		1811CD9B1DFD4F12ADF3C980436992D2 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -1192,13 +1286,14 @@
 		1894977A654F3E3E37AE9B8DF88BD2C1 /* SingleAssignmentDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAssignmentDisposable.swift; path = RxSwift/Disposables/SingleAssignmentDisposable.swift; sourceTree = "<group>"; };
 		18D1CE36D955A0C5FEC25D6D1895CA62 /* PublishSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublishSubject.swift; path = RxSwift/Subjects/PublishSubject.swift; sourceTree = "<group>"; };
 		1932DDDCDDF1DB2763FF2AB7285B30F3 /* RLMPredicateUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMPredicateUtil.mm; path = Realm/RLMPredicateUtil.mm; sourceTree = "<group>"; };
-		1A43A09B6D65D27F02BB3E3E549E7DCD /* Pods-WeatherAppSearch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherAppSearch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		19C218E729160F12EDEE6CA397696664 /* Pods-TeamWeatherAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TeamWeatherAppTests-umbrella.h"; sourceTree = "<group>"; };
 		1A89C4A25908ADE110B3086DEEA72D87 /* CuckooFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CuckooFunctions.swift; path = Source/CuckooFunctions.swift; sourceTree = "<group>"; };
 		1BA005E4AB69E5B76EEBE959731ED2F3 /* RxCocoa-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxCocoa-Info.plist"; sourceTree = "<group>"; };
 		1CBF7E8DC60F61C111D1ABC23185742E /* Debounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debounce.swift; path = RxSwift/Observables/Debounce.swift; sourceTree = "<group>"; };
 		1CE6EB310E335E2757ADAF18064FA398 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		1D28BFF65E4C4EEC5C3F209E63AEF385 /* ToArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToArray.swift; path = RxSwift/Observables/ToArray.swift; sourceTree = "<group>"; };
 		1DC46619C303E97D28C1162674FE35D0 /* UISlider+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISlider+Rx.swift"; path = "RxCocoa/iOS/UISlider+Rx.swift"; sourceTree = "<group>"; };
+		1E2CBD5C2A1A4E5833AF3EE536EC6A4C /* Pods-WeatherAppSearch-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSearch-Info.plist"; sourceTree = "<group>"; };
 		1E77923DCFEE1001FF83F4D60165A015 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		1F05A54046F75C68451861C1EDC4620B /* Delay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Delay.swift; path = RxSwift/Observables/Delay.swift; sourceTree = "<group>"; };
 		1F45D6703141F025AB102ED02638BFCF /* partial_sync.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = partial_sync.cpp; path = Realm/ObjectStore/src/sync/partial_sync.cpp; sourceTree = "<group>"; };
@@ -1238,7 +1333,6 @@
 		28F43B5A30DC15E279A148816F39D89C /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationController+Rx.swift"; path = "RxCocoa/iOS/UINavigationController+Rx.swift"; sourceTree = "<group>"; };
 		28F75EE5126AD03CD5D5AE8D78AA9AA0 /* UILabel+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILabel+Rx.swift"; path = "RxCocoa/iOS/UILabel+Rx.swift"; sourceTree = "<group>"; };
 		2921A0CD00C1A7FAC6D171BD49F98E6F /* ConcurrentMainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrentMainScheduler.swift; path = RxSwift/Schedulers/ConcurrentMainScheduler.swift; sourceTree = "<group>"; };
-		2958E86ED7884B58682A2E5B9A8A8864 /* Pods-WeatherAppSettings-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherAppSettings-acknowledgements.markdown"; sourceTree = "<group>"; };
 		29BB4E72E58D77D1D2C00885409A8DA8 /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
 		2A025374E67910C03C696DADE9E040E0 /* RLMObservation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObservation.mm; path = Realm/RLMObservation.mm; sourceTree = "<group>"; };
 		2AD5B956ED5C3648A74B144F4C261BBD /* RLMArray_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMArray_Private.h; path = include/RLMArray_Private.h; sourceTree = "<group>"; };
@@ -1250,6 +1344,7 @@
 		2C2EED79B70ABF3EC8C2EDCEDDA01884 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		2C8257EE0BC5D6207F039C6E382C678A /* MatcherProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherProtocols.swift; path = Sources/Nimble/Matchers/MatcherProtocols.swift; sourceTree = "<group>"; };
 		2C9653A823F4B5D8AC7D11CEE015AEE8 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
+		2C9823FC68AC3CFA17283449A70B0C94 /* Pods-WeatherAppSettings-WeatherAppSettingsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D842D47A3047CF0ED84A719452491A4 /* RxScrollViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxScrollViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxScrollViewDelegateProxy.swift; sourceTree = "<group>"; };
 		2DDFA61E5FE326ED219E86B09AC15EEA /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		2DF6E934F03A149AD03284ED6C973CA2 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
@@ -1261,13 +1356,13 @@
 		2F52B2B80F91AE33C935BB1CA525137D /* AnyObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyObserver.swift; path = RxSwift/AnyObserver.swift; sourceTree = "<group>"; };
 		2F7BE342CB43B464D5A7224544FB23C8 /* HotObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HotObservable.swift; path = RxTest/HotObservable.swift; sourceTree = "<group>"; };
 		2F8A884DDA3A3C8DEB37BC2B28CA1B8B /* RLMObjectBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObjectBase.h; path = include/RLMObjectBase.h; sourceTree = "<group>"; };
-		2FB1BEE2CFAF33E0AAEB0EEB84DBE377 /* Pods-WeatherAppSettings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSettings.debug.xcconfig"; sourceTree = "<group>"; };
 		302C33B81DFC62A0C4CCAB1BF26B8C28 /* MockManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockManager.swift; path = Source/MockManager.swift; sourceTree = "<group>"; };
 		3190C40E4A6E68C019F47F4BE94BB853 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		3202C897F76892BBE15F054E0A5CD2BC /* AsyncSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncSubject.swift; path = RxSwift/Subjects/AsyncSubject.swift; sourceTree = "<group>"; };
 		3290627A23C92D6B67BF0C33BFBD7C8B /* RetryWhen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryWhen.swift; path = RxSwift/Observables/RetryWhen.swift; sourceTree = "<group>"; };
 		3300A26AF1C2CA36386FF8F86560CF8C /* PublishRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublishRelay.swift; path = RxRelay/PublishRelay.swift; sourceTree = "<group>"; };
 		33524F2F6049629802ECB4C26DDCF56F /* PrimitiveSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimitiveSequence.swift; path = RxSwift/Traits/PrimitiveSequence.swift; sourceTree = "<group>"; };
+		336E9E9D0F735CB538600901306F0ED5 /* Pods-TeamWeatherApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamWeatherApp-Info.plist"; sourceTree = "<group>"; };
 		3379954279C2F00A403297F3E979DE45 /* work_queue.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = work_queue.cpp; path = Realm/ObjectStore/src/sync/impl/work_queue.cpp; sourceTree = "<group>"; };
 		33856A4AFBC423521102652E6CB46528 /* ConnectableObservableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectableObservableType.swift; path = RxSwift/ConnectableObservableType.swift; sourceTree = "<group>"; };
 		34296CEBA62DBDA56323BFD5948AA261 /* KVORepresentable+Swift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "KVORepresentable+Swift.swift"; path = "RxCocoa/Foundation/KVORepresentable+Swift.swift"; sourceTree = "<group>"; };
@@ -1281,7 +1376,6 @@
 		36C6AC834AB823651C51C3106CB36F6F /* CwlMachBadInstructionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlMachBadInstructionHandler.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include/CwlMachBadInstructionHandler.h; sourceTree = "<group>"; };
 		36CAF9DF5B159026327AF74F20334B25 /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		36E64EEC9BE2C82261B4C2A7889F2311 /* RealmConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RealmConfiguration.swift; path = RealmSwift/RealmConfiguration.swift; sourceTree = "<group>"; };
-		36EEC3FE1E3E93195E9AFA2019593513 /* Pods-WeatherAppSettings-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherAppSettings-umbrella.h"; sourceTree = "<group>"; };
 		3818645A3CF5B3D61CFEFBB5A65794F2 /* Amb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Amb.swift; path = RxSwift/Observables/Amb.swift; sourceTree = "<group>"; };
 		382B44BEE04CF1892D5BAE8479465077 /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
 		38392627807CC0FF9231D96C809BDA17 /* Observers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observers.swift; path = "Sources/SwiftLocation/Data Models/Observers.swift"; sourceTree = "<group>"; };
@@ -1300,10 +1394,10 @@
 		3C2E0138BE6F25A54E5A13262A6864E1 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = RxSwift/SwiftSupport/SwiftSupport.swift; sourceTree = "<group>"; };
 		3C4E2CD3C2D494CEE7BC77266BF3470A /* StubCall.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubCall.swift; path = Source/Stubbing/StubCall.swift; sourceTree = "<group>"; };
 		3C82AF508CDA9FD57EDE684C6732F8AC /* RealmCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RealmCollection.swift; path = RealmSwift/RealmCollection.swift; sourceTree = "<group>"; };
+		3C9CA9D27748B5EDDDC4011546413D9B /* Pods-TeamWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		3CB20CC172918F783954FEE35629EF02 /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
-		3D26663D4884429CA22DFD395C3B6979 /* Pods-TeamWeatherApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamWeatherApp-Info.plist"; sourceTree = "<group>"; };
+		3CEF6CEDE5863F92ACBAF71A10A1B75E /* Pods-WeatherAppSettings-WeatherAppSettingsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3DBB19454719C46EF557B36B5FDA8B40 /* IPAPICoRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPAPICoRequest.swift; path = "Sources/SwiftLocation/Locating By IP/Services/IPAPICoRequest.swift"; sourceTree = "<group>"; };
-		3DE245C5ACC04CBC955385FBFF4C9D42 /* Pods-WeatherAppSettings-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherAppSettings-dummy.m"; sourceTree = "<group>"; };
 		3DE796D6CF812C720A56E4E8DE5EBB40 /* RxWebViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxWebViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxWebViewDelegateProxy.swift; sourceTree = "<group>"; };
 		3E0B3ABE41B9B0EB93E84D9D7597BC14 /* ThrowAssertion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowAssertion.swift; path = Sources/Nimble/Matchers/ThrowAssertion.swift; sourceTree = "<group>"; };
 		3E17478D80DBC97F18F7DE0FFE97DFAA /* QuickConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickConfiguration.h; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.h; sourceTree = "<group>"; };
@@ -1321,9 +1415,9 @@
 		40DDCB59DD87CC3A05CEC071811E1AAE /* Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequence.swift; path = RxSwift/Observables/Sequence.swift; sourceTree = "<group>"; };
 		40E9E47B47BFFB82D225DC6CC64664D1 /* VerificationProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerificationProxy.swift; path = Source/Mock/VerificationProxy.swift; sourceTree = "<group>"; };
 		4129E97FA91A4170463DA87DA0A0DA78 /* UIPageControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIPageControl+Rx.swift"; path = "RxCocoa/iOS/UIPageControl+Rx.swift"; sourceTree = "<group>"; };
+		41350B9D21842E34C40ADD76CE246A8D /* Pods_WeatherAppSettings_WeatherAppSettingsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WeatherAppSettings_WeatherAppSettingsTests.framework; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F686FA2639E9080B5649FA864662FE /* Array+matchers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+matchers.swift"; path = "Source/Matching/Array+matchers.swift"; sourceTree = "<group>"; };
 		423B41AA41DB3AAB7E93A74C9CC7D114 /* Deferred.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deferred.swift; path = RxSwift/Observables/Deferred.swift; sourceTree = "<group>"; };
-		427F3E748710C154D64C85E736531E5E /* Pods-WeatherAppSearch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSearch-acknowledgements.plist"; sourceTree = "<group>"; };
 		42C6A29700A06FDD02130CF6AB5F79ED /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		432FCD0825CC4D3044F5826FE3A750E7 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		437919EE08EC6BFCCBAC3BD346309742 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RealmSwift.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1346,6 +1440,7 @@
 		47EE4412BC7BB1144822F6A1D19CBE9E /* Realm.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Realm.xcconfig; sourceTree = "<group>"; };
 		47FC3DA171D599D1D852B8B9C5110BA8 /* Dictionary+matchers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+matchers.swift"; path = "Source/Matching/Dictionary+matchers.swift"; sourceTree = "<group>"; };
 		484B1E64A6616EAA2210834237363666 /* index_set.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = index_set.cpp; path = Realm/ObjectStore/src/index_set.cpp; sourceTree = "<group>"; };
+		48663DF1806BFB18FF6A6EA943B3A434 /* Pods-TeamWeatherApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TeamWeatherApp.modulemap"; sourceTree = "<group>"; };
 		49184D65FC3C927E60066CCB936DACE8 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Quick.modulemap; sourceTree = "<group>"; };
 		495605B4D983E292AEBAA20A086EA1AE /* UISwitch+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISwitch+Rx.swift"; path = "RxCocoa/iOS/UISwitch+Rx.swift"; sourceTree = "<group>"; };
 		49AF8C3B6568E1EEBE79B239FD7AEF2E /* RLMListBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMListBase.h; path = include/RLMListBase.h; sourceTree = "<group>"; };
@@ -1358,8 +1453,10 @@
 		4C46E46989700EABF9AFA664A77F629E /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		4C5588D4E6C29DC81C6566946CAB4577 /* Observable+Bind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Bind.swift"; path = "RxCocoa/Common/Observable+Bind.swift"; sourceTree = "<group>"; };
 		4C678B4A8CAADE71D75DA8311295097A /* SwiftLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftLocation.framework; path = SwiftLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBD91718BA9BD84BB0E14FFABA23020 /* Pods-TeamWeatherAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamWeatherAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4CD0604E8921F6888BF708615FCC2374 /* Bag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = Platform/DataStructures/Bag.swift; sourceTree = "<group>"; };
 		4D5DE4BF44077022692CA2582C2E1899 /* RxSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RxSwift.xcconfig; sourceTree = "<group>"; };
+		4D82DC0F812C21B0AC6D13F81C25C86E /* Pods-WeatherAppSettings.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeatherAppSettings.modulemap"; sourceTree = "<group>"; };
 		4D9110E93215E7B3F9D936AE80854A61 /* PriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PriorityQueue.swift; path = Platform/DataStructures/PriorityQueue.swift; sourceTree = "<group>"; };
 		4E0752A82A2893CD1FDC01FEB4178A9D /* CwlCatchException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchException.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Dependencies/CwlCatchException/Sources/CwlCatchException/CwlCatchException.swift; sourceTree = "<group>"; };
 		4E12491B5DADC9B6CD358A39D9B63FB4 /* Maybe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Maybe.swift; path = RxSwift/Traits/Maybe.swift; sourceTree = "<group>"; };
@@ -1391,7 +1488,6 @@
 		56E5EB15727BE4B050D27672AB0C21FC /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
 		5715C2D49871D88FB318829006E5067A /* Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Create.swift; path = RxSwift/Observables/Create.swift; sourceTree = "<group>"; };
 		5720FAEC1B4477008CD1B377ABACBFDD /* Do.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Do.swift; path = RxSwift/Observables/Do.swift; sourceTree = "<group>"; };
-		5734D4ECD981E76137D54A2F9A091E7A /* Pods-WeatherAppSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		580D8760CBED10F2C354C58EC89B5FC4 /* LocationByIPRequest+Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LocationByIPRequest+Support.swift"; path = "Sources/SwiftLocation/Locating By IP/LocationByIPRequest+Support.swift"; sourceTree = "<group>"; };
 		581FF73DC7B0BAC169358D330651A666 /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Sources/Nimble/FailureMessage.swift; sourceTree = "<group>"; };
 		5840912EA945755E7186E24374D76F79 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
@@ -1404,10 +1500,10 @@
 		58FAD0E1FDFBF0CBA7621951087A5580 /* StubFunctionThenDoNothingTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenDoNothingTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenDoNothingTrait.swift; sourceTree = "<group>"; };
 		5922920CD5515B81A6FD38C8229E0A43 /* PriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PriorityQueue.swift; path = Platform/DataStructures/PriorityQueue.swift; sourceTree = "<group>"; };
 		5966B637EB0AB7D88BD5B4451E4BD1FB /* QuickSpecBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpecBase.m; path = Sources/QuickSpecBase/QuickSpecBase.m; sourceTree = "<group>"; };
-		5975DCC23A384B6C5F820FC77EEA879A /* Pods-TeamWeatherAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TeamWeatherAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		59BE38E062F8F91C2C1657C506F953C6 /* ControlTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ControlTarget.swift; path = RxCocoa/Common/ControlTarget.swift; sourceTree = "<group>"; };
 		59C696F67D5632293B51C619490B1E42 /* Quick.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.xcconfig; sourceTree = "<group>"; };
 		5ACF15DF0FA012E14A884761F37F626E /* NSObject+Rx+RawRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Rx+RawRepresentable.swift"; path = "RxCocoa/Foundation/NSObject+Rx+RawRepresentable.swift"; sourceTree = "<group>"; };
+		5B0D22212A6B92605F4110AB5F4F9F3A /* Pods-TeamWeatherAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamWeatherAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		5B32D11AB7F8FC4C290CD6B54F02610D /* AutoCompleteRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoCompleteRequest.swift; path = "Sources/SwiftLocation/Auto Complete/AutoCompleteRequest.swift"; sourceTree = "<group>"; };
 		5B38A785449046B28E4E348B831FC5BC /* RxTableViewDataSourceProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewDataSourceProxy.swift; path = RxCocoa/iOS/Proxies/RxTableViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		5B3D47928EDE05E268EF711E1D3B823C /* RxTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxTest.modulemap; sourceTree = "<group>"; };
@@ -1434,6 +1530,7 @@
 		5FDE7B8F019A0B38647D9B8DBD577B6C /* Completable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Completable.swift; path = RxSwift/Traits/Completable.swift; sourceTree = "<group>"; };
 		605C67CE39986FA0D034852D7430C236 /* RxRelay-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxRelay-umbrella.h"; sourceTree = "<group>"; };
 		6096C91D4E06CDE4AB12D0C75E505753 /* DelaySubscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelaySubscription.swift; path = RxSwift/Observables/DelaySubscription.swift; sourceTree = "<group>"; };
+		60A9E0766BCC1B6E82BD2AB9897304C4 /* Pods-TeamWeatherApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TeamWeatherApp-umbrella.h"; sourceTree = "<group>"; };
 		60E12894ADC3A7646A16BFDC31B33834 /* RefCountDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RefCountDisposable.swift; path = RxSwift/Disposables/RefCountDisposable.swift; sourceTree = "<group>"; };
 		61141156D050503F08B8185A9FE46532 /* Lock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lock.swift; path = RxSwift/Concurrency/Lock.swift; sourceTree = "<group>"; };
 		61AF15DFFCA752B87707ED9BA7E12C05 /* Hue-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hue-dummy.m"; sourceTree = "<group>"; };
@@ -1469,7 +1566,6 @@
 		6A447E18161789012D2880C70C727B8E /* RxTableViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTableViewDelegateProxy.swift; sourceTree = "<group>"; };
 		6A527DF0163053CC882D00F0FC4831FE /* PrimitiveSequence+Zip+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PrimitiveSequence+Zip+arity.swift"; path = "RxSwift/Traits/PrimitiveSequence+Zip+arity.swift"; sourceTree = "<group>"; };
 		6BD8FDB592BD2FEC331209C6E5694E39 /* ScheduledItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScheduledItem.swift; path = RxSwift/Schedulers/Internal/ScheduledItem.swift; sourceTree = "<group>"; };
-		6C33AF8B684AC335E058EB6E591254BB /* Pods-WeatherAppSettings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSettings.release.xcconfig"; sourceTree = "<group>"; };
 		6C531AA13E9865F6800F0EC7D72425B5 /* RLMAccessor.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMAccessor.mm; path = Realm/RLMAccessor.mm; sourceTree = "<group>"; };
 		6CB27934DA0411FC6E6FC430972973D8 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableType+Extensions.swift"; path = "RxSwift/ObservableType+Extensions.swift"; sourceTree = "<group>"; };
 		6CEAFB7516D6650F9601128735171371 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
@@ -1477,6 +1573,7 @@
 		6DC53B50495AF9C376633A697F8B7674 /* RxMutableBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxMutableBox.swift; path = RxSwift/RxMutableBox.swift; sourceTree = "<group>"; };
 		6DC6C0D3389D711675511C192C8968FF /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
 		6DCAD102AC3033FE2E68477E5F5F6DAD /* ControlProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ControlProperty.swift; path = RxCocoa/Traits/ControlProperty.swift; sourceTree = "<group>"; };
+		6DCBB5D8149BBC1CB5595824692DDFCA /* Pods-TeamWeatherAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamWeatherAppTests-Info.plist"; sourceTree = "<group>"; };
 		6E016FFB5D4585B130C5323DDA285585 /* SectionedViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionedViewDataSourceType.swift; path = RxCocoa/Common/SectionedViewDataSourceType.swift; sourceTree = "<group>"; };
 		6E3C0408866E2FE09567E3D82F3383B5 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		6E7EE6C35D75E7A9E816014C5D6E74BE /* Schema.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Schema.swift; path = RealmSwift/Schema.swift; sourceTree = "<group>"; };
@@ -1487,6 +1584,7 @@
 		6F83527239C8F7E0F255AE4199A03C9C /* RLMRealmConfiguration+Sync.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RLMRealmConfiguration+Sync.h"; path = "include/RLMRealmConfiguration+Sync.h"; sourceTree = "<group>"; };
 		7017D2A064DB9D6ADC20C1E2FBA78851 /* Cuckoo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cuckoo-Info.plist"; sourceTree = "<group>"; };
 		70EEB6B6F8B55BB3762663EC01F7ED6A /* Buffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Buffer.swift; path = RxSwift/Observables/Buffer.swift; sourceTree = "<group>"; };
+		7148931F644040B2C9428F70EA549F82 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests-umbrella.h"; sourceTree = "<group>"; };
 		71C1989F768BA13F7B8399B125186943 /* GeocoderRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeocoderRequest.swift; path = Sources/SwiftLocation/Geocoding/GeocoderRequest.swift; sourceTree = "<group>"; };
 		71C6995CE3C00EC873F54D5E093AA085 /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		72D6A482F6EFCBB471961C07BCC6E829 /* RxTextStorageDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTextStorageDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTextStorageDelegateProxy.swift; sourceTree = "<group>"; };
@@ -1502,6 +1600,7 @@
 		75116890B067938C381191954E4CC3FD /* SharedSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SharedSequence.swift; path = RxCocoa/Traits/SharedSequence/SharedSequence.swift; sourceTree = "<group>"; };
 		7569C9F9620B0110E4920DA4CE345CAA /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		75E9EBA7B9500CEB08858AD994CA344F /* SingleAsync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleAsync.swift; path = RxSwift/Observables/SingleAsync.swift; sourceTree = "<group>"; };
+		762E5C50545521747CCF43C8C2EAA7BE /* Pods-WeatherAppSettings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSettings.debug.xcconfig"; sourceTree = "<group>"; };
 		7637B26AB3024D2A3B515E461780F69D /* Place.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Place.swift; path = "Sources/SwiftLocation/Data Models/Place.swift"; sourceTree = "<group>"; };
 		76B6FF03DD498D7ECDE16EDCD7064F18 /* StubNoReturnThrowingFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubNoReturnThrowingFunction.swift; path = Source/Stubbing/StubFunction/StubNoReturnThrowingFunction.swift; sourceTree = "<group>"; };
 		777B4533917B76B2EC0E73368A04D57F /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
@@ -1514,10 +1613,10 @@
 		79FD30BFA9F301D05764F955C75EB57E /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/QuickObjectiveC/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
 		7A786E1FAFAB1E2EFA836F3FB3FB0841 /* Quick-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-umbrella.h"; sourceTree = "<group>"; };
 		7AA4E5885FD91EA65B6735E794F73392 /* Hue.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hue.xcconfig; sourceTree = "<group>"; };
+		7B78AF287D60E9B89947023946B1249B /* Pods-WeatherAppSettings-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSettings-acknowledgements.plist"; sourceTree = "<group>"; };
 		7C486847C71D8F724DE6130F2B1E20A3 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC2FBECF535C1A2A363E137B6C0AD2B /* Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Signal.swift; path = RxCocoa/Traits/Signal/Signal.swift; sourceTree = "<group>"; };
 		7D07563719BF6D58F9DA4F016C516186 /* PlaceMatch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlaceMatch.swift; path = "Sources/SwiftLocation/Data Models/PlaceMatch.swift"; sourceTree = "<group>"; };
-		7D4CDC6ADAD9FF4348D8EB4D4F326279 /* Pods-TeamWeatherAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamWeatherAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D6B3C82141C45E5F36DA3E6A98C1E05 /* NSTextField+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSTextField+Rx.swift"; path = "RxCocoa/macOS/NSTextField+Rx.swift"; sourceTree = "<group>"; };
 		7D7210C8B82A000A32ADD059C535A16E /* RLMSyncPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncPermission.h; path = include/RLMSyncPermission.h; sourceTree = "<group>"; };
 		7E12D04CA5284C542495E2806422360C /* Throttle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Throttle.swift; path = RxSwift/Observables/Throttle.swift; sourceTree = "<group>"; };
@@ -1565,12 +1664,12 @@
 		8B892DDE3CFC0773F497456C3139A562 /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Sources/Quick/Example.swift; sourceTree = "<group>"; };
 		8BE516E0592F1CC54E74A28AB834DEA6 /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = RxTest/Deprecated.swift; sourceTree = "<group>"; };
 		8C12897C122FA0072F6FCFFA2F69B4F1 /* ColdObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColdObservable.swift; path = RxTest/ColdObservable.swift; sourceTree = "<group>"; };
-		8C2C8B3F7E886C63A0C545EC22E742E0 /* Pods-TeamWeatherAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamWeatherAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		8C5BB095D6500B30FA32AB32C71F60B8 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
 		8C5F7677FCD675ABF6AF5F6B63BEF1A2 /* RLMSyncConfiguration.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncConfiguration.mm; path = Realm/RLMSyncConfiguration.mm; sourceTree = "<group>"; };
 		8DD4B88E7E51183BA440E0EA5C269CE0 /* RxCocoaRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RxCocoaRuntime.h; path = RxCocoa/Runtime/include/RxCocoaRuntime.h; sourceTree = "<group>"; };
 		8E2088496EA1ADD71D63EA88BAE3AD57 /* IPAPIRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPAPIRequest.swift; path = "Sources/SwiftLocation/Locating By IP/Services/IPAPIRequest.swift"; sourceTree = "<group>"; };
 		8ED6F06C3B48F975E32F8907E176E014 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
+		8F072DAF594D80BBD569BCD34E51F8EC /* Pods-WeatherAppSettings-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSettings-Info.plist"; sourceTree = "<group>"; };
 		8F374C1D8FD188BB6FE18AC8EF6F9372 /* object_schema.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = object_schema.cpp; path = Realm/ObjectStore/src/object_schema.cpp; sourceTree = "<group>"; };
 		8F77DEC4F632032B83767629FE5800CF /* HistoricalSchedulerTimeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HistoricalSchedulerTimeConverter.swift; path = RxSwift/Schedulers/HistoricalSchedulerTimeConverter.swift; sourceTree = "<group>"; };
 		9030BC767950B7917F74B27BF7DDF581 /* sync_permission.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = sync_permission.cpp; path = Realm/ObjectStore/src/sync/sync_permission.cpp; sourceTree = "<group>"; };
@@ -1583,7 +1682,6 @@
 		916497281031102712BF5F6617F6AD98 /* ObserveOn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserveOn.swift; path = RxSwift/Observables/ObserveOn.swift; sourceTree = "<group>"; };
 		9175DEB7FAD6F3698CD877BFE765B537 /* collection_notifications.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = collection_notifications.cpp; path = Realm/ObjectStore/src/collection_notifications.cpp; sourceTree = "<group>"; };
 		91A825DEAC40881EE099A8166E35B93A /* ObservableConvertibleType+SharedSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableConvertibleType+SharedSequence.swift"; path = "RxCocoa/Traits/SharedSequence/ObservableConvertibleType+SharedSequence.swift"; sourceTree = "<group>"; };
-		91C02CAA8E83A54058B66087FE40A363 /* Pods-TeamWeatherAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TeamWeatherAppTests.modulemap"; sourceTree = "<group>"; };
 		91F6FA05DC8C50033A2D52F1DD19908A /* UIStepper+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStepper+Rx.swift"; path = "RxCocoa/iOS/UIStepper+Rx.swift"; sourceTree = "<group>"; };
 		92155F786D97EEA41EE47A5CD8669BAB /* thread_safe_reference.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = thread_safe_reference.cpp; path = Realm/ObjectStore/src/thread_safe_reference.cpp; sourceTree = "<group>"; };
 		921BE4A82C4A7A5C72A0C6F8B8FEF200 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Realm.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1591,26 +1689,24 @@
 		9316C489B3403039297243109ECF3CB9 /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		939448C138CAE2987FD2272A5D6D8E85 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Quick/Configuration/Configuration.swift; sourceTree = "<group>"; };
 		93C3DC47016F40EEF22EBAEA00332801 /* UIColor+Hue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Hue.swift"; path = "Source/iOS+tvOS/UIColor+Hue.swift"; sourceTree = "<group>"; };
-		93DF63B47C86F002E184F019DC187A01 /* Pods-WeatherAppSettings-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSettings-Info.plist"; sourceTree = "<group>"; };
 		9405E57A6FB87912C184EA8342EC6EC2 /* Realm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Realm.swift; path = RealmSwift/Realm.swift; sourceTree = "<group>"; };
 		943B6FE7C46CF37AD9C6D9B53944A93A /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		9440A77F23630DDC3C6261B3A30D6D38 /* RLMSyncConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncConfiguration.h; path = include/RLMSyncConfiguration.h; sourceTree = "<group>"; };
-		945E6AFFC0D4D5C2687DCA15EE0A5CF4 /* Pods-TeamWeatherAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TeamWeatherAppTests-frameworks.sh"; sourceTree = "<group>"; };
 		9494A56FDFBEB65F4F61B8DC75227E99 /* Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rx.swift; path = RxSwift/Rx.swift; sourceTree = "<group>"; };
 		958B1AD7B9914BAC8B9F69F4A3B01A3B /* RLMSyncCredentials.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncCredentials.h; path = include/RLMSyncCredentials.h; sourceTree = "<group>"; };
 		959A7D400E6EA96F2321813E935BB067 /* ObservableConvertibleType+Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableConvertibleType+Signal.swift"; path = "RxCocoa/Traits/Signal/ObservableConvertibleType+Signal.swift"; sourceTree = "<group>"; };
 		95F1455729763F7711F602AB5B13AE10 /* Multicast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multicast.swift; path = RxSwift/Observables/Multicast.swift; sourceTree = "<group>"; };
 		9606218CBB07FA0D57C9FF04177579E3 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		9624F23B1C0294AF2C738623D7BE9209 /* MainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainScheduler.swift; path = RxSwift/Schedulers/MainScheduler.swift; sourceTree = "<group>"; };
-		9629A0FB2DC5AED274D5FE2CF75B95FB /* Pods-WeatherAppSearch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherAppSearch-umbrella.h"; sourceTree = "<group>"; };
 		963D8ECE1DC67D5FBDC80871439F8EDB /* __DoNotUse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = __DoNotUse.swift; path = Source/Verification/__DoNotUse.swift; sourceTree = "<group>"; };
 		9652EA261170F17E3EFAF398BA9E2FC3 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		966005F42C29E097C8CA62AC2AE17E75 /* PublishRelay+Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PublishRelay+Signal.swift"; path = "RxCocoa/Traits/Signal/PublishRelay+Signal.swift"; sourceTree = "<group>"; };
 		96751EA63EA0FE51C4DDB49360FC633D /* MockBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockBuilder.swift; path = Source/Initialization/MockBuilder.swift; sourceTree = "<group>"; };
-		968089CB4F70A22A75F7B2BB5BE31C36 /* Pods-WeatherAppSearch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherAppSearch-dummy.m"; sourceTree = "<group>"; };
 		96C4C55936BB254FF341D4944AC63810 /* object_store.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = object_store.cpp; path = Realm/ObjectStore/src/object_store.cpp; sourceTree = "<group>"; };
 		96DB02495AEEB0D650E0CED138B355FC /* DispatchQueueConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DispatchQueueConfiguration.swift; path = RxSwift/Schedulers/Internal/DispatchQueueConfiguration.swift; sourceTree = "<group>"; };
+		977A7D038BDB2577680DA91588950232 /* Pods-WeatherAppSearch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherAppSearch-acknowledgements.markdown"; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97ABE6D4F60FDBAF8EEC3F2A7536A3B5 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		98827AFA5D2A3D50576E094ADED7D60E /* Bag+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bag+Rx.swift"; path = "RxSwift/Extensions/Bag+Rx.swift"; sourceTree = "<group>"; };
 		996AF0C1AF429B5B33A44210EE2D1245 /* placeholder.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = placeholder.cpp; path = Realm/ObjectStore/src/placeholder.cpp; sourceTree = "<group>"; };
 		9A256A7B9823B02216F245A2F0DE5A35 /* TakeLast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeLast.swift; path = RxSwift/Observables/TakeLast.swift; sourceTree = "<group>"; };
@@ -1620,17 +1716,13 @@
 		9AE538742A4A59F2E9A3BE2A0B8D2724 /* UITextView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Rx.swift"; path = "RxCocoa/iOS/UITextView+Rx.swift"; sourceTree = "<group>"; };
 		9B3E2A80118583F0527D04BF2BF5DE79 /* Hue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Hue.modulemap; sourceTree = "<group>"; };
 		9BA9B847CA9C188A5B257085EE76F263 /* RLMSyncPermission.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncPermission.mm; path = Realm/RLMSyncPermission.mm; sourceTree = "<group>"; };
-		9C0EE003D65AD723DFED9CBF8A9B644D /* Pods-TeamWeatherAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamWeatherAppTests-Info.plist"; sourceTree = "<group>"; };
 		9C7549F771C2FED1F61FE6336BA2FFC0 /* SwiftLocation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftLocation.modulemap; sourceTree = "<group>"; };
-		9C90B8AE146B9EBC69393AB960F821FB /* Pods-TeamWeatherAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TeamWeatherAppTests-dummy.m"; sourceTree = "<group>"; };
 		9CCD8D8D588633A4E37EC8F10BEA59CD /* RxNavigationControllerDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxNavigationControllerDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxNavigationControllerDelegateProxy.swift; sourceTree = "<group>"; };
 		9CF635D88351E05BAEA9D6816CF1E21B /* RLMSyncCredentials.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RLMSyncCredentials.m; path = Realm/RLMSyncCredentials.m; sourceTree = "<group>"; };
 		9CFE1C24D86C5A6291D5B960F1E6DF63 /* URLSession+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSession+Rx.swift"; path = "RxCocoa/Foundation/URLSession+Rx.swift"; sourceTree = "<group>"; };
 		9D084A9D4C1E4E1B9ADF1C8A65F02C0E /* ToBeStubbedProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToBeStubbedProperty.swift; path = Source/Stubbing/ToBeStubbedProperty/ToBeStubbedProperty.swift; sourceTree = "<group>"; };
-		9D315F2414DAA26880AD493BBBED24F4 /* Pods-TeamWeatherApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TeamWeatherApp-frameworks.sh"; sourceTree = "<group>"; };
 		9D7DCBD92A0F287B4B3BB26DF0747998 /* PriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PriorityQueue.swift; path = Platform/DataStructures/PriorityQueue.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D97117BEB138AF8E8CEA797B2D61C15 /* Pods-WeatherAppSettings.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeatherAppSettings.modulemap"; sourceTree = "<group>"; };
 		9DBE662BE2E507B89A5F9F88E2B00A88 /* RLMProperty_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMProperty_Private.h; path = include/RLMProperty_Private.h; sourceTree = "<group>"; };
 		9E1EBDFC0190538959D18337ECF7CAA3 /* SchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulerType.swift; path = RxSwift/SchedulerType.swift; sourceTree = "<group>"; };
 		9E86C16F1A4A2FF111AD2E5B7E860A94 /* SwiftVersion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftVersion.swift; path = RealmSwift/SwiftVersion.swift; sourceTree = "<group>"; };
@@ -1645,6 +1737,7 @@
 		A0B08C6C25FA10897B198A0E5E0524C3 /* HistoricalScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HistoricalScheduler.swift; path = RxSwift/Schedulers/HistoricalScheduler.swift; sourceTree = "<group>"; };
 		A10148DB5C85CB6724D8C2D06B0D0CD9 /* RLMThreadSafeReference.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMThreadSafeReference.mm; path = Realm/RLMThreadSafeReference.mm; sourceTree = "<group>"; };
 		A14C02A255B73FAD240EEA18F59B4F9B /* StubAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubAction.swift; path = Source/Stubbing/StubAction.swift; sourceTree = "<group>"; };
+		A167F46A21F4CEE363F9EF08EA9126E8 /* Pods-WeatherAppSearch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSearch-acknowledgements.plist"; sourceTree = "<group>"; };
 		A314E44D62790CE2C9CA335B22EA7D9D /* RLMObject.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObject.mm; path = Realm/RLMObject.mm; sourceTree = "<group>"; };
 		A373E99E6964C09317C5744CEF380E41 /* TestableObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TestableObservable.swift; path = RxTest/TestableObservable.swift; sourceTree = "<group>"; };
 		A39E0A48995B47517DCFA19BC7842325 /* Equal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equal.swift; path = Sources/Nimble/Matchers/Equal.swift; sourceTree = "<group>"; };
@@ -1655,7 +1748,7 @@
 		A5DEA0B8C307AC89772B1768475F4CCF /* RLMListBase.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMListBase.mm; path = Realm/RLMListBase.mm; sourceTree = "<group>"; };
 		A6676C9A0113B340BE734F6AC0C0FBF6 /* AsyncLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncLock.swift; path = RxSwift/Concurrency/AsyncLock.swift; sourceTree = "<group>"; };
 		A67C941355CE681CC34A39769F86B9E8 /* RxTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxTest-dummy.m"; sourceTree = "<group>"; };
-		A73FE982EEB148C31D1268EBB34C65CF /* Pods-WeatherAppSearch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeatherAppSearch.modulemap"; sourceTree = "<group>"; };
+		A70770FD5307AAC20A485D2E03F9DA7C /* Pods-WeatherAppSettings-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherAppSettings-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A7D5A67F1ABF5C0168B802F07CB3C81D /* RLMQueryUtil.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMQueryUtil.mm; path = Realm/RLMQueryUtil.mm; sourceTree = "<group>"; };
 		A864E4DCD69F52543AAD46BCC7C8F02C /* SharedSequence+Operators+arity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SharedSequence+Operators+arity.swift"; path = "RxCocoa/Traits/SharedSequence/SharedSequence+Operators+arity.swift"; sourceTree = "<group>"; };
 		A971FAB8DE09DEA4A889C50FABED9951 /* RLMArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMArray.h; path = include/RLMArray.h; sourceTree = "<group>"; };
@@ -1680,6 +1773,7 @@
 		AD3960C799BD21141BDC6968F8E4B96B /* Await.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Await.swift; path = Sources/Nimble/Utils/Await.swift; sourceTree = "<group>"; };
 		ADAC5623B1DA08495AA659606C94B6F2 /* Timeout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeout.swift; path = RxSwift/Observables/Timeout.swift; sourceTree = "<group>"; };
 		AE857DDF8465EAE637050AD9004CE0F8 /* QuickTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickTestSuite.swift; path = Sources/Quick/QuickTestSuite.swift; sourceTree = "<group>"; };
+		AE8B6450695437838C6B47207A1437AB /* Pods-TeamWeatherApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TeamWeatherApp-frameworks.sh"; sourceTree = "<group>"; };
 		AEA63ACDEF99943B7586B32F829397C4 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		AFC03DBF7E7E3E82B0AB5A73B16BFD0F /* RxCollectionViewReactiveArrayDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewReactiveArrayDataSource.swift; path = RxCocoa/iOS/DataSources/RxCollectionViewReactiveArrayDataSource.swift; sourceTree = "<group>"; };
 		AFD50BB8A97381E68EB8BC865FC944E8 /* RxPickerViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxPickerViewDelegateProxy.swift; sourceTree = "<group>"; };
@@ -1703,10 +1797,12 @@
 		B483A7796548B975B1F704E46AFFE8AA /* NSImageView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSImageView+Rx.swift"; path = "RxCocoa/macOS/NSImageView+Rx.swift"; sourceTree = "<group>"; };
 		B506D4FA2E05CD39CB9E476F9FB7B77E /* SchedulerType+SharedSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SchedulerType+SharedSequence.swift"; path = "RxCocoa/Traits/SharedSequence/SchedulerType+SharedSequence.swift"; sourceTree = "<group>"; };
 		B510647ECF2D984CD3A7CD42AC11FC8A /* RLMObjectStore.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMObjectStore.mm; path = Realm/RLMObjectStore.mm; sourceTree = "<group>"; };
+		B546CD3794D6D9A0524F976D19FD48E4 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests-dummy.m"; sourceTree = "<group>"; };
 		B55A9BD3329BC3787C906C144D014012 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
 		B5845DA93237AB217CF36D127B03584A /* CompositeDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompositeDisposable.swift; path = RxSwift/Disposables/CompositeDisposable.swift; sourceTree = "<group>"; };
 		B59B9C4F793376AFDF5DC527659DD33D /* Driver+Subscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Driver+Subscription.swift"; path = "RxCocoa/Traits/Driver/Driver+Subscription.swift"; sourceTree = "<group>"; };
 		B62562E4BEF7AADE7007E46BF062DA65 /* list_notifier.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = list_notifier.cpp; path = Realm/ObjectStore/src/impl/list_notifier.cpp; sourceTree = "<group>"; };
+		B6258852C4BFF96E4DFCF8C7B0AA4D20 /* Pods-TeamWeatherAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TeamWeatherAppTests.modulemap"; sourceTree = "<group>"; };
 		B627FE60B9CEA7829684CBDD33C3BF22 /* UIBarButtonItem+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Rx.swift"; path = "RxCocoa/iOS/UIBarButtonItem+Rx.swift"; sourceTree = "<group>"; };
 		B660CE5CFFDC7BCA24588DBE663BABEF /* StubFunctionThenThrowingTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenThrowingTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenThrowingTrait.swift; sourceTree = "<group>"; };
 		B6FB44834770E3DE3D9F6046DB338BD0 /* RxCollectionViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDataSourceType.swift; path = RxCocoa/iOS/Protocols/RxCollectionViewDataSourceType.swift; sourceTree = "<group>"; };
@@ -1730,10 +1826,12 @@
 		BC5F12C13BB9374907250B44977B38F5 /* Timeout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeout.swift; path = Sources/SwiftLocation/Support/Timeout.swift; sourceTree = "<group>"; };
 		BC9296F3960CBB921859E008B198F59E /* RLMRealm.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMRealm.mm; path = Realm/RLMRealm.mm; sourceTree = "<group>"; };
 		BCFB96E1FB6F2B864482429B303062F8 /* RLMRealmConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMRealmConfiguration.h; path = include/RLMRealmConfiguration.h; sourceTree = "<group>"; };
+		BD90B52533C9F6CF063D5D506D39CD29 /* Pods-TeamWeatherApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TeamWeatherApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BE146DC6528C56D70C1346B944411095 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		BE2CC9E4A4E2C7A57BEDCF257CA129C5 /* RxCocoa-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxCocoa-prefix.pch"; sourceTree = "<group>"; };
 		BE2FF9033864397CC712DF47F58BA6EA /* NSSlider+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSSlider+Rx.swift"; path = "RxCocoa/macOS/NSSlider+Rx.swift"; sourceTree = "<group>"; };
 		BE3A97066DDFD7940E42C1327477EF12 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		BE72FDD14C3357C44A636AB7404A6755 /* Pods-TeamWeatherApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TeamWeatherApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		BEA1CA6BEA48540D97B83024C06D5E44 /* LocationByIPRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationByIPRequest.swift; path = "Sources/SwiftLocation/Locating By IP/LocationByIPRequest.swift"; sourceTree = "<group>"; };
 		BEA293D413FB1E812293F21032AE9526 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		BEBC29CD87615D1445E1F4479C90C615 /* RxCollectionViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxCollectionViewDelegateProxy.swift; sourceTree = "<group>"; };
@@ -1741,15 +1839,14 @@
 		C0104FA426B0D0F6FE9DC83DB4CC4AF9 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = RealmSwift/Error.swift; sourceTree = "<group>"; };
 		C03D5C429656B1EC25DFA353EE13E7A4 /* RLMObjectBase_Dynamic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObjectBase_Dynamic.h; path = include/RLMObjectBase_Dynamic.h; sourceTree = "<group>"; };
 		C03E6EC731B266DC1A8891563A027F3C /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxRelay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C05B73EB81CCD6B6DF8A798B556C873C /* Pods-WeatherAppSearch-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSearch-Info.plist"; sourceTree = "<group>"; };
 		C0A9A10CD66EB1CAF2B49466A62DC500 /* async_open_task.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = async_open_task.cpp; path = Realm/ObjectStore/src/sync/async_open_task.cpp; sourceTree = "<group>"; };
 		C0C65BE4049AD142CD260E2BEEDA33E4 /* Event+Equatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Event+Equatable.swift"; path = "RxTest/Event+Equatable.swift"; sourceTree = "<group>"; };
 		C0D00F4D849706971A53D5E5682D2242 /* TakeWhile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeWhile.swift; path = RxSwift/Observables/TakeWhile.swift; sourceTree = "<group>"; };
 		C0E2825BFD5657F5FC6D71BCEAC5F133 /* collection_change_builder.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = collection_change_builder.cpp; path = Realm/ObjectStore/src/impl/collection_change_builder.cpp; sourceTree = "<group>"; };
 		C0F862FEAB893CF534CDD87A868BE57A /* ImmediateSchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmediateSchedulerType.swift; path = RxSwift/ImmediateSchedulerType.swift; sourceTree = "<group>"; };
+		C1046F48E2E19CD6DCECFACC0B27E27B /* Pods-WeatherAppSettings-WeatherAppSettingsTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeatherAppSettings-WeatherAppSettingsTests-frameworks.sh"; sourceTree = "<group>"; };
 		C14B678F7EC685937C9C49EFE133A31C /* DelegateProxyType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelegateProxyType.swift; path = RxCocoa/Common/DelegateProxyType.swift; sourceTree = "<group>"; };
 		C18BE1C4903753116DFE23C2A75DC0BB /* Results.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Results.swift; path = RealmSwift/Results.swift; sourceTree = "<group>"; };
-		C199325507550B3830F717C494321415 /* Pods-TeamWeatherApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TeamWeatherApp-dummy.m"; sourceTree = "<group>"; };
 		C1E7E5EA58085220A60874CA15277581 /* RLMSyncSession.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMSyncSession.mm; path = Realm/RLMSyncSession.mm; sourceTree = "<group>"; };
 		C1FBE8C417116427B904E2B25194B325 /* Cuckoo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cuckoo.modulemap; sourceTree = "<group>"; };
 		C221C24A85119E3A7C691BA296F45331 /* Concat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concat.swift; path = RxSwift/Observables/Concat.swift; sourceTree = "<group>"; };
@@ -1761,6 +1858,7 @@
 		C4FA8E29AD243437E57B5C3B302B7371 /* Disposables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposables.swift; path = RxSwift/Disposables/Disposables.swift; sourceTree = "<group>"; };
 		C4FC4D16FA90C391C8556AFE963177B4 /* ReplaySubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaySubject.swift; path = RxSwift/Subjects/ReplaySubject.swift; sourceTree = "<group>"; };
 		C5008E3215F5E9AE90B926CB405CF090 /* SwiftLocation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLocation.xcconfig; sourceTree = "<group>"; };
+		C52C742F194035CE0CA4F23D7DACADD2 /* Pods-WeatherAppSettings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSettings.release.xcconfig"; sourceTree = "<group>"; };
 		C5597C54DFBCA59422D76D179FEB1FCA /* NopDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NopDisposable.swift; path = RxSwift/Disposables/NopDisposable.swift; sourceTree = "<group>"; };
 		C5E5B647978A8F9C4B870235718A8483 /* RealmSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RealmSwift-Info.plist"; sourceTree = "<group>"; };
 		C613775F09ECF8957335063B7FB216C8 /* UIAlertAction+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIAlertAction+Rx.swift"; path = "RxCocoa/iOS/UIAlertAction+Rx.swift"; sourceTree = "<group>"; };
@@ -1771,6 +1869,7 @@
 		C798264FB571519185DEEA9D6431CDFF /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
 		C7EE8596EC1A89147DF591CADFA0BDA5 /* RLMAnalytics.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMAnalytics.mm; path = Realm/RLMAnalytics.mm; sourceTree = "<group>"; };
 		C82A6899EA53507A88A9787115AD3912 /* UITextField+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Rx.swift"; path = "RxCocoa/iOS/UITextField+Rx.swift"; sourceTree = "<group>"; };
+		C878C270D5B435413F3F42CF61B797EB /* Pods-WeatherAppSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		C8C554D8FBDF6570D64BA442B04C0490 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		C91758FFDA6CF50CF7A0360E8B35A1F0 /* RLMRealmConfiguration+Sync.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "RLMRealmConfiguration+Sync.mm"; path = "Realm/RLMRealmConfiguration+Sync.mm"; sourceTree = "<group>"; };
 		C94AB2609F430D2B8AE113880EF7C5C6 /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
@@ -1805,6 +1904,7 @@
 		D1069B7E0B1F2757AD69C2CFDA2973C1 /* realm_coordinator.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = realm_coordinator.cpp; path = Realm/ObjectStore/src/impl/realm_coordinator.cpp; sourceTree = "<group>"; };
 		D11E8A1870F7AF6FA1197B7A9308C227 /* RxPickerViewDataSourceType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewDataSourceType.swift; path = RxCocoa/iOS/Protocols/RxPickerViewDataSourceType.swift; sourceTree = "<group>"; };
 		D1D89E6EB522EDEDA88DFBA8D1FB2CE3 /* StubFunctionThenCallRealImplementationTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubFunctionThenCallRealImplementationTrait.swift; path = Source/Stubbing/StubFunction/Trait/StubFunctionThenCallRealImplementationTrait.swift; sourceTree = "<group>"; };
+		D278CA05FD0BA68178B3E58B972D69DF /* Pods-WeatherAppSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherAppSearch.release.xcconfig"; sourceTree = "<group>"; };
 		D345C2A04E13436AA21424D16C7C8083 /* TailRecursiveSink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TailRecursiveSink.swift; path = RxSwift/Observers/TailRecursiveSink.swift; sourceTree = "<group>"; };
 		D35B788BFF5FDA8B4DE9E01B3038B6E3 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		D48B0A4DF585189B8BDB4CA09BCB6AA3 /* UIDatePicker+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDatePicker+Rx.swift"; path = "RxCocoa/iOS/UIDatePicker+Rx.swift"; sourceTree = "<group>"; };
@@ -1832,20 +1932,17 @@
 		DCA004E9A2B13CCE15DD623B77C471EA /* CwlPreconditionTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlPreconditionTesting.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/include/CwlPreconditionTesting.h; sourceTree = "<group>"; };
 		DD320A53B5483275B86DEF1649CDBBD7 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		DDE7063D7F4F55CADF1BD4ACEB5A9A17 /* ThreadLocal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadLocal.swift; path = Source/Initialization/ThreadLocal.swift; sourceTree = "<group>"; };
-		DE2A416C929B5D3575ED64588793A9C8 /* Pods-TeamWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE71342F56148908C24B8A02A5A2C8B8 /* UIView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Rx.swift"; path = "RxCocoa/iOS/UIView+Rx.swift"; sourceTree = "<group>"; };
 		DEBE52A02FC33CAB4FD842A788DE389F /* Platform.Linux.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Linux.swift; path = Platform/Platform.Linux.swift; sourceTree = "<group>"; };
 		DECC10F8E5174E5FDA6BFEC33947AF44 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		DEDB494F310B7C8B0D2601B4B24AB556 /* BeginWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Sources/Nimble/Matchers/BeginWith.swift; sourceTree = "<group>"; };
 		DF18B9405A4E43DB127CCDDEAC443187 /* ThreadSafeReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadSafeReference.swift; path = RealmSwift/ThreadSafeReference.swift; sourceTree = "<group>"; };
 		E013A2CB743760AC0F9E370781252DBC /* Enumerated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enumerated.swift; path = RxSwift/Observables/Enumerated.swift; sourceTree = "<group>"; };
-		E0292399A383037FFCB9942ABD05F508 /* Pods-WeatherAppSettings-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherAppSettings-acknowledgements.plist"; sourceTree = "<group>"; };
 		E089557DE657C818DBE56179E0CE899A /* RLMObjectSchema.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObjectSchema.h; path = include/RLMObjectSchema.h; sourceTree = "<group>"; };
 		E0D70920B447179EECEF55F9C2D941B7 /* RLMSyncManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMSyncManager.h; path = include/RLMSyncManager.h; sourceTree = "<group>"; };
 		E14A6D83E4E48D23B4FC80FE45FE56B9 /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
 		E1524C966CB7D24C09E361DD1D918B92 /* RxTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTarget.swift; path = RxCocoa/Common/RxTarget.swift; sourceTree = "<group>"; };
 		E1757B281D33E9210269DD44F5CCE926 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
-		E1EA420E75D492E6956D8EFCF3C6E43C /* Pods-TeamWeatherAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TeamWeatherAppTests-umbrella.h"; sourceTree = "<group>"; };
 		E250C22EEB1A737E8B00CE0E77347A4A /* ObjectSchema.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectSchema.swift; path = RealmSwift/ObjectSchema.swift; sourceTree = "<group>"; };
 		E2F43EC1EE16A5FD9DA0999C98E072FC /* Sink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sink.swift; path = RxSwift/Observables/Sink.swift; sourceTree = "<group>"; };
 		E3468AE0044CBCA19C3F4569175E362D /* Any+Equatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Any+Equatable.swift"; path = "RxTest/Any+Equatable.swift"; sourceTree = "<group>"; };
@@ -1856,11 +1953,14 @@
 		E452D6B197FEE4B5487EB1FF909EF851 /* Object.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Object.swift; path = RealmSwift/Object.swift; sourceTree = "<group>"; };
 		E45F044ADC82D5F294601B6D3FA2DDB6 /* Merge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Merge.swift; path = RxSwift/Observables/Merge.swift; sourceTree = "<group>"; };
 		E47A8C6B5538C32643324011BE3224A6 /* RLMNetworkClient.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = RLMNetworkClient.mm; path = Realm/RLMNetworkClient.mm; sourceTree = "<group>"; };
+		E493DA70E40348CE637FFC61EC53AA3D /* Pods-TeamWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5E74396F8B57706A7303E2F47755440 /* UIWebView+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIWebView+Rx.swift"; path = "RxCocoa/iOS/UIWebView+Rx.swift"; sourceTree = "<group>"; };
 		E61F39FB354D25748057F7FCCF2E2D0F /* RxPickerViewDataSourceProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewDataSourceProxy.swift; path = RxCocoa/iOS/Proxies/RxPickerViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		E6CEBD50B6CDDD3A3FD26F7E600B571C /* Cuckoo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cuckoo.xcconfig; sourceTree = "<group>"; };
 		E766803B800E771B0C03AF85B2FCB72F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		E8EDD379906A96181448D4F990D519BA /* ExampleGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleGroup.swift; path = Sources/Quick/ExampleGroup.swift; sourceTree = "<group>"; };
+		E90268FFB4E4FDDD54A6A534C5DE6EA8 /* Pods-WeatherAppSettings-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherAppSettings-umbrella.h"; sourceTree = "<group>"; };
+		E90C309FFB37883CB73D5B92142EB572 /* Pods-WeatherAppSearch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeatherAppSearch.modulemap"; sourceTree = "<group>"; };
 		E9AF5CA14A1263B61487C74E5B236834 /* Zip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zip.swift; path = RxSwift/Observables/Zip.swift; sourceTree = "<group>"; };
 		E9E7588525CB4C60F37D3702B963BFFD /* RxRelay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxRelay-dummy.m"; sourceTree = "<group>"; };
 		EA1D07D8A391124EDF68854799133B41 /* Observable+Bind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Bind.swift"; path = "RxRelay/Observable+Bind.swift"; sourceTree = "<group>"; };
@@ -1879,20 +1979,22 @@
 		F05801120D27B06E47D92B6F60C984F1 /* CwlCatchException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlCatchException.h; path = Carthage/Checkouts/CwlPreconditionTesting/Dependencies/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchException.h; sourceTree = "<group>"; };
 		F072D848D587685FA923F25B0B6C2146 /* binding_callback_thread_observer.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = binding_callback_thread_observer.cpp; path = Realm/ObjectStore/src/binding_callback_thread_observer.cpp; sourceTree = "<group>"; };
 		F0C409728ADBC6C835B83511EC7427A9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		F0C740F2FAD82BEBE8460C25E31CCCE3 /* Pods-TeamWeatherAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TeamWeatherAppTests-frameworks.sh"; sourceTree = "<group>"; };
 		F13E69C268C70D613B0F2692EC3146B0 /* RxCocoa-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxCocoa-dummy.m"; sourceTree = "<group>"; };
 		F1AFA62CE405A38FBACE6B52C93FA777 /* RxRelay-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxRelay-prefix.pch"; sourceTree = "<group>"; };
 		F1E9D9199C25EA452045EEEC0134746F /* ExampleMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleMetadata.swift; path = Sources/Quick/ExampleMetadata.swift; sourceTree = "<group>"; };
 		F1FF92A5B060C9FAC7697B51F02090B0 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		F26B30B49D53ECD6DE49F03F469E5112 /* RxPickerViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewAdapter.swift; path = RxCocoa/iOS/DataSources/RxPickerViewAdapter.swift; sourceTree = "<group>"; };
 		F276F24B75ACA08E413283321CB2C259 /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
-		F27850B287F44BA51CCE4C7884E4F768 /* Pods-TeamWeatherApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TeamWeatherApp-umbrella.h"; sourceTree = "<group>"; };
 		F27BDAE3E4019C23C04A761F122162D8 /* ObservableType+PrimitiveSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ObservableType+PrimitiveSequence.swift"; path = "RxSwift/Traits/ObservableType+PrimitiveSequence.swift"; sourceTree = "<group>"; };
 		F320CFD6BEE95A23B96AD66184FC6F8F /* InfiniteSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfiniteSequence.swift; path = Platform/DataStructures/InfiniteSequence.swift; sourceTree = "<group>"; };
 		F333630FE90481ED8D29F0FACFFC7205 /* WithLatestFrom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WithLatestFrom.swift; path = RxSwift/Observables/WithLatestFrom.swift; sourceTree = "<group>"; };
 		F3C797EFC97B120CD29423EA10883549 /* Platform.Darwin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Darwin.swift; path = Platform/Platform.Darwin.swift; sourceTree = "<group>"; };
 		F42D5685B88CB9DA44AAAA27FB45B435 /* RealmSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RealmSwift-dummy.m"; sourceTree = "<group>"; };
 		F4D4ED692FE5FD05E2DBD9EDE331E593 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
+		F5AC1D9CECD847AD2D895E3936100A18 /* Pods-TeamWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TeamWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F62B30648767AACD9DA042D7125AD495 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
+		F63BF174FF955429E5B35320BEF0475D /* Pods-TeamWeatherAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TeamWeatherAppTests-dummy.m"; sourceTree = "<group>"; };
 		F655218381715A1BBC05326CFB15EA48 /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
 		F79C4BC7CD3DF332A29EB1B8F6BF94E5 /* ObserverType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObserverType.swift; path = RxSwift/ObserverType.swift; sourceTree = "<group>"; };
 		F7BCF55B81F9F8336C337960668865BD /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
@@ -1911,9 +2013,11 @@
 		FCDBA9AEC4CDE62459A57F4B2BE87FB2 /* VerifyReadOnlyProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerifyReadOnlyProperty.swift; path = Source/Verification/VerifyProperty/VerifyReadOnlyProperty.swift; sourceTree = "<group>"; };
 		FCFC3922627BF75C19C8EED5966041B0 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		FD1139615EBC9DB088827ECBC25B376F /* BaseStubFunctionTrait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseStubFunctionTrait.swift; path = Source/Stubbing/StubFunction/Trait/BaseStubFunctionTrait.swift; sourceTree = "<group>"; };
+		FD350F4F8A55696596DD96D8313F24F0 /* Pods-WeatherAppSearch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherAppSearch-umbrella.h"; sourceTree = "<group>"; };
 		FD647F2410FCD11116250AA5616AA39A /* ShareReplayScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareReplayScope.swift; path = RxSwift/Observables/ShareReplayScope.swift; sourceTree = "<group>"; };
 		FE1E05A5EDC647D9A36BC9F7FAE13D2C /* RLMRealm_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMRealm_Private.h; path = include/RLMRealm_Private.h; sourceTree = "<group>"; };
 		FE5537D4FBD4BE2C0C85E6861B9E4EC5 /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
+		FE999508C0E1B9B492566FC14DA54D99 /* Pods-WeatherAppSearch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherAppSearch-dummy.m"; sourceTree = "<group>"; };
 		FEC59F74DCBA1299D303AB32766F0655 /* SwiftLocation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftLocation-dummy.m"; sourceTree = "<group>"; };
 		FF16D58B1E25093A10DB4CBA58CB007A /* QCKDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QCKDSL.h; path = Sources/QuickObjectiveC/DSL/QCKDSL.h; sourceTree = "<group>"; };
 		FF5A3C3041884CF89D2E12E07DD8ED9A /* Bag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bag.swift; path = Platform/DataStructures/Bag.swift; sourceTree = "<group>"; };
@@ -1998,6 +2102,14 @@
 			files = (
 				EE2A5AE21E43B6A17BFFFE1695AF66FE /* Foundation.framework in Frameworks */,
 				530EC7E20DB092A84F13DFAF89701619 /* Realm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6971A22BEB7531732924653481DBCAB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7603B0CA9D500B7E2088DE5418B9689 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2088,7 +2200,7 @@
 			path = "../Target Support Files/Nimble";
 			sourceTree = "<group>";
 		};
-		3176F80922EC3BCD7B0490CD58061DF7 /* Products */ = {
+		13D6F440FB19D7D9398EEA00B94F4FD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
@@ -2099,6 +2211,7 @@
 				358C610234E1984A2C56957A6EAC8393 /* Pods_TeamWeatherAppTests.framework */,
 				78E09DF8D7CDEC480EE94A078A124715 /* Pods_WeatherAppSearch.framework */,
 				FB1A8346A24EDAE1753112FD9B535E89 /* Pods_WeatherAppSettings.framework */,
+				41350B9D21842E34C40ADD76CE246A8D /* Pods_WeatherAppSettings_WeatherAppSettingsTests.framework */,
 				0D631E9908483F9525A6B3F36F16CC61 /* Quick.framework */,
 				921BE4A82C4A7A5C72A0C6F8B8FEF200 /* Realm.framework */,
 				437919EE08EC6BFCCBAC3BD346309742 /* RealmSwift.framework */,
@@ -2110,6 +2223,23 @@
 				4C678B4A8CAADE71D75DA8311295097A /* SwiftLocation.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		29AFBE327FA98AE9136613E4EA09AB1D /* Pods-WeatherAppSettings-WeatherAppSettingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				08856D6C4BF302B5E8EFCEA6AFA698FA /* Pods-WeatherAppSettings-WeatherAppSettingsTests.modulemap */,
+				97ABE6D4F60FDBAF8EEC3F2A7536A3B5 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-acknowledgements.markdown */,
+				3CEF6CEDE5863F92ACBAF71A10A1B75E /* Pods-WeatherAppSettings-WeatherAppSettingsTests-acknowledgements.plist */,
+				B546CD3794D6D9A0524F976D19FD48E4 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-dummy.m */,
+				C1046F48E2E19CD6DCECFACC0B27E27B /* Pods-WeatherAppSettings-WeatherAppSettingsTests-frameworks.sh */,
+				071DDA49DD20DA4494FBFAD9CA8F2EA1 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-Info.plist */,
+				7148931F644040B2C9428F70EA549F82 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-umbrella.h */,
+				15B3C1EA0F2C763300E3B8963086D78F /* Pods-WeatherAppSettings-WeatherAppSettingsTests.debug.xcconfig */,
+				2C9823FC68AC3CFA17283449A70B0C94 /* Pods-WeatherAppSettings-WeatherAppSettingsTests.release.xcconfig */,
+			);
+			name = "Pods-WeatherAppSettings-WeatherAppSettingsTests";
+			path = "Target Support Files/Pods-WeatherAppSettings-WeatherAppSettingsTests";
 			sourceTree = "<group>";
 		};
 		37316A452B2778B9DE71CEA64A3A4216 /* Support Files */ = {
@@ -2358,6 +2488,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5DFB75FB3BF822A1475CA62B809E81B6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D6573D7EDF4F9E24035B867F7E4E2DF /* Pods-TeamWeatherApp */,
+				BCF59F674E321CB500C033620FB1635F /* Pods-TeamWeatherAppTests */,
+				B7829D16BBC3402509D9B61B8EE112A1 /* Pods-WeatherAppSearch */,
+				96CFBB7135DAEFA80A5CC65A235669C8 /* Pods-WeatherAppSettings */,
+				29AFBE327FA98AE9136613E4EA09AB1D /* Pods-WeatherAppSettings-WeatherAppSettingsTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		5EAFE2443B4B065A4231BB81D05C501F /* SwiftLocation */ = {
 			isa = PBXGroup;
 			children = (
@@ -2419,6 +2561,23 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Hue";
+			sourceTree = "<group>";
+		};
+		6D6573D7EDF4F9E24035B867F7E4E2DF /* Pods-TeamWeatherApp */ = {
+			isa = PBXGroup;
+			children = (
+				48663DF1806BFB18FF6A6EA943B3A434 /* Pods-TeamWeatherApp.modulemap */,
+				BD90B52533C9F6CF063D5D506D39CD29 /* Pods-TeamWeatherApp-acknowledgements.markdown */,
+				BE72FDD14C3357C44A636AB7404A6755 /* Pods-TeamWeatherApp-acknowledgements.plist */,
+				0506E7FF55F43EA09A79F61421211B62 /* Pods-TeamWeatherApp-dummy.m */,
+				AE8B6450695437838C6B47207A1437AB /* Pods-TeamWeatherApp-frameworks.sh */,
+				336E9E9D0F735CB538600901306F0ED5 /* Pods-TeamWeatherApp-Info.plist */,
+				60A9E0766BCC1B6E82BD2AB9897304C4 /* Pods-TeamWeatherApp-umbrella.h */,
+				F5AC1D9CECD847AD2D895E3936100A18 /* Pods-TeamWeatherApp.debug.xcconfig */,
+				3C9CA9D27748B5EDDDC4011546413D9B /* Pods-TeamWeatherApp.release.xcconfig */,
+			);
+			name = "Pods-TeamWeatherApp";
+			path = "Target Support Files/Pods-TeamWeatherApp";
 			sourceTree = "<group>";
 		};
 		7664D853A41D52905A0EAD0EC85C4FBD /* Pods */ = {
@@ -2653,23 +2812,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		85CBA08D7D41F9B5F15D4FCCDB5D2A42 /* Pods-TeamWeatherApp */ = {
-			isa = PBXGroup;
-			children = (
-				07F9FCC668680BD10BB763096794D9D1 /* Pods-TeamWeatherApp.modulemap */,
-				06889B5A74FAF89EEC813D1334076F03 /* Pods-TeamWeatherApp-acknowledgements.markdown */,
-				17626436DC5319954BB177B323F37AFF /* Pods-TeamWeatherApp-acknowledgements.plist */,
-				C199325507550B3830F717C494321415 /* Pods-TeamWeatherApp-dummy.m */,
-				9D315F2414DAA26880AD493BBBED24F4 /* Pods-TeamWeatherApp-frameworks.sh */,
-				3D26663D4884429CA22DFD395C3B6979 /* Pods-TeamWeatherApp-Info.plist */,
-				F27850B287F44BA51CCE4C7884E4F768 /* Pods-TeamWeatherApp-umbrella.h */,
-				0D8E1499F4E05E75EA0BDDD4EE5B3E7E /* Pods-TeamWeatherApp.debug.xcconfig */,
-				009B66F2624F158B0BF815B939FA3FD5 /* Pods-TeamWeatherApp.release.xcconfig */,
-			);
-			name = "Pods-TeamWeatherApp";
-			path = "Target Support Files/Pods-TeamWeatherApp";
-			sourceTree = "<group>";
-		};
 		85D0B54640E89CB3DD9968310FE53253 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -2835,37 +2977,20 @@
 			path = "../Target Support Files/Quick";
 			sourceTree = "<group>";
 		};
-		963A9DBC05F3997825F4C22EE0F34C99 /* Pods-TeamWeatherAppTests */ = {
+		96CFBB7135DAEFA80A5CC65A235669C8 /* Pods-WeatherAppSettings */ = {
 			isa = PBXGroup;
 			children = (
-				91C02CAA8E83A54058B66087FE40A363 /* Pods-TeamWeatherAppTests.modulemap */,
-				5975DCC23A384B6C5F820FC77EEA879A /* Pods-TeamWeatherAppTests-acknowledgements.markdown */,
-				8C2C8B3F7E886C63A0C545EC22E742E0 /* Pods-TeamWeatherAppTests-acknowledgements.plist */,
-				9C90B8AE146B9EBC69393AB960F821FB /* Pods-TeamWeatherAppTests-dummy.m */,
-				945E6AFFC0D4D5C2687DCA15EE0A5CF4 /* Pods-TeamWeatherAppTests-frameworks.sh */,
-				9C0EE003D65AD723DFED9CBF8A9B644D /* Pods-TeamWeatherAppTests-Info.plist */,
-				E1EA420E75D492E6956D8EFCF3C6E43C /* Pods-TeamWeatherAppTests-umbrella.h */,
-				DE2A416C929B5D3575ED64588793A9C8 /* Pods-TeamWeatherAppTests.debug.xcconfig */,
-				7D4CDC6ADAD9FF4348D8EB4D4F326279 /* Pods-TeamWeatherAppTests.release.xcconfig */,
+				4D82DC0F812C21B0AC6D13F81C25C86E /* Pods-WeatherAppSettings.modulemap */,
+				A70770FD5307AAC20A485D2E03F9DA7C /* Pods-WeatherAppSettings-acknowledgements.markdown */,
+				7B78AF287D60E9B89947023946B1249B /* Pods-WeatherAppSettings-acknowledgements.plist */,
+				06AF0FB323A048F55BC0E3DD03A1631D /* Pods-WeatherAppSettings-dummy.m */,
+				8F072DAF594D80BBD569BCD34E51F8EC /* Pods-WeatherAppSettings-Info.plist */,
+				E90268FFB4E4FDDD54A6A534C5DE6EA8 /* Pods-WeatherAppSettings-umbrella.h */,
+				762E5C50545521747CCF43C8C2EAA7BE /* Pods-WeatherAppSettings.debug.xcconfig */,
+				C52C742F194035CE0CA4F23D7DACADD2 /* Pods-WeatherAppSettings.release.xcconfig */,
 			);
-			name = "Pods-TeamWeatherAppTests";
-			path = "Target Support Files/Pods-TeamWeatherAppTests";
-			sourceTree = "<group>";
-		};
-		9E7F515009D029177669D7073355329C /* Pods-WeatherAppSearch */ = {
-			isa = PBXGroup;
-			children = (
-				A73FE982EEB148C31D1268EBB34C65CF /* Pods-WeatherAppSearch.modulemap */,
-				1A43A09B6D65D27F02BB3E3E549E7DCD /* Pods-WeatherAppSearch-acknowledgements.markdown */,
-				427F3E748710C154D64C85E736531E5E /* Pods-WeatherAppSearch-acknowledgements.plist */,
-				968089CB4F70A22A75F7B2BB5BE31C36 /* Pods-WeatherAppSearch-dummy.m */,
-				C05B73EB81CCD6B6DF8A798B556C873C /* Pods-WeatherAppSearch-Info.plist */,
-				9629A0FB2DC5AED274D5FE2CF75B95FB /* Pods-WeatherAppSearch-umbrella.h */,
-				5734D4ECD981E76137D54A2F9A091E7A /* Pods-WeatherAppSearch.debug.xcconfig */,
-				1158F2B1342ABC1DF03DCF2E2F1D5B06 /* Pods-WeatherAppSearch.release.xcconfig */,
-			);
-			name = "Pods-WeatherAppSearch";
-			path = "Target Support Files/Pods-WeatherAppSearch";
+			name = "Pods-WeatherAppSettings";
+			path = "Target Support Files/Pods-WeatherAppSettings";
 			sourceTree = "<group>";
 		};
 		AA6C6F8DDC9208983C4A88195F40C9BF /* Cuckoo */ = {
@@ -2984,20 +3109,37 @@
 			path = "../Target Support Files/Realm";
 			sourceTree = "<group>";
 		};
-		C79D92730B78E752E29001CCF5F66962 /* Pods-WeatherAppSettings */ = {
+		B7829D16BBC3402509D9B61B8EE112A1 /* Pods-WeatherAppSearch */ = {
 			isa = PBXGroup;
 			children = (
-				9D97117BEB138AF8E8CEA797B2D61C15 /* Pods-WeatherAppSettings.modulemap */,
-				2958E86ED7884B58682A2E5B9A8A8864 /* Pods-WeatherAppSettings-acknowledgements.markdown */,
-				E0292399A383037FFCB9942ABD05F508 /* Pods-WeatherAppSettings-acknowledgements.plist */,
-				3DE245C5ACC04CBC955385FBFF4C9D42 /* Pods-WeatherAppSettings-dummy.m */,
-				93DF63B47C86F002E184F019DC187A01 /* Pods-WeatherAppSettings-Info.plist */,
-				36EEC3FE1E3E93195E9AFA2019593513 /* Pods-WeatherAppSettings-umbrella.h */,
-				2FB1BEE2CFAF33E0AAEB0EEB84DBE377 /* Pods-WeatherAppSettings.debug.xcconfig */,
-				6C33AF8B684AC335E058EB6E591254BB /* Pods-WeatherAppSettings.release.xcconfig */,
+				E90C309FFB37883CB73D5B92142EB572 /* Pods-WeatherAppSearch.modulemap */,
+				977A7D038BDB2577680DA91588950232 /* Pods-WeatherAppSearch-acknowledgements.markdown */,
+				A167F46A21F4CEE363F9EF08EA9126E8 /* Pods-WeatherAppSearch-acknowledgements.plist */,
+				FE999508C0E1B9B492566FC14DA54D99 /* Pods-WeatherAppSearch-dummy.m */,
+				1E2CBD5C2A1A4E5833AF3EE536EC6A4C /* Pods-WeatherAppSearch-Info.plist */,
+				FD350F4F8A55696596DD96D8313F24F0 /* Pods-WeatherAppSearch-umbrella.h */,
+				C878C270D5B435413F3F42CF61B797EB /* Pods-WeatherAppSearch.debug.xcconfig */,
+				D278CA05FD0BA68178B3E58B972D69DF /* Pods-WeatherAppSearch.release.xcconfig */,
 			);
-			name = "Pods-WeatherAppSettings";
-			path = "Target Support Files/Pods-WeatherAppSettings";
+			name = "Pods-WeatherAppSearch";
+			path = "Target Support Files/Pods-WeatherAppSearch";
+			sourceTree = "<group>";
+		};
+		BCF59F674E321CB500C033620FB1635F /* Pods-TeamWeatherAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6258852C4BFF96E4DFCF8C7B0AA4D20 /* Pods-TeamWeatherAppTests.modulemap */,
+				018CE398112CEAA557B91EA1818DEAAC /* Pods-TeamWeatherAppTests-acknowledgements.markdown */,
+				4CBD91718BA9BD84BB0E14FFABA23020 /* Pods-TeamWeatherAppTests-acknowledgements.plist */,
+				F63BF174FF955429E5B35320BEF0475D /* Pods-TeamWeatherAppTests-dummy.m */,
+				F0C740F2FAD82BEBE8460C25E31CCCE3 /* Pods-TeamWeatherAppTests-frameworks.sh */,
+				6DCBB5D8149BBC1CB5595824692DDFCA /* Pods-TeamWeatherAppTests-Info.plist */,
+				19C218E729160F12EDEE6CA397696664 /* Pods-TeamWeatherAppTests-umbrella.h */,
+				E493DA70E40348CE637FFC61EC53AA3D /* Pods-TeamWeatherAppTests.debug.xcconfig */,
+				5B0D22212A6B92605F4110AB5F4F9F3A /* Pods-TeamWeatherAppTests.release.xcconfig */,
+			);
+			name = "Pods-TeamWeatherAppTests";
+			path = "Target Support Files/Pods-TeamWeatherAppTests";
 			sourceTree = "<group>";
 		};
 		C9E83B8986B4804F4F018919228065B5 /* iOS */ = {
@@ -3033,8 +3175,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				4CC454531AA934B261FADE52B64F59F6 /* Frameworks */,
 				7664D853A41D52905A0EAD0EC85C4FBD /* Pods */,
-				3176F80922EC3BCD7B0490CD58061DF7 /* Products */,
-				ECCCD4566C101F67CF0021E1C6C3E796 /* Targets Support Files */,
+				13D6F440FB19D7D9398EEA00B94F4FD1 /* Products */,
+				5DFB75FB3BF822A1475CA62B809E81B6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3166,17 +3308,6 @@
 			);
 			name = RxRelay;
 			path = RxRelay;
-			sourceTree = "<group>";
-		};
-		ECCCD4566C101F67CF0021E1C6C3E796 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				85CBA08D7D41F9B5F15D4FCCDB5D2A42 /* Pods-TeamWeatherApp */,
-				963A9DBC05F3997825F4C22EE0F34C99 /* Pods-TeamWeatherAppTests */,
-				9E7F515009D029177669D7073355329C /* Pods-WeatherAppSearch */,
-				C79D92730B78E752E29001CCF5F66962 /* Pods-WeatherAppSettings */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		F3A08D997EEB12FD2D47EDBDD5395B06 /* Quick */ = {
@@ -3318,6 +3449,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A89985F788F63E29B0FEDA8BA75AC3 /* RxTest-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BB94C7F261F40F196BE8AC226F23E51 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2FA1123E80ABCCE7DEF8189D3912A9 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3589,6 +3728,37 @@
 			productReference = 437919EE08EC6BFCCBAC3BD346309742 /* RealmSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		78ECF54387C542D232E00CC3F917D081 /* Pods-WeatherAppSettings-WeatherAppSettingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBFB1E2F67401925FA1C1119C989F4A4 /* Build configuration list for PBXNativeTarget "Pods-WeatherAppSettings-WeatherAppSettingsTests" */;
+			buildPhases = (
+				7BB94C7F261F40F196BE8AC226F23E51 /* Headers */,
+				E5F980FFC5DE3E012207E5070C1B0576 /* Sources */,
+				6971A22BEB7531732924653481DBCAB5 /* Frameworks */,
+				0050FA5E404A8E730E69ED16AB2ED2A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33F079CB6810B0EFC1CA9345BCD28A44 /* PBXTargetDependency */,
+				2C7339144E610CA142763D64114A5DDA /* PBXTargetDependency */,
+				975923DC427BC9F91BD36A20BFA05607 /* PBXTargetDependency */,
+				F238644352B409778A86263D485B85B3 /* PBXTargetDependency */,
+				BCABF78BF7D011A6AB2E74DC58B947E9 /* PBXTargetDependency */,
+				EFB7690F3ED9606EFFDB57468257ABFA /* PBXTargetDependency */,
+				5C44AB9513F13492879EE13979520DFB /* PBXTargetDependency */,
+				42E28BDE9325C1160F3D1B77675D8964 /* PBXTargetDependency */,
+				0BE1BEFD527EFA21E55A006115EE294B /* PBXTargetDependency */,
+				B3F101666DA527C2DB4A339D1A6A38E7 /* PBXTargetDependency */,
+				24D59CF352CE87EE041133B97BC32A75 /* PBXTargetDependency */,
+				2F58090CCBCAA675CF8C1C71FDA44B28 /* PBXTargetDependency */,
+				090B732D3184984AF84744E576C85FF1 /* PBXTargetDependency */,
+			);
+			name = "Pods-WeatherAppSettings-WeatherAppSettingsTests";
+			productName = "Pods-WeatherAppSettings-WeatherAppSettingsTests";
+			productReference = 41350B9D21842E34C40ADD76CE246A8D /* Pods_WeatherAppSettings_WeatherAppSettingsTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6 /* RxCocoa */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5FA55E16DB9F2243CE5AFD6E4224C2C /* Build configuration list for PBXNativeTarget "RxCocoa" */;
@@ -3785,7 +3955,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 3176F80922EC3BCD7B0490CD58061DF7 /* Products */;
+			productRefGroup = 13D6F440FB19D7D9398EEA00B94F4FD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -3797,6 +3967,7 @@
 				F8624867226473492117B1141A86413D /* Pods-TeamWeatherAppTests */,
 				4CAB3FBB6AE4C3BA077BAB185A5B424E /* Pods-WeatherAppSearch */,
 				3B563D024BB7D794D8EA2ECFA165728B /* Pods-WeatherAppSettings */,
+				78ECF54387C542D232E00CC3F917D081 /* Pods-WeatherAppSettings-WeatherAppSettingsTests */,
 				C82891EAB7293DBEE916B21F57E8474D /* Quick */,
 				68494F30B4A13F8E5E88BCCAEC25B0A4 /* Realm */,
 				782725687624F8665247B84AB581BEB1 /* RealmSwift */,
@@ -3811,6 +3982,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0050FA5E404A8E730E69ED16AB2ED2A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		024C3F166EA1359DDDC0603E2C0E1370 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4372,6 +4550,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E5F980FFC5DE3E012207E5070C1B0576 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F020AD7450A7B3B982AEC32607CF878 /* Pods-WeatherAppSettings-WeatherAppSettingsTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F241C0E6104F9DF8A0A932E69A4A0E68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4687,11 +4873,47 @@
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = D900AC6156B736124EB988100E978B93 /* PBXContainerItemProxy */;
 		};
+		090B732D3184984AF84744E576C85FF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLocation;
+			target = A77DC3FBE3DFD1D1CA8D8812A6CF0776 /* SwiftLocation */;
+			targetProxy = 68469C9868914B34C0541F261A09E4FC /* PBXContainerItemProxy */;
+		};
+		0BE1BEFD527EFA21E55A006115EE294B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxRelay;
+			target = 4622BFEF3DC16E8BD15EEFC30D4D0084 /* RxRelay */;
+			targetProxy = 3FA70D2074D3CB2B03E44454F9027964 /* PBXContainerItemProxy */;
+		};
+		24D59CF352CE87EE041133B97BC32A75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxTest;
+			target = C8D93C508E21FFD4EE60D335DD6C22E3 /* RxTest */;
+			targetProxy = E68410F0F0C09BDE8CAB7C887A9B87E0 /* PBXContainerItemProxy */;
+		};
+		2C7339144E610CA142763D64114A5DDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cuckoo;
+			target = CFCA8CA494372A14108299CE150648B8 /* Cuckoo */;
+			targetProxy = 3C3E34899024CE7EF5F2E1A20A821805 /* PBXContainerItemProxy */;
+		};
+		2F58090CCBCAA675CF8C1C71FDA44B28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
+			targetProxy = 841BB3AE5E3BE04BDB6DF0F94FF2DFBE /* PBXContainerItemProxy */;
+		};
 		3155CB11DFAD91DAA4C10678596FA650 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxRelay;
 			target = 4622BFEF3DC16E8BD15EEFC30D4D0084 /* RxRelay */;
 			targetProxy = 3CA6183D4F91B91B876992B3E51069D0 /* PBXContainerItemProxy */;
+		};
+		33F079CB6810B0EFC1CA9345BCD28A44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 6DA02EAE48AC512656ABC9F9C91FBD48 /* PBXContainerItemProxy */;
 		};
 		355BF558BC2D6DAB736F5485A3B4D92C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4710,6 +4932,12 @@
 			name = SnapKit;
 			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
 			targetProxy = 271E99B5D12387B4FD8C4E780315F8E8 /* PBXContainerItemProxy */;
+		};
+		42E28BDE9325C1160F3D1B77675D8964 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxCocoa;
+			target = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6 /* RxCocoa */;
+			targetProxy = 924CE8463B7EC70B7687865BB37AD00D /* PBXContainerItemProxy */;
 		};
 		43E27459C5B5C4EA698EE47D3559F541 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4746,6 +4974,12 @@
 			name = RxSwift;
 			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
 			targetProxy = 267A3BCD2AB57D773B23FCA466936D49 /* PBXContainerItemProxy */;
+		};
+		5C44AB9513F13492879EE13979520DFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RealmSwift;
+			target = 782725687624F8665247B84AB581BEB1 /* RealmSwift */;
+			targetProxy = 879F0A49776F3D581360251369066F16 /* PBXContainerItemProxy */;
 		};
 		650DBF3369838EC8F00CEDC934BB9B2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4788,6 +5022,12 @@
 			name = RxTest;
 			target = C8D93C508E21FFD4EE60D335DD6C22E3 /* RxTest */;
 			targetProxy = 0C2DE9DF210AD56719F0C15FB4A1A065 /* PBXContainerItemProxy */;
+		};
+		975923DC427BC9F91BD36A20BFA05607 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Hue;
+			target = 00D9B51B84230E50370AC70ADCF7F8AA /* Hue */;
+			targetProxy = F6A30CDBEC3613FB79B8413595D24640 /* PBXContainerItemProxy */;
 		};
 		9CC239530FF1F8F22ED406CAD9C614F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4849,6 +5089,18 @@
 			target = 68494F30B4A13F8E5E88BCCAEC25B0A4 /* Realm */;
 			targetProxy = 2241096BF52D154C2390A33A7C459082 /* PBXContainerItemProxy */;
 		};
+		B3F101666DA527C2DB4A339D1A6A38E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			target = EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */;
+			targetProxy = 0F47EF5101B58B376643F070754C3C8C /* PBXContainerItemProxy */;
+		};
+		BCABF78BF7D011A6AB2E74DC58B947E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Quick;
+			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
+			targetProxy = 60ECF6D0783625992D6F678902A585F0 /* PBXContainerItemProxy */;
+		};
 		CAD25967E4D02770442CC12F8DC43C7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
@@ -4885,6 +5137,12 @@
 			target = A77DC3FBE3DFD1D1CA8D8812A6CF0776 /* SwiftLocation */;
 			targetProxy = A7A7662E60180E578D4B981E0E928479 /* PBXContainerItemProxy */;
 		};
+		EFB7690F3ED9606EFFDB57468257ABFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Realm;
+			target = 68494F30B4A13F8E5E88BCCAEC25B0A4 /* Realm */;
+			targetProxy = 40A754FFFD158EC87F1F9648EE38F54F /* PBXContainerItemProxy */;
+		};
 		F072E02605A5EB1B24C3CDFCA6F479D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cuckoo;
@@ -4896,6 +5154,12 @@
 			name = RealmSwift;
 			target = 782725687624F8665247B84AB581BEB1 /* RealmSwift */;
 			targetProxy = B074D1558C48A99ED1F1F061313BC80C /* PBXContainerItemProxy */;
+		};
+		F238644352B409778A86263D485B85B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Nimble;
+			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
+			targetProxy = A5D47196F133A73782ECFA4208D66BAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4939,7 +5203,7 @@
 		};
 		08A3D907BFEF6A6E686B45A67D908759 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 009B66F2624F158B0BF815B939FA3FD5 /* Pods-TeamWeatherApp.release.xcconfig */;
+			baseConfigurationReference = 3C9CA9D27748B5EDDDC4011546413D9B /* Pods-TeamWeatherApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -5014,7 +5278,7 @@
 		};
 		1444BFDA3DD46E1D48EB3396E328045A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE2A416C929B5D3575ED64588793A9C8 /* Pods-TeamWeatherAppTests.debug.xcconfig */;
+			baseConfigurationReference = E493DA70E40348CE637FFC61EC53AA3D /* Pods-TeamWeatherAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -5037,6 +5301,83 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1503865616AA6B47FE486FA648F71338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C9823FC68AC3CFA17283449A70B0C94 /* Pods-WeatherAppSettings-WeatherAppSettingsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeatherAppSettings-WeatherAppSettingsTests/Pods-WeatherAppSettings-WeatherAppSettingsTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeatherAppSettings-WeatherAppSettingsTests/Pods-WeatherAppSettings-WeatherAppSettingsTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1B9E21A20A9A7664D3CECF80FCDBAFC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15B3C1EA0F2C763300E3B8963086D78F /* Pods-WeatherAppSettings-WeatherAppSettingsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeatherAppSettings-WeatherAppSettingsTests/Pods-WeatherAppSettings-WeatherAppSettingsTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeatherAppSettings-WeatherAppSettingsTests/Pods-WeatherAppSettings-WeatherAppSettingsTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -5125,7 +5466,7 @@
 		};
 		2172DDDBFB86E64A8AB4AE9863AEC7FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1158F2B1342ABC1DF03DCF2E2F1D5B06 /* Pods-WeatherAppSearch.release.xcconfig */;
+			baseConfigurationReference = D278CA05FD0BA68178B3E58B972D69DF /* Pods-WeatherAppSearch.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -5576,7 +5917,7 @@
 		};
 		6D152AADBE9CF752294931FB90A8C7F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5734D4ECD981E76137D54A2F9A091E7A /* Pods-WeatherAppSearch.debug.xcconfig */;
+			baseConfigurationReference = C878C270D5B435413F3F42CF61B797EB /* Pods-WeatherAppSearch.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -5719,7 +6060,7 @@
 		};
 		A78C5FB60FDC9C42020442076C1A3A47 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D4CDC6ADAD9FF4348D8EB4D4F326279 /* Pods-TeamWeatherAppTests.release.xcconfig */;
+			baseConfigurationReference = 5B0D22212A6B92605F4110AB5F4F9F3A /* Pods-TeamWeatherAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -5899,7 +6240,7 @@
 		};
 		B5CBB180C3F491D3F2A89B757423E56E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C33AF8B684AC335E058EB6E591254BB /* Pods-WeatherAppSettings.release.xcconfig */;
+			baseConfigurationReference = C52C742F194035CE0CA4F23D7DACADD2 /* Pods-WeatherAppSettings.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -5974,7 +6315,7 @@
 		};
 		D363BD8ECEB224C64305E10C6F11EF4B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FB1BEE2CFAF33E0AAEB0EEB84DBE377 /* Pods-WeatherAppSettings.debug.xcconfig */;
+			baseConfigurationReference = 762E5C50545521747CCF43C8C2EAA7BE /* Pods-WeatherAppSettings.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -6076,7 +6417,7 @@
 		};
 		E0661E091E9ACCC2C045F507ED65C6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D8E1499F4E05E75EA0BDDD4EE5B3E7E /* Pods-TeamWeatherApp.debug.xcconfig */;
+			baseConfigurationReference = F5AC1D9CECD847AD2D895E3936100A18 /* Pods-TeamWeatherApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -6371,6 +6712,15 @@
 			buildConfigurations = (
 				2B64DE0B81B4CB28B7442A2074F845CE /* Debug */,
 				AABE6E11EFABF232D23DE544E090FA63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBFB1E2F67401925FA1C1119C989F4A4 /* Build configuration list for PBXNativeTarget "Pods-WeatherAppSettings-WeatherAppSettingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B9E21A20A9A7664D3CECF80FCDBAFC9 /* Debug */,
+				1503865616AA6B47FE486FA648F71338 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

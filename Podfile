@@ -24,6 +24,9 @@ end
 target 'WeatherAppSettings' do
   project 'WeatherAppSettings/WeatherAppSettings.project'
   pods
+  target 'WeatherAppSettingsTests' do
+    testing_pods
+  end
 end
 
 target 'WeatherAppSearch' do

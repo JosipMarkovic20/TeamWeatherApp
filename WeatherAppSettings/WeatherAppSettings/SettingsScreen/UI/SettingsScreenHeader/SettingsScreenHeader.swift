@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 
 class SettingsScreenHeader: UITableViewHeaderFooterView{
     
+    //MARK: UI Elements
     let title: UILabel = {
         let label = UILabel()
         label.text = "Location"
@@ -22,6 +24,7 @@ class SettingsScreenHeader: UITableViewHeaderFooterView{
         return label
     }()
     
+    //MARK: Init
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         self.backgroundView = UIView()
@@ -34,16 +37,21 @@ class SettingsScreenHeader: UITableViewHeaderFooterView{
         super.init(coder: aDecoder)
     }
     
+    //MARK: UI Setup
     func setupUI(){
         contentView.addSubview(title)
         
         setupConstraints()
     }
     
+    //MARK: Constraints
     func setupConstraints(){
-        title.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        title.snp.makeConstraints { (make) in
+            make.top.equalTo(self)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+            make.bottom.equalTo(self)
+        }
     }
 }
