@@ -74,7 +74,7 @@ class ConditionsView: UIView{
         button.setImage(UIImage(named: "checkmark_check"), for: .selected)
         button.setImage(UIImage(named: "checkmark_uncheck"), for: .normal)
         button.isSelected = true
-        button.tag = 1
+        button.tag = 2
         return button
     }()
     
@@ -84,7 +84,7 @@ class ConditionsView: UIView{
         button.setImage(UIImage(named: "checkmark_check"), for: .selected)
         button.setImage(UIImage(named: "checkmark_uncheck"), for: .normal)
         button.isSelected = true
-        button.tag = 2
+        button.tag = 3
         return button
     }()
     
@@ -94,7 +94,7 @@ class ConditionsView: UIView{
         button.setImage(UIImage(named: "checkmark_check"), for: .selected)
         button.setImage(UIImage(named: "checkmark_uncheck"), for: .normal)
         button.isSelected = true
-        button.tag = 3
+        button.tag = 4
         return button
     }()
 

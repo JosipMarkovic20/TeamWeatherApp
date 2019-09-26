@@ -8,6 +8,9 @@
 
 import Foundation
 import RxSwift
+import Shared
+
+
 class LocationRepository {
     let url = "http://api.geonames.org/searchJSON?q="
     let username = "&maxRows=10&username=myCRObaM"

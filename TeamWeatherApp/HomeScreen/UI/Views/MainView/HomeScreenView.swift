@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SnapKit
 
 class HomeScreenView: UIView {
     
@@ -70,25 +70,36 @@ class HomeScreenView: UIView {
     
     //MARK: Constraints
     func setupConstraints(){
-        backgroundView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        backgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        temperatureView.topAnchor.constraint(equalTo: self.topAnchor, constant: UIScreen.main.bounds.height * 0.20).isActive = true
-        temperatureView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        backgroundView.snp.makeConstraints { (make) in
+            make.top.equalTo(self)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+            make.bottom.equalTo(self)
+        }
         
-        locationMinAndMaxView.topAnchor.constraint(equalTo: temperatureView.bottomAnchor, constant: UIScreen.main.bounds.height * 0.25).isActive = true
-        locationMinAndMaxView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        locationMinAndMaxView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        temperatureView.snp.makeConstraints { (make) in
+            make.top.equalTo(self).offset(UIScreen.main.bounds.height * 0.20)
+            make.centerX.equalTo(self)
+        }
         
-        conditionsView.topAnchor.constraint(equalTo: locationMinAndMaxView.bottomAnchor, constant: UIScreen.main.bounds.height * 0.25).isActive = true
-        conditionsView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        conditionsView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        locationMinAndMaxView.snp.makeConstraints { (make) in
+            make.top.equalTo(temperatureView.snp.bottom).offset(UIScreen.main.bounds.height * 0.25)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+        }
         
-        searchAndSettingsView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        searchAndSettingsView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        searchAndSettingsView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        conditionsView.snp.makeConstraints { (make) in
+            make.top.equalTo(locationMinAndMaxView.snp.bottom).offset(UIScreen.main.bounds.height * 0.25)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+        }
+
+        searchAndSettingsView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
+            make.leading.equalTo(self)
+            make.trailing.equalTo(self)
+        }
     }
     
     

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SnapKit
 
 
 class SearchAndSettingsView: UIView{
@@ -50,15 +50,19 @@ class SearchAndSettingsView: UIView{
     
     //MARK: Constraints
     func setupConstraints(){
-        settingsButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-        settingsButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
-        settingsButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        settingsButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
-        searchBar.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-        searchBar.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: settingsButton.trailingAnchor, constant: 10).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        settingsButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-10)
+            make.leading.equalTo(self).offset(30)
+            make.width.equalTo(24)
+            make.height.equalTo(56)
+        }
         
+        searchBar.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-10)
+            make.top.equalTo(self)
+            make.leading.equalTo(settingsButton.snp.trailing).offset(10)
+            make.trailing.equalTo(self).offset(-10)
+        }        
     }
 }

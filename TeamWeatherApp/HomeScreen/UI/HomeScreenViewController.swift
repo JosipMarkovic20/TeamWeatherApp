@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import RxSwift
 import Shared
+import SnapKit
+import WeatherAppSettings
 
 class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
@@ -66,11 +68,13 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     //MARK: Constraints
     func setupConstraints(){
-        homeScreenView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        homeScreenView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        homeScreenView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        homeScreenView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
+        homeScreenView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view)
+            make.leading.equalTo(self.view)
+            make.trailing.equalTo(self.view)
+            make.bottom.equalTo(self.view)
+        }
     }
     
     
@@ -117,24 +121,20 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     //MARK: Setup screen
     
-    func setupScreenData(enumCase: LayoutSetupEnum){
+    func setupScreenData(){
         
         guard let weatherData = viewModel.mainWeatherData else { return }
-        let roundedVaules = viewModel.roundingCorrection(weatherData: weatherData)
-        let units = viewModel.unitSettings(currentUnits: viewModel.units)
+        let screenData = viewModel.convertUnits(unitType: viewModel.units, data: weatherData)
         
-        homeScreenView.temperatureView.temperatureLabel.text = "\(roundedVaules.temperatureValue)°"
+        homeScreenView.temperatureView.temperatureLabel.text = screenData.currentTemperature
         homeScreenView.temperatureView.summaryLabel.text = weatherData.currently.summary
         
-        let minAndMax: (Double, Double) = viewModel.compareDayInData(weatherData: weatherData)
-        homeScreenView.locationMinAndMaxView.minTempLabel.text = "\(minAndMax.0)\(units.temperatureUnit)"
-        homeScreenView.locationMinAndMaxView.maxTempLabel.text = "\(minAndMax.1)\(units.temperatureUnit)"
+        homeScreenView.locationMinAndMaxView.minTempLabel.text = screenData.lowTemperature
+        homeScreenView.locationMinAndMaxView.maxTempLabel.text = screenData.highTemperature
         
-        homeScreenView.conditionsView.humidityLabel.text = "\(roundedVaules.humidityValue)%"
-        homeScreenView.conditionsView.windLabel.text = "\(weatherData.currently.windSpeed) \(units.speedUnit)"
-        homeScreenView.conditionsView.pressureLabel.text = "\(Int(weatherData.currently.pressure)) hpa"
-        
-        homeScreenView.setupBackground(enumCase: enumCase)
+        homeScreenView.conditionsView.humidityLabel.text = screenData.humidity
+        homeScreenView.conditionsView.windLabel.text = screenData.windSpeed
+        homeScreenView.conditionsView.pressureLabel.text = screenData.pressure
     }
     
     
@@ -146,7 +146,8 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
             .observeOn(MainScheduler.instance)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .subscribe(onNext: {[unowned self] (enumCase) in
-                self.setupScreenData(enumCase: enumCase)
+                self.homeScreenView.setupBackground(enumCase: enumCase)
+                self.setupScreenData()
             }).disposed(by: disposeBag)
         
         viewModel.output.loaderSubject
@@ -166,4 +167,17 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
                     print("Error displaying loader ", error)
             }).disposed(by: disposeBag)
     }
+}
+
+//MARK: Settings delegate
+extension HomeScreenViewController: SetupSettingsDelegate{
+    
+    func setupScreenBasedOn(settings: SettingsData) {
+        self.homeScreenView.conditionsView.humidityView.isHidden = !settings.displayHumidity
+        self.homeScreenView.conditionsView.windView.isHidden = !settings.displayWind
+        self.homeScreenView.conditionsView.pressureView.isHidden = !settings.displayPressure
+        self.viewModel.units = settings.unitsType
+        setupScreenData()
+    }
+    
 }

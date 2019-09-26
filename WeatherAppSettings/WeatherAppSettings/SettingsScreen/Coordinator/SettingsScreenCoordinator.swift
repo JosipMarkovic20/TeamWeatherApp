@@ -14,7 +14,7 @@ public class SettingsScreenCoordinator: Coordinator{
     
     //MARK: Properites
     public var childCoordinators: [Coordinator] = []
-    let viewController: SettingsScreenViewController
+    public let viewController: SettingsScreenViewController
     let viewModel: SettingsScreenViewModel
     let presenter: UINavigationController
     

@@ -9,6 +9,9 @@
 import Foundation
 import RxSwift
 import Alamofire
+import Shared
+
+
 class LocationAlamofireManager {
     func requestLocation(url: String) -> Observable<SearchDataModel> {
     

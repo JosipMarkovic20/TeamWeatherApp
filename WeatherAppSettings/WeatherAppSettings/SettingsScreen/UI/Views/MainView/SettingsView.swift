@@ -79,9 +79,6 @@ class SettingsView: UIView{
             make.width.equalTo(90)
             make.height.equalTo(40)
         }
-        
-
-        
     }
     
 }

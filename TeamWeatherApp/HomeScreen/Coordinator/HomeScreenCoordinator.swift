@@ -43,6 +43,7 @@ extension HomeScreenCoordinator: OpenSettingsDelegate{
     
     func openSettings() {
         let settingsCoordinator = SettingsScreenCoordinator(presenter: presenter)
+        settingsCoordinator.viewController.settingsDelegate = self.viewController
         settingsCoordinator.start()
     }
 

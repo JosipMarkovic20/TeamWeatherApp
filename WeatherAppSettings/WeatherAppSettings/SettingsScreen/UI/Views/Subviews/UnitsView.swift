@@ -30,6 +30,7 @@ class UnitsView: UIView{
         button.isSelected = true
         button.setImage(UIImage(named: "square_checkmark_check"), for: .selected)
         button.setImage(UIImage(named: "square_checkmark_uncheck"), for: .normal)
+        button.tag = 0
         return button
     }()
     
@@ -49,6 +50,7 @@ class UnitsView: UIView{
         button.isSelected = false
         button.setImage(UIImage(named: "square_checkmark_check"), for: .selected)
         button.setImage(UIImage(named: "square_checkmark_uncheck"), for: .normal)
+        button.tag = 1
         return button
     }()
     
