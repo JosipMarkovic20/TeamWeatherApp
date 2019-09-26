@@ -15,6 +15,8 @@
 		5F642FF2233B774B000E1C83 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F642FF0233B774B000E1C83 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F82CE88233B934100BD8F08 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82CE87233B934100BD8F08 /* SettingsView.swift */; };
 		5F82CE8A233B948600BD8F08 /* UnitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F82CE89233B948600BD8F08 /* UnitsView.swift */; };
+		5FA1DEAC233CBD3B002A1C61 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEAB233CBD3B002A1C61 /* SettingsData.swift */; };
+		5FA1DEB8233CBE25002A1C61 /* SetupSettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEB7233CBE25002A1C61 /* SetupSettingsDelegate.swift */; };
 		5FFB2EA1233B3C9C0038387A /* WeatherAppSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFB2E97233B3C9C0038387A /* WeatherAppSettings.framework */; };
 		5FFB2EA6233B3C9C0038387A /* WeatherAppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB2EA5233B3C9C0038387A /* WeatherAppSettingsTests.swift */; };
 		5FFB2EA8233B3C9D0038387A /* WeatherAppSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FFB2E9A233B3C9C0038387A /* WeatherAppSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,6 +59,8 @@
 		5F642FF0233B774B000E1C83 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F82CE87233B934100BD8F08 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5F82CE89233B948600BD8F08 /* UnitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsView.swift; sourceTree = "<group>"; };
+		5FA1DEAB233CBD3B002A1C61 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
+		5FA1DEB7233CBE25002A1C61 /* SetupSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSettingsDelegate.swift; sourceTree = "<group>"; };
 		5FFB2E97233B3C9C0038387A /* WeatherAppSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherAppSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFB2E9A233B3C9C0038387A /* WeatherAppSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherAppSettings.h; sourceTree = "<group>"; };
 		5FFB2E9B233B3C9C0038387A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +133,22 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		5FA1DEAA233CBD29002A1C61 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1DEAB233CBD3B002A1C61 /* SettingsData.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		5FA1DEB6233CBE16002A1C61 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				5FA1DEB7233CBE25002A1C61 /* SetupSettingsDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		5FFB2E8D233B3C9C0038387A = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +172,8 @@
 		5FFB2E99233B3C9C0038387A /* WeatherAppSettings */ = {
 			isa = PBXGroup;
 			children = (
+				5FA1DEB6233CBE16002A1C61 /* Delegates */,
+				5FA1DEAA233CBD29002A1C61 /* DataModel */,
 				5FFB2EB1233B3CBC0038387A /* SettingsScreen */,
 				5FFB2E9A233B3C9C0038387A /* WeatherAppSettings.h */,
 				5FFB2E9B233B3C9C0038387A /* Info.plist */,
@@ -407,7 +429,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA1DEAC233CBD3B002A1C61 /* SettingsData.swift in Sources */,
 				5F82CE88233B934100BD8F08 /* SettingsView.swift in Sources */,
+				5FA1DEB8233CBE25002A1C61 /* SetupSettingsDelegate.swift in Sources */,
 				5FFB2EB7233B3CFC0038387A /* SettingsScreenViewController.swift in Sources */,
 				5F82CE8A233B948600BD8F08 /* UnitsView.swift in Sources */,
 				5F47E83B233B9F7200C215B4 /* ConditionsView.swift in Sources */,
