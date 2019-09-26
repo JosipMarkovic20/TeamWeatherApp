@@ -57,7 +57,7 @@ class HomeScreenViewModel: ViewModelType{
     var output: Output!
     var mainWeatherData: MainWeatherClass?
     
-    let units: UnitsEnum = .metric
+    var units: UnitsEnum = .metric
     let location: String = "45.82176,17.39763"
     
     
@@ -183,19 +183,20 @@ class HomeScreenViewModel: ViewModelType{
         }
     }
     
-    //MARK: Returns units dependent on settings
-    func unitSettings(currentUnits: UnitsEnum) -> (speedUnit: String, temperatureUnit: String){
-        switch currentUnits {
-        case .metric:
-            return ("km/h", "°C")
+    //MARK: Unit Coversion function
+    func convertUnits(unitType: UnitsEnum, data: MainWeatherClass) -> (currentTemperature: String, lowTemperature: String, highTemperature: String, windSpeed: String, humidity: String, pressure: String){
+        let lowAndHighTemp = compareDayInData(weatherData: data)
+        switch unitType {
         case .imperial:
-            return ("mph", "°F")
+            let currentTemperature = Double((data.currently.temperature * 1.8 + 32))
+            let lowTemperature = (((lowAndHighTemp.temperatureLow * 1.8 + 32) * 10).rounded() / 10)
+            let highTemperature = (((lowAndHighTemp.temperatureHigh * 1.8 + 32) * 10).rounded() / 10)
+            let windSpeed = ((((data.currently.windSpeed) * 1.6 ) * 10).rounded() / 10)
+            
+            
+            return ("\(Int(currentTemperature))°", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph", "\(data.currently.humidity * 100)%", "\(Int(data.currently.pressure)) hpa")
+        default:
+            return ("\(Int((data.currently.temperature)))°", "\(lowAndHighTemp.temperatureLow)°C", "\(lowAndHighTemp.temperatureHigh)°C", "\(data.currently.windSpeed) km/h", "\(data.currently.humidity * 100)%", "\(Int(data.currently.pressure)) hpa")
         }
     }
-    //MARK: Data rounding correction
-    func roundingCorrection(weatherData: MainWeatherClass) -> (humidityValue: Int, temperatureValue: Int){
-        let currentWeather = weatherData.currently
-        return (Int(currentWeather.humidity*100), Int(currentWeather.temperature))
-    }
-
 }
