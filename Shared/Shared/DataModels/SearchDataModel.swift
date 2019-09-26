@@ -17,5 +17,6 @@ public struct Locations: Decodable {
     public let lng: String
     public let lat: String
     public let name: String
+    public let geonameId: Int
     public let countryCode: String
 }

@@ -37,6 +37,11 @@ target 'WeatherAppSearch' do
   end
 end
 
+target 'Shared' do
+  project 'Shared/Shared.project'
+  pods
+end
+
 target 'TeamWeatherApp' do
   pods
 end
