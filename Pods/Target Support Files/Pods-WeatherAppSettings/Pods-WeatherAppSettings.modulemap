@@ -1,6 +1,0 @@
-framework module Pods_WeatherAppSettings {
-  umbrella header "Pods-WeatherAppSettings-umbrella.h"
-
-  export *
-  module * { export * }
-}

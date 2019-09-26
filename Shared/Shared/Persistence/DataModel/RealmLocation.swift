@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import RealmSwift
+
+class RealmLocation: Object{
+    @objc dynamic var name: String = ""
+    @objc dynamic var lng: String = ""
+    @objc dynamic var lat: String = ""
+    @objc dynamic var geonameId: Int = 0
+    
+    func createRealmLocation(location: Locations){
+        self.name = location.name
+        self.lng = location.lng
+        self.lat = location.lat
+        self.geonameId = location.geonameId
+    }
+    
+    override class func primaryKey() -> String?{
+        return "geonameId"
+    }
+}

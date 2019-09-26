@@ -21,6 +21,7 @@
 		5FA1DEA5233CAAFD002A1C61 /* RealmLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA4233CAAFD002A1C61 /* RealmLocation.swift */; };
 		5FA1DEA7233CAB11002A1C61 /* LastRealmLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA6233CAB11002A1C61 /* LastRealmLocation.swift */; };
 		5FA1DEA9233CAB26002A1C61 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA8233CAB26002A1C61 /* RealmManager.swift */; };
+		F8AA45D7D5CCA112E431BC45 /* Pods_Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EDF9EDD0241029AA24BB1F /* Pods_Shared.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,9 @@
 		5FA1DEA6233CAB11002A1C61 /* LastRealmLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRealmLocation.swift; sourceTree = "<group>"; };
 		5FA1DEA8233CAB26002A1C61 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		5FA1DEAE233CBD99002A1C61 /* WeatherAppSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherAppSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF2E05FEE8352B5B8C91135 /* Pods-Shared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared.debug.xcconfig"; path = "Target Support Files/Pods-Shared/Pods-Shared.debug.xcconfig"; sourceTree = "<group>"; };
+		80C70F67D6CE417D68617C11 /* Pods-Shared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared.release.xcconfig"; path = "Target Support Files/Pods-Shared/Pods-Shared.release.xcconfig"; sourceTree = "<group>"; };
+		D4EDF9EDD0241029AA24BB1F /* Pods_Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8AA45D7D5CCA112E431BC45 /* Pods_Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +94,7 @@
 				5F642FD5233B763F000E1C83 /* SharedTests */,
 				5F642FC9233B763F000E1C83 /* Products */,
 				5FA1DEAD233CBD99002A1C61 /* Frameworks */,
+				E6776A6820B91A142CBEF88B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,8 +195,19 @@
 			isa = PBXGroup;
 			children = (
 				5FA1DEAE233CBD99002A1C61 /* WeatherAppSettings.framework */,
+				D4EDF9EDD0241029AA24BB1F /* Pods_Shared.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6776A6820B91A142CBEF88B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2E05FEE8352B5B8C91135 /* Pods-Shared.debug.xcconfig */,
+				80C70F67D6CE417D68617C11 /* Pods-Shared.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F642FDC233B763F000E1C83 /* Build configuration list for PBXNativeTarget "Shared" */;
 			buildPhases = (
+				F47162A0C86AFB47D926C134 /* [CP] Check Pods Manifest.lock */,
 				5F642FC3233B763F000E1C83 /* Headers */,
 				5F642FC4233B763F000E1C83 /* Sources */,
 				5F642FC5233B763F000E1C83 /* Frameworks */,
@@ -297,6 +315,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F47162A0C86AFB47D926C134 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shared-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F642FC4233B763F000E1C83 /* Sources */ = {
@@ -458,6 +501,7 @@
 		};
 		5F642FDD233B763F000E1C83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF2E05FEE8352B5B8C91135 /* Pods-Shared.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +528,7 @@
 		};
 		5F642FDE233B763F000E1C83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80C70F67D6CE417D68617C11 /* Pods-Shared.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

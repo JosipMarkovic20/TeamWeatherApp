@@ -1,6 +1,0 @@
-framework module Pods_TeamWeatherAppTests {
-  umbrella header "Pods-TeamWeatherAppTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
