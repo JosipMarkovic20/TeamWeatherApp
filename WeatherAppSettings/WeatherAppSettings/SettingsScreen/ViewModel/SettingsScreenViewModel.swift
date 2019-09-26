@@ -13,6 +13,7 @@ import Shared
 
 class SettingsScreenViewModel: ViewModelType{
 
+    //MARK: Input/Output/Dependencies
     struct Input{
     }
     
@@ -27,11 +28,12 @@ class SettingsScreenViewModel: ViewModelType{
     var output: Output!
     
     
+    //MARK: Init
     init(dependencies: Dependencies){
         self.dependencies = dependencies
     }
     
-    
+    //MARK: Transform
     func transform(input: SettingsScreenViewModel.Input) -> SettingsScreenViewModel.Output {
         
         let output = Output()

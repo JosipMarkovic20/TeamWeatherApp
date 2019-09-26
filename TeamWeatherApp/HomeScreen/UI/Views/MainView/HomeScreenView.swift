@@ -45,6 +45,8 @@ class HomeScreenView: UIView {
     
     let gradientColors = GradientColors()
     
+    
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()

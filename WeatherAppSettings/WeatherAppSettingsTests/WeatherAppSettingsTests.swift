@@ -8,6 +8,8 @@
 
 import XCTest
 @testable import WeatherAppSettings
+import RxTest
+import Quick
 
 class WeatherAppSettingsTests: XCTestCase {
 

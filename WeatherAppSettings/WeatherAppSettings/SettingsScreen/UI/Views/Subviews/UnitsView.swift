@@ -63,6 +63,7 @@ class UnitsView: UIView{
     }()
     
     
+    //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -88,32 +89,32 @@ class UnitsView: UIView{
     func setupConstraints(){
         
         unitsLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.top)
-            make.centerX.equalTo(self.snp.centerX)
+            make.top.equalTo(self)
+            make.centerX.equalTo(self)
         }
         
         imperialCheckBox.snp.makeConstraints { (make) in
-            make.topMargin.equalTo(unitsLabel.snp.bottom).offset(UIScreen.main.bounds.height * 0.02)
-            make.leading.equalTo(self.snp.leading).offset(10)
+            make.topMargin.equalTo(unitsLabel).offset(UIScreen.main.bounds.height * 0.02)
+            make.leading.equalTo(self).offset(10)
             make.width.height.equalTo(40)
         }
         
         imperialLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(imperialCheckBox.snp.top)
+            make.top.equalTo(imperialCheckBox)
             make.leading.equalTo(imperialCheckBox.snp.trailing).offset(10)
-            make.bottom.equalTo(imperialCheckBox.snp.bottom)
+            make.bottom.equalTo(imperialCheckBox)
         }
         
         metricCheckBox.snp.makeConstraints { (make) in
             make.top.equalTo(imperialCheckBox.snp.bottom)
-            make.leading.equalTo(self.snp.leading).offset(10)
+            make.leading.equalTo(self).offset(10)
             make.width.height.equalTo(40)
         }
         
         metricLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(metricCheckBox.snp.top)
+            make.top.equalTo(metricCheckBox)
             make.leading.equalTo(metricCheckBox.snp.trailing).offset(10)
-            make.bottom.equalTo(metricCheckBox.snp.bottom)
+            make.bottom.equalTo(metricCheckBox)
         }   
     }
 }
