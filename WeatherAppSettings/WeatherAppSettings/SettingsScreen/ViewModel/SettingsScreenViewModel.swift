@@ -11,12 +11,13 @@ import RxSwift
 import Shared
 
 class SettingsScreenViewModel: ViewModelType{
-
+    
     //MARK: Input/Output/Dependencies
     struct Input{
         let getLocationsSubject: PublishSubject<Bool>
         let getSettingsSubject: PublishSubject<Bool>
-        let deleteLocationSubject: PublishSubject<Bool>
+        let deleteLocationSubject: PublishSubject<Int>
+        let saveSettingsSubject: PublishSubject<Bool>
     }
     
     struct Output{
@@ -25,6 +26,7 @@ class SettingsScreenViewModel: ViewModelType{
         var locations: [Locations]
         var settings: SettingsData
         let tableReloadSubject: PublishSubject<Bool>
+        let locationDeletedSubject: PublishSubject<Locations>
         var disposables: [Disposable]
     }
     
@@ -49,14 +51,15 @@ class SettingsScreenViewModel: ViewModelType{
         self.input = input
         disposables.append(loadSettings(for: input.getSettingsSubject))
         disposables.append(loadLocations(for: input.getLocationsSubject))
+        disposables.append(saveSettings(for: input.saveSettingsSubject))
+        disposables.append(deleteLocation(for: input.deleteLocationSubject))
         
-        self.output = Output(settingsLoadedSubject: PublishSubject(), popUpSubject: PublishSubject(), locations: [], settings: SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric), tableReloadSubject: PublishSubject(), disposables: disposables)
+        self.output = Output(settingsLoadedSubject: PublishSubject(), popUpSubject: PublishSubject(), locations: [], settings: SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric), tableReloadSubject: PublishSubject(), locationDeletedSubject: PublishSubject(), disposables: disposables)
         return output
     }
     
     //MARK: Load settings
     func loadSettings(for subject: PublishSubject<Bool>) -> Disposable{
-        
         return subject.flatMap({[unowned self] (bool) -> Observable<SettingsData> in
             let settings = self.dependencies.realmManager.getSettings()
             return Observable.just(settings)
@@ -87,6 +90,40 @@ class SettingsScreenViewModel: ViewModelType{
                 }, onError: {[unowned self] (error) in
                     self.output.popUpSubject.onNext(true)
                     print(error)
+            })
+    }
+    
+    //MARK: Save settings
+    func saveSettings(for subject: PublishSubject<Bool>) -> Disposable{
+        return subject.flatMap({[unowned self] (bool) -> Observable<String> in
+            _ = self.dependencies.realmManager.deleteSettings()
+            let settings = self.dependencies.realmManager.saveSettings(settings: self.output.settings)
+            return settings
+        })
+            .subscribeOn(dependencies.subscribeScheduler)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {(settings) in
+                print(settings)
+            }, onError: {[unowned self] (error) in
+                self.output.popUpSubject.onNext(true)
+                print(error)
+            })
+    }
+    
+    //MARK: Delete Location
+    func deleteLocation(for subject: PublishSubject<Int>) -> Disposable{
+        
+        return subject.flatMap({[unowned self] (location) -> Observable<String> in
+            let locations = self.dependencies.realmManager.deleteLocation(geonameId: location)
+            return locations
+        })
+            .subscribeOn(dependencies.subscribeScheduler)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {(locations) in
+                print(locations)
+            }, onError: {[unowned self] (error) in
+                self.output.popUpSubject.onNext(true)
+                print(error)
             })
     }
 }
