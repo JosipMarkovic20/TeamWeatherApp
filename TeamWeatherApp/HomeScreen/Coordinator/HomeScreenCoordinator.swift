@@ -23,7 +23,7 @@ class HomeScreenCoordinator: Coordinator{
     let presenter: UINavigationController
     
     init(presenter: UINavigationController){
-        self.viewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
+        self.viewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background), realmManager: RealmManager()))
             
         self.viewController = HomeScreenViewController(viewModel: viewModel)
         self.presenter = presenter
