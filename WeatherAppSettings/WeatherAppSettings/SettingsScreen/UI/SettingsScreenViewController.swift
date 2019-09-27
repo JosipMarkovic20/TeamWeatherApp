@@ -31,7 +31,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     }()
     
     
-    let viewModel: SettingsScreenViewModel
+    var viewModel: SettingsScreenViewModel
     public var settingsDelegate: SetupSettingsDelegate?
     let disposeBag = DisposeBag()
     public weak var coordinatorDelegate: CoordinatorDelegate?

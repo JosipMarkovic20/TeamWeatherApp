@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol SearchScreenClosingDelegate {
-    func screenWillClose(location: Locations)
+    func screenWillClose(location: LocationsClass)
 }

@@ -99,7 +99,8 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
     
     //MARK: Did select row at
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        closingScreenDelegate.screenWillClose(location: (viewModel.dataForView?.geonames[indexPath.row])!)
+        let data = viewModel.dataForView?.geonames[indexPath.row]
+        closingScreenDelegate.screenWillClose(location: LocationsClass(lng: data!.lng, lat: data!.lat, name: data!.name, geoName: data!.geonameId))
         self.dismiss(animated: false) {
         }
     }

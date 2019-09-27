@@ -14,8 +14,22 @@ public class SearchDataModel: Decodable {
 }
 
 public struct Locations: Decodable {
+   public var lng: String
+    public var lat: String
+    public var name: String
+    public var geonameId: Int
+}
+
+public class LocationsClass {
     public var lng: String
     public var lat: String
     public var name: String
     public var geonameId: Int
+    
+    public init(lng: String, lat: String, name: String, geoName: Int){
+        self.lng = lng
+        self.lat = lat
+        self.name = name
+        self.geonameId = geoName
+    }
 }
