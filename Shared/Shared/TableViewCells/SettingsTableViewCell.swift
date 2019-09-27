@@ -13,7 +13,7 @@ import UIKit
 
 public class SettingsScreenTableCell: UITableViewCell{
     
-    
+    //MARK: Cell elements
     let squareView: UIView = {
         let squareView = UIView()
         squareView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +41,8 @@ public class SettingsScreenTableCell: UITableViewCell{
     public weak var deleteLocationDelegate: DeleteLocationDelegate?
     public var geonameId: Int?
     
+    
+    //MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -50,6 +52,7 @@ public class SettingsScreenTableCell: UITableViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: UI Setup
     func setupUI(){
         contentView.addSubview(placeName)
         contentView.addSubview(squareView)
@@ -64,6 +67,7 @@ public class SettingsScreenTableCell: UITableViewCell{
         deleteLocationDelegate?.deleteLocation(geonameId: geonameId ?? 0)
     }
     
+    //MARK: Constraints
     func setupConstraints(){
         squareView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 3).isActive = true
         squareView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true

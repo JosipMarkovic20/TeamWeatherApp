@@ -22,6 +22,7 @@ class HomeScreenCoordinator: Coordinator{
     let viewController: HomeScreenViewController
     let presenter: UINavigationController
     
+    //MARK: Init
     init(presenter: UINavigationController){
         self.viewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), realmManager: RealmManager(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
             
@@ -31,7 +32,7 @@ class HomeScreenCoordinator: Coordinator{
         self.viewController.openSearchDelegate = self
     }
     
-    
+    //MARK: Start
     func start() {
         presenter.navigationBar.barStyle = .black
         presenter.pushViewController(viewController, animated: true)
@@ -41,6 +42,7 @@ class HomeScreenCoordinator: Coordinator{
 
 extension HomeScreenCoordinator: ParentCoordinatorDelegate, CoordinatorDelegate, OpenSettingsDelegate{
     
+    //MARK: Open settings
     func openSettings() {
         let settingsCoordinator = SettingsScreenCoordinator(presenter: presenter)
         settingsCoordinator.viewController.settingsDelegate = self.viewController
@@ -62,6 +64,7 @@ extension HomeScreenCoordinator: ParentCoordinatorDelegate, CoordinatorDelegate,
 }
 
 extension HomeScreenCoordinator: OpenSearchDelegate{
+    //MARK: Open search
     func openSearch(searchBar: UISearchBar) {
         let searchCoordinator = SearchScreenCoordinator(presenter: presenter, searchBar: searchBar)
         searchCoordinator.viewController.closingScreenDelegate = self.viewController
