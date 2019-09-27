@@ -12,6 +12,7 @@ import RxSwift
 import Nimble
 import Quick
 import Cuckoo
+import Shared
 @testable import WeatherAppSearch
 
 class SearchViewModelTest: QuickSpec {
@@ -57,7 +58,7 @@ class SearchViewModelTest: QuickSpec {
                 it("check if correct data is loaded into the viewModel"){
                     testScheduler.start()
                     searchScreenViewModel.input.getDataSubject.onNext("s")
-                    expect(searchScreenViewModel.dataForView.geonames.count).toEventually(equal(searchDataModel.geonames.count))
+                    expect(searchScreenViewModel.dataForView?.geonames.count).toEventually(equal(searchDataModel.geonames.count))
                 }
         }
     }

@@ -14,12 +14,12 @@ public class WeatherTableViewCell: UITableViewCell {
     let letterLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        view.textColor = .black
+        view.backgroundColor = UIColor(red: 182/255, green: 222/255, blue: 238/255, alpha: 1)
+        view.textColor = .white
+        view.font = UIFont(name: "GothamRounded-Light", size: 40)
         view.text = "L"
         view.textAlignment = .center
         view.numberOfLines = 1
-        view.font = UIFont.boldSystemFont(ofSize: 40)
         return view
     }()
     
@@ -27,6 +27,7 @@ public class WeatherTableViewCell: UITableViewCell {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.boldSystemFont(ofSize: 15)
+        view.textColor = .white
         view.text = "ASDFAFSDASDASDASDAS"
         return view
     }()
