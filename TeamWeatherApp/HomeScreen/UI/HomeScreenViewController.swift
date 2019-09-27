@@ -44,6 +44,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     //MARK: Lifecycle methods
     override func viewDidLoad() {
+        transformViewModel()
         setupSubscriptions()
         setupUI()
         getData()
@@ -51,6 +52,15 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         setupSearchBar()
+    }
+    
+    //MARK: Transform
+    func transformViewModel(){
+        let input = HomeScreenViewModel.Input(getSettingsSubject: PublishSubject(), getDataSubject: ReplaySubject.create(bufferSize: 1), getLocationsSubject: ReplaySubject.create(bufferSize: 1), writeToRealmSubject: PublishSubject())
+        let output = viewModel.transform(input: input)
+        for disposable in output.disposables{
+            disposable.disposed(by: disposeBag)
+        }
     }
     
     //MARK: UI Setup

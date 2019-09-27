@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Shared
 
-//AppCoordinator which creates our main screen coordinator and sets it as root viewController
+
 class AppCoordinator: Coordinator{
     
     var childCoordinators: [Coordinator] = []

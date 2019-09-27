@@ -40,11 +40,6 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     //MARK: Init
     init(viewModel: SettingsScreenViewModel){
         self.viewModel = viewModel
-        let input = SettingsScreenViewModel.Input(getLocationsSubject: PublishSubject(), getSettingsSubject: PublishSubject(), deleteLocationSubject: PublishSubject(), saveSettingsSubject: PublishSubject(), saveLastLocationSubject: PublishSubject())
-        let output = viewModel.transform(input: input)
-        for disposable in output.disposables{
-            disposable.disposed(by: disposeBag)
-        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -59,6 +54,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     //MARK: Lifecycle methods
     override public func viewDidLoad() {
         setupUI()
+        transformViewModel()
         addTargets()
         setupSubscriptions()
         viewModel.input.getSettingsSubject.onNext(true)
@@ -68,6 +64,15 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     override public func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         coordinatorDelegate?.viewControllerHasFinished()
+    }
+    
+    //MARK: Transform viewModel
+    func transformViewModel(){
+        let input = SettingsScreenViewModel.Input(getLocationsSubject: PublishSubject(), getSettingsSubject: PublishSubject(), deleteLocationSubject: PublishSubject(), saveSettingsSubject: PublishSubject(), saveLastLocationSubject: PublishSubject())
+        let output = viewModel.transform(input: input)
+        for disposable in output.disposables{
+            disposable.disposed(by: disposeBag)
+        }
     }
     
     //MARK: UI Setup
@@ -178,7 +183,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
         }
     }
     
-    //MARK: SaveSettings
+    //MARK: Save settings
     func saveSettings() -> SettingsData{
         var units = UnitsEnum.metric
         if settingsView.unitsView.metricCheckBox.isSelected {
@@ -194,7 +199,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
         return settingsData
     }
     
-    //MARK: LoadSettings
+    //MARK: Load settings
     func settingsLoaded(){
         settingsView.conditionsView.humidityButton.isSelected = viewModel.output.settings.displayHumidity
         settingsView.conditionsView.windButton.isSelected = viewModel.output.settings.displayWind
