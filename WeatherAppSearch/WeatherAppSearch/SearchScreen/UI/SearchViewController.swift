@@ -37,6 +37,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var searchBar: UISearchBar!
     let disposeBag = DisposeBag()
     var bottomConstraint: NSLayoutConstraint?
+    var loader = LoaderViewController()
     
     var tableView: UITableView = {
         let view = UITableView()
@@ -67,13 +68,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         setupUI()
-        
         prepareForViewModel()
+        bindTextFieldWithRx()
+        
     }
-    
+    //MARK: ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         setupSearchBar()
         super.viewDidAppear(animated)
+        searchBar.becomeFirstResponder()
     }
     
     func prepareForViewModel(){
@@ -87,11 +90,27 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         refreshTableView(subject: output.dataReadySubject).disposed(by: disposeBag)
         
-        viewModel.input.getDataSubject.onNext("virovitica")
+        
+        viewModel.output.loaderSubject
+        .observeOn(MainScheduler.instance)
+        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)).subscribe(onNext: { [unowned self] (bool) in
+            if bool{
+                self.addChild(self.loader)
+                self.loader.view.frame = self.view.frame
+                self.view.addSubview(self.loader.view)
+                self.loader.didMove(toParent: self)
+            }else{
+                self.loader.willMove(toParent: nil)
+                self.loader.view.removeFromSuperview()
+                self.loader.removeFromParent()
+            }
+            }, onError: { (error) in
+                print("Error displaying loader ", error)
+        }).disposed(by: disposeBag)
     }
     //MARK: UISettings
     func setupUI(){
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         tableView.delegate = self
         tableView.dataSource = self
         customView = SearchView(frame: UIScreen.main.bounds, tableView: tableView)
@@ -109,6 +128,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "da")
         setupConstraints()
     }
+    
+    //MARK: SearchBar setup
     func setupSearchBar(){
         let searchTextField = customView.searchBar.value(forKey: "searchField") as! UITextField
         searchTextField.textAlignment = NSTextAlignment.left
@@ -126,7 +147,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             backgroundview.clipsToBounds = true;
         }
     }
-    
+    //MARK: Constraints setup
     func setupConstraints(){
         NSLayoutConstraint.activate([
             customView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -171,11 +192,26 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             .debounce(.milliseconds(300), scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
             .bind(to: viewModel.input.getDataSubject)
     }
+    
     //MARK: Action for button
     @objc func buttonPressed(){
         print("dismiss")
         self.dismiss(animated: false) {
         }
+    }
+    //MARK: Animation handle
+    @objc func keyboardWillShow(notification: NSNotification){
+          UIView.setAnimationsEnabled(true)
+              if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                  let keyboardHeight = keyboardFrame.cgRectValue.height
+                  
+                  let isKeyboardShown = notification.name == UIResponder.keyboardWillShowNotification
+                  self.bottomConstraint?.constant = isKeyboardShown ? -keyboardHeight : -60
+                  
+                  UIView.animate(withDuration: 1) {
+                      self.view.layoutIfNeeded()
+                  }
+              }
     }
     
     //MARK: Refresh Table View
