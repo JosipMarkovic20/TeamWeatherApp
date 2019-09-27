@@ -32,13 +32,17 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     
     
     let viewModel: SettingsScreenViewModel
-    var settings: SettingsData
     public var settingsDelegate: SetupSettingsDelegate?
+    let disposeBag = DisposeBag()
     
     
-    init(viewModel: SettingsScreenViewModel, settings: SettingsData = SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric)){
+    init(viewModel: SettingsScreenViewModel){
         self.viewModel = viewModel
-        self.settings = settings
+        let input = SettingsScreenViewModel.Input(getLocationsSubject: PublishSubject(), getSettingsSubject: PublishSubject(), deleteLocationSubject: PublishSubject(), saveSettingsSubject: PublishSubject())
+        let output = viewModel.transform(input: input)
+        for disposable in output.disposables{
+            disposable.disposed(by: disposeBag)
+        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -49,6 +53,8 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     override public func viewDidLoad() {
         setupUI()
         addTargets()
+        setupSubscriptions()
+        viewModel.input.getSettingsSubject.onNext(true)
     }
     
     //MARK: UI Setup
@@ -69,8 +75,8 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     
     //MARK: Screen dismiss
     @objc func dismissSettings(){
-        self.settings = saveSettings()
-        self.settingsDelegate?.setupScreenBasedOn(settings: self.settings)
+        self.viewModel.output.settings = saveSettings()
+        self.settingsDelegate?.setupScreenBasedOn(settings: self.viewModel.output.settings)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -161,9 +167,32 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
                                         displayWind: settingsView.conditionsView.windButton.isSelected,
                                         displayPressure: settingsView.conditionsView.pressureButton.isSelected,
                                         unitsType: units)
+        viewModel.input.saveSettingsSubject.onNext(settingsData)
         return settingsData
     }
     
+    //MARK: LoadSettings
+    func settingsLoaded(){
+        settingsView.conditionsView.humidityButton.isSelected = viewModel.output.settings.displayHumidity
+        settingsView.conditionsView.windButton.isSelected = viewModel.output.settings.displayWind
+        settingsView.conditionsView.pressureButton.isSelected = viewModel.output.settings.displayPressure
+        if viewModel.output.settings.unitsType == .metric{
+            settingsView.unitsView.metricCheckBox.isSelected = true
+            settingsView.unitsView.imperialCheckBox.isSelected = false
+        }else{
+            settingsView.unitsView.metricCheckBox.isSelected = false
+            settingsView.unitsView.imperialCheckBox.isSelected = true
+        }
+    }
     
+    //MARK: Subscriptions
+    func setupSubscriptions(){
+        viewModel.output.settingsLoadedSubject
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .subscribe(onNext: {[unowned self] (enumCase) in
+                self.settingsLoaded()
+            }).disposed(by: disposeBag)
+    }
     
 }

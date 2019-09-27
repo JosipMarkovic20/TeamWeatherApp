@@ -17,7 +17,7 @@ class SettingsScreenViewModel: ViewModelType{
         let getLocationsSubject: PublishSubject<Bool>
         let getSettingsSubject: PublishSubject<Bool>
         let deleteLocationSubject: PublishSubject<Int>
-        let saveSettingsSubject: PublishSubject<Bool>
+        let saveSettingsSubject: PublishSubject<SettingsData>
     }
     
     struct Output{
@@ -94,10 +94,10 @@ class SettingsScreenViewModel: ViewModelType{
     }
     
     //MARK: Save settings
-    func saveSettings(for subject: PublishSubject<Bool>) -> Disposable{
-        return subject.flatMap({[unowned self] (bool) -> Observable<String> in
+    func saveSettings(for subject: PublishSubject<SettingsData>) -> Disposable{
+        return subject.flatMap({[unowned self] (settings) -> Observable<String> in
             _ = self.dependencies.realmManager.deleteSettings()
-            let settings = self.dependencies.realmManager.saveSettings(settings: self.output.settings)
+            let settings = self.dependencies.realmManager.saveSettings(settings: settings)
             return settings
         })
             .subscribeOn(dependencies.subscribeScheduler)
