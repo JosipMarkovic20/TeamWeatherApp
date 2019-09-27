@@ -12,10 +12,10 @@ import Foundation
 public struct SettingsData{
     
 
-    public let displayHumidity: Bool
-    public let displayWind: Bool
-    public let displayPressure: Bool
-    public let unitsType: UnitsEnum
+    public var displayHumidity: Bool
+    public var displayWind: Bool
+    public var displayPressure: Bool
+    public var unitsType: UnitsEnum
     
     public init(displayHumidity: Bool, displayWind: Bool, displayPressure: Bool, unitsType: UnitsEnum){
         self.displayHumidity = displayHumidity
