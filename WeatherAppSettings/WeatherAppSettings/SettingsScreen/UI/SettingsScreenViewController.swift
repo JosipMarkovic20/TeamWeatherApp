@@ -31,7 +31,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     }()
     
     
-    let viewModel: SettingsScreenViewModel
+    var viewModel: SettingsScreenViewModel
     public var settingsDelegate: SetupSettingsDelegate?
     let disposeBag = DisposeBag()
     public weak var coordinatorDelegate: CoordinatorDelegate?
@@ -216,6 +216,14 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
             .subscribe(onNext: {[unowned self] (enumCase) in
                 self.settingsLoaded()
             }).disposed(by: disposeBag)
+        
+        viewModel.output.reloadRowSubject
+        .observeOn(MainScheduler.instance)
+        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+        .subscribe(onNext: {[unowned self] (row) in
+            let indexPath = IndexPath(row: row, section: 0)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }).disposed(by: disposeBag)
     }
     
 }
@@ -224,7 +232,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
 extension SettingsScreenViewController: DeleteLocationDelegate{
     
     public func deleteLocation(geonameId: Int) {
-        print("Delete this boi")
+        viewModel.input.deleteLocationSubject.onNext(geonameId)
     }
   
 }

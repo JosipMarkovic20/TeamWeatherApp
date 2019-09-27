@@ -183,11 +183,8 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
 //MARK: Settings delegate
 extension HomeScreenViewController: SetupSettingsDelegate, OpenLocationFromSettingsDelegate{
     
-    func openLocation(location: Locations) {
-        let geoLocation = location.lat + "," + location.lng
-        viewModel.location = geoLocation
-        viewModel.locationName = location.name
-        viewModel.locationData = location
+    func openLocation(location: LocationsClass) {
+        viewModel.locationData = LocationsClass(lng: location.lng, lat: location.lat, name: location.name, geoName: location.geonameId)
         viewModel.input.getDataSubject.onNext(true)
     }
   
@@ -202,7 +199,8 @@ extension HomeScreenViewController: SetupSettingsDelegate, OpenLocationFromSetti
 }
 
 extension HomeScreenViewController: SearchScreenClosingDelegate {
-    func screenWillClose(location: Locations) {
+    
+    func screenWillClose(location: LocationsClass) {
         let geoLocation = location.lat + "," + location.lng
         viewModel.locationData = LocationsClass(lng: location.lng, lat: location.lat, name: location.name, geoName: location.geonameId)
         viewModel.input.getDataSubject.onNext(true)

@@ -10,5 +10,5 @@ import Foundation
 
 public protocol OpenLocationFromSettingsDelegate: class{
     
-    func openLocation(location: Locations)
+    func openLocation(location: LocationsClass)
 }
