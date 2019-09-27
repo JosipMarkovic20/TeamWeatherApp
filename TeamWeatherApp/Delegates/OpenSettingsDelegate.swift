@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol OpenSettingsDelegate{
+protocol OpenSettingsDelegate: class{
     func openSettings()
 }

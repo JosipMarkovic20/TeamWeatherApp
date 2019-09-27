@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-protocol OpenSearchDelegate {
+protocol OpenSearchDelegate: class {
     func openSearch(searchBar: UISearchBar)
 }

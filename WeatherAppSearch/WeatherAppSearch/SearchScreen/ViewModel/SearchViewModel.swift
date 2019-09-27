@@ -20,6 +20,7 @@ class SearchViewModel: ViewModelType {
     struct Output {
         var dataReadySubject: PublishSubject<Bool>
         var loaderSubject: PublishSubject<Bool>
+        var errorPopup: PublishSubject<Bool>
         var disposables: [Disposable]
     }
     
@@ -40,7 +41,7 @@ class SearchViewModel: ViewModelType {
         
         disposables.append(getLocations(subject: input.getDataSubject))
         
-        self.output = Output(dataReadySubject: PublishSubject<Bool>(), loaderSubject: PublishSubject<Bool>(), disposables: disposables)
+        self.output = Output(dataReadySubject: PublishSubject<Bool>(), loaderSubject: PublishSubject<Bool>(), errorPopup: PublishSubject<Bool>(), disposables: disposables)
         return output
     }
     
@@ -62,6 +63,9 @@ class SearchViewModel: ViewModelType {
             self.dataForView = bool
             self.output.loaderSubject.onNext(false)
             print("d")
+        },  onError: {[unowned self] (error) in
+                self.output.errorPopup.onNext(true)
+                print(error)
         })
     }
     

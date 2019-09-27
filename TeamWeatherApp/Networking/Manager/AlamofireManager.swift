@@ -12,7 +12,7 @@ import Alamofire
 
 class AlamofireManager {
     
-    func requestData(url: String) -> Observable<MainWeatherClass> {
+    func requestData(url: String) -> Observable<MainWeatherModel> {
           let requestUrl = URL(string: url)!
           
           return Observable.create{   observable -> Disposable in
@@ -21,7 +21,7 @@ class AlamofireManager {
                       .responseJSON   { response in
                   do {
                       guard let data = response.data else {return}
-                      let article = try JSONDecoder().decode(MainWeatherClass.self, from: data)
+                      let article = try JSONDecoder().decode(MainWeatherModel.self, from: data)
                       observable.onNext(article)
                   }   catch let jsonErr {
                       observable.onError(jsonErr)
