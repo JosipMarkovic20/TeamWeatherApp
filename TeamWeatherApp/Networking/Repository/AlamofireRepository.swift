@@ -13,7 +13,7 @@ class AlamofireRepository {
     
     let url = "https://api.darksky.net/forecast/eed19b0a0b89a80e38d4ae15b1f24130/"
     
-    func alamofireRequest(_ location: String) -> Observable<MainWeatherClass> {
+    func alamofireRequest(_ location: String) -> Observable<MainWeatherModel> {
         let alamofireManager = AlamofireManager()
         let currentURL = url + location + "?units=si"
         print(currentURL)

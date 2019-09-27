@@ -19,7 +19,7 @@ import Shared
 class HomeScreenViewModelTest: QuickSpec {
     override func spec() {
         describe("setup Data"){
-            var mainWeatherData: MainWeatherClass!
+            var mainWeatherData: MainWeatherModel!
             let mockedAlamofireRepo = MockAlamofireRepository()
             var testScheduler: TestScheduler!
             var homeScreenViewModel: HomeScreenViewModel!
@@ -29,7 +29,7 @@ class HomeScreenViewModelTest: QuickSpec {
                     let testBundle = Bundle(for: HomeScreenViewModelTest.self)
                     guard let path = testBundle.url(forResource: "MainWeatherData", withExtension: "json") else {return}
                     let dataFromLocation = try! Data(contentsOf: path)
-                    let weather = try! JSONDecoder().decode(MainWeatherClass.self, from: dataFromLocation)
+                    let weather = try! JSONDecoder().decode(MainWeatherModel.self, from: dataFromLocation)
                     when(mock.alamofireRequest(any())).thenReturn(Observable.just(weather))
                     
                     mainWeatherData = weather
