@@ -47,6 +47,5 @@ target 'TeamWeatherApp' do
 end
 
 target 'TeamWeatherAppTests' do
-  inherit! :search_paths
   testing_pods
 end
