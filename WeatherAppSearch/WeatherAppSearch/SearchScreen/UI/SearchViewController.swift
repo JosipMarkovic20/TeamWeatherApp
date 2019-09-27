@@ -40,6 +40,7 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
     let disposeBag = DisposeBag()
     var bottomConstraint: NSLayoutConstraint?
     public var closingScreenDelegate: SearchScreenClosingDelegate!
+    public weak var coordinatorDelegate: CoordinatorDelegate?
     var loader = LoaderViewController()
     
     var tableView: UITableView = {
@@ -48,7 +49,9 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+    public override func viewDidDisappear(_ animated: Bool) {
+        coordinatorDelegate?.viewControllerHasFinished()
+    }
      let cancelButton: UIButton = {
            let imageView = UIButton()
            imageView.setImage(UIImage(named: "settings_icon"), for: .normal)

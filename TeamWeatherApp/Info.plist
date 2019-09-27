@@ -42,6 +42,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Daj lokaciju da saljem kinezima, hvala &lt;4</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Book.otf</string>
