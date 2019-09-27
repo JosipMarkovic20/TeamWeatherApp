@@ -177,6 +177,22 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
         .subscribe(onNext: {[unowned self] (enumCase) in
             self.setupScreenBasedOn(settings: self.viewModel.output.settings)
         }).disposed(by: disposeBag)
+        
+        viewModel.output.popUpSubject
+        .observeOn(MainScheduler.instance)
+        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+        .subscribe(onNext: {[unowned self] (enumCase) in
+            self.showPopUp()
+        }).disposed(by: disposeBag)
+    }
+    
+    //MARK: PopUp
+    func showPopUp(){
+        let alert = UIAlertController(title: "Error", message: "Something went wrong.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
     }
 }
 
@@ -201,7 +217,7 @@ extension HomeScreenViewController: SetupSettingsDelegate, OpenLocationFromSetti
 extension HomeScreenViewController: SearchScreenClosingDelegate {
     
     func screenWillClose(location: LocationsClass) {
-        let geoLocation = location.lat + "," + location.lng
+        //let geoLocation = location.lat + "," + location.lng
         viewModel.locationData = LocationsClass(lng: location.lng, lat: location.lat, name: location.name, geoName: location.geonameId)
         viewModel.input.getDataSubject.onNext(true)
         viewModel.input.writeToRealmSubject.onNext(.location(true))
