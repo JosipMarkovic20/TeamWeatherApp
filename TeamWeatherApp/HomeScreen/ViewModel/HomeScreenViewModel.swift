@@ -111,14 +111,12 @@ class HomeScreenViewModel: ViewModelType{
         return subject
         .flatMap({ [unowned self]enumType -> Observable<(String, String)> in
             switch enumType {
-            case let .location(bool):
+            case let .location(_):
                 return Observable.zip(self.dependencies.realmManager.saveLocation(location: self.locationData), Observable.just(""))
             case let .settings(bool):
                 if bool == true {
-                    #warning("create novog objekta jer je prvo zapisivanje")
                 }
                 else {
-                    #warning("zapisivanje uredenog objekta")
                 }
                 return Observable.zip(Observable.just("bool"), Observable.just(""))
             case .lastLocation(_):
