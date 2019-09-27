@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import Shared
 
-class HomeScreenViewModel: ViewModelType{
+class HomeScreenViewModel: NSObject, ViewModelType{
     
     init(dependencies: HomeScreenViewModel.Dependencies){
         self.dependencies = dependencies
@@ -81,6 +81,9 @@ class HomeScreenViewModel: ViewModelType{
                 self.setupCurrentWeatherState(weatherDataIcon: bool.currently.icon)
                 self.output.loaderSubject.onNext(false)
                 self.input.getSettingsSubject.onNext(true)
+            },  onError: {[unowned self] (error) in
+                    self.output.popUpSubject.onNext(true)
+                    print(error)
             })
     }
 
@@ -104,7 +107,11 @@ class HomeScreenViewModel: ViewModelType{
             })
             .subscribe(onNext: {bool in
                 self.input.getDataSubject.onNext(true)
-            })
+            },  onError: {[unowned self] (error) in
+                    self.output.popUpSubject.onNext(true)
+                    print(error)
+            }
+        )
     }
     //MARK: Write To Realm
     func writeToRealm(subject: PublishSubject<WriteToRealmEnum>) -> Disposable {
@@ -131,6 +138,10 @@ class HomeScreenViewModel: ViewModelType{
             print("mapLocations")
         })
         .subscribe(onNext: {bool in
+            print(bool)
+        },  onError: {[unowned self] (error) in
+                self.output.popUpSubject.onNext(true)
+                print(error)
         })
     }
     //MARK: Compare Day In Data
@@ -212,7 +223,7 @@ class HomeScreenViewModel: ViewModelType{
             let windSpeed = ((((data.currently.windSpeed) / 1.6 ) * 10).rounded() / 10)
             
             
-            return ("\(Int(currentTemperature))°", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph", "\(Int(data.currently.humidity * 100))%", "\(data.currently.pressure) hpa")
+            return ("\(Int(currentTemperature))°", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph", "\(Int(data.currently.humidity * 100))%", "\(Int(data.currently.pressure)) hpa")
         default:
             return ("\(Int((data.currently.temperature)))°", "\(lowAndHighTemp.temperatureLow)°C", "\(lowAndHighTemp.temperatureHigh)°C", "\(data.currently.windSpeed) km/h", "\(Int(data.currently.humidity * 100))%", "\(Int(data.currently.pressure)) hpa")
         }

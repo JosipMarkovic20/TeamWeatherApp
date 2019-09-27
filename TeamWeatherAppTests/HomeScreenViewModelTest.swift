@@ -12,6 +12,7 @@ import RxSwift
 import Nimble
 import Quick
 import Cuckoo
+import Shared
 @testable import TeamWeatherApp
 
 
@@ -29,7 +30,7 @@ class HomeScreenViewModelTest: QuickSpec {
                     guard let path = testBundle.url(forResource: "MainWeatherData", withExtension: "json") else {return}
                     let dataFromLocation = try! Data(contentsOf: path)
                     let weather = try! JSONDecoder().decode(MainWeatherClass.self, from: dataFromLocation)
-                    when(mock.alamofireRequest(any(), any())).thenReturn(Observable.just(weather))
+                    when(mock.alamofireRequest(any())).thenReturn(Observable.just(weather))
                     
                     mainWeatherData = weather
                 }
@@ -40,9 +41,9 @@ class HomeScreenViewModelTest: QuickSpec {
                 beforeEach {
                     testScheduler = TestScheduler(initialClock: 0)
                     
-                    homeScreenViewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
+                    homeScreenViewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), realmManager: RealmManager(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
                     
-                    let output = homeScreenViewModel.transform(input: HomeScreenViewModel.Input(getSettingsSubject: ReplaySubject<Bool>.create(bufferSize: 1), getDataSubject: ReplaySubject<Bool>.create(bufferSize: 1), getLocationsSubject: ReplaySubject<Bool>.create(bufferSize: 1), writeToRealmSubject: PublishSubject<WriteToRealmEnum>()))
+                    let output = homeScreenViewModel.transform(input: HomeScreenViewModel.Input(getSettingsSubject: PublishSubject<Bool>(), getDataSubject: ReplaySubject<Bool>.create(bufferSize: 1), getLocationsSubject: ReplaySubject<Bool>.create(bufferSize: 1), writeToRealmSubject: PublishSubject<WriteToRealmEnum>()))
                     
                     for disposable in output.disposables {
                         disposable.disposed(by: disposeBag)
@@ -54,17 +55,18 @@ class HomeScreenViewModelTest: QuickSpec {
                     homeScreenViewModel.output.dataIsReadySubject.subscribe(dataReadySubject).disposed(by: disposeBag)
                     
                     homeScreenViewModel.output.loaderSubject.subscribe(loaderSubject).disposed(by: disposeBag)
+                    homeScreenViewModel.locationData = LocationsClass(lng: "17.39763", lat: "45.82176", name: "Virovitica", geoName: 0)
                 }
                 //MARK: Data Ready subject test
                 it("Check if dataReady subject is triggered"){
                     testScheduler.start()
-                    
                     homeScreenViewModel.input.getDataSubject.onNext(true)
                 expect(dataReadySubject.events.count).toEventually(equal(1))
                 }
                 //MARK: Data test
                 it("Check if viewModel is getting correct Data"){
                     testScheduler.start()
+                    homeScreenViewModel.locationData = LocationsClass(lng: "17.39763", lat: "45.82176", name: "Virovitica", geoName: 0)
                     homeScreenViewModel.input.getDataSubject.onNext(true)
 
                     expect(homeScreenViewModel.mainWeatherData?.daily.data.count).toEventually(equal(mainWeatherData.daily.data.count))
@@ -148,7 +150,7 @@ class HomeScreenViewModelTest: QuickSpec {
                     expect(outputImperial.currentTemperature).toEventually(equal("58°"))
                     expect(outputImperial.lowTemperature).toEventually(equal("52.7°F"))
                     expect(outputImperial.highTemperature).toEventually(equal("69.3°F"))
-                    expect(outputImperial.windSpeed).toEventually(equal("2.6 mph"))
+                    expect(outputImperial.windSpeed).toEventually(equal("1.0 mph"))
                     expect(outputImperial.pressure).toEventually(equal("1015 hpa"))
                     
                     expect(outputMetric.currentTemperature).toEventually(equal("14°"))

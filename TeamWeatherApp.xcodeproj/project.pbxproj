@@ -37,6 +37,7 @@
 		5FE857ED233A1EB000E82BEE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE857EC233A1EB000E82BEE /* GradientView.swift */; };
 		5FE857F1233A3AED00E82BEE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE857F0233A3AED00E82BEE /* HomeScreenView.swift */; };
 		5FFB2E8C233A55AD0038387A /* ScreenSetupEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB2E8B233A55AD0038387A /* ScreenSetupEnum.swift */; };
+		F0028B9A233E26BB00638C54 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028B99233E26BB00638C54 /* GeneratedMocks.swift */; };
 		F06E7F67233A113E007DD635 /* AlamofireRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F66233A113E007DD635 /* AlamofireRepository.swift */; };
 		F06E7F69233A118A007DD635 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F68233A118A007DD635 /* AlamofireManager.swift */; };
 		F06E7F6F233A1607007DD635 /* HomeScreenViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */; };
@@ -103,6 +104,7 @@
 		9833D7060BCC120F7FC6719E /* Pods-TeamWeatherAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherAppTests.release.xcconfig"; path = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D042B29126EF05B5E8145 /* Pods-TeamWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherAppTests/Pods-TeamWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA781D20A5632B07A2A54A5A /* Pods-TeamWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-TeamWeatherApp/Pods-TeamWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F0028B99233E26BB00638C54 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		F06E7F66233A113E007DD635 /* AlamofireRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRepository.swift; sourceTree = "<group>"; };
 		F06E7F68233A118A007DD635 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModelTest.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				5FC93308233A00D200D5B6C4 /* TeamWeatherAppTests.swift */,
 				F06E7F70233A17E5007DD635 /* MainWeatherData.json */,
+				F0028B99233E26BB00638C54 /* GeneratedMocks.swift */,
 				F06E7F6E233A1607007DD635 /* HomeScreenViewModelTest.swift */,
 				5FC9330A233A00D200D5B6C4 /* Info.plist */,
 			);
@@ -543,6 +546,7 @@
 			);
 			inputPaths = (
 				"${PROJECT_DIR}/${PROJECT_NAME}/Networking/Repository/AlamofireRepository.swift",
+				"${PROJECT_DIR}/${PROJECT_NAME}/Networking/Repository/AlamofireRepository.swift",
 			);
 			outputFileListPaths = (
 			);
@@ -587,6 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06E7F6F233A1607007DD635 /* HomeScreenViewModelTest.swift in Sources */,
+				F0028B9A233E26BB00638C54 /* GeneratedMocks.swift in Sources */,
 				5FC93309233A00D200D5B6C4 /* TeamWeatherAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
