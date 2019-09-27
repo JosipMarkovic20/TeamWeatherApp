@@ -34,7 +34,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: Variables
     let viewModel: SearchViewModel
     var customView: SearchView!
-    let searchBar: UISearchBar!
+    var searchBar: UISearchBar!
     let disposeBag = DisposeBag()
     var bottomConstraint: NSLayoutConstraint?
     
@@ -56,7 +56,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: init
     init(viewModel: SearchViewModel, searchBar: UISearchBar) {
         self.viewModel = viewModel
-        self.searchBar = searchBar
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -66,9 +65,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.delegate = self
+        
         setupUI()
+        
         prepareForViewModel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupSearchBar()
+        super.viewDidAppear(animated)
     }
     
     func prepareForViewModel(){
@@ -91,6 +96,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         customView = SearchView(frame: UIScreen.main.bounds, tableView: tableView)
         
+        searchBar = customView.searchBar
+        searchBar.delegate = self
         cancelButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         view.addSubview(customView)
         view.addSubview(tableView)
@@ -102,7 +109,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "da")
         setupConstraints()
     }
-    
+    func setupSearchBar(){
+        let searchTextField = customView.searchBar.value(forKey: "searchField") as! UITextField
+        searchTextField.textAlignment = NSTextAlignment.left
+        let image:UIImage = UIImage(named: "search_icon")!
+        let imageView:UIImageView = UIImageView.init(image: image)
+        imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = UIColor(red: 109/255, green: 161/255, blue: 51/255, alpha: 1)
+        searchTextField.leftView = nil
+        searchTextField.placeholder = "Search"
+        searchTextField.rightView = imageView
+        searchTextField.rightViewMode = UITextField.ViewMode.always
+        
+        if let backgroundview = searchTextField.subviews.first {
+            backgroundview.layer.cornerRadius = 18;
+            backgroundview.clipsToBounds = true;
+        }
+    }
     
     func setupConstraints(){
         NSLayoutConstraint.activate([

@@ -14,6 +14,15 @@ class SearchView: UIView {
     let tableView: UITableView!
     var blurEffectView: UIVisualEffectView!
     
+     let searchBar: UISearchBar = {
+           let searchBar = UISearchBar()
+           searchBar.translatesAutoresizingMaskIntoConstraints = false
+           searchBar.backgroundImage = UIImage()
+           searchBar.placeholder = "Search"
+           return searchBar
+       }()
+    
+    
     init(frame: CGRect, tableView: UITableView) {
         self.tableView = tableView
         super.init(frame: frame)
