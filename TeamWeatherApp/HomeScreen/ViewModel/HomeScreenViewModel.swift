@@ -244,9 +244,17 @@ class HomeScreenViewModel: NSObject, ViewModelType, CLLocationManagerDelegate   
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        self.locationData = LocationsClass(lng: String(locValue.longitude), lat: String(locValue.latitude), name: "Ne moze bas tolko..", geoName: 1)
-        locationManager.stopUpdatingLocation()
-        self.input.writeToRealmSubject.onNext(.lastLocation(true))
-        self.input.getDataSubject.onNext(true)
+        let geocoder = CLGeocoder()
+        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+        geocoder.reverseGeocodeLocation(location, completionHandler: {[unowned self](placemarks, error) in
+            
+            self.locationData = LocationsClass(lng: String(locValue.longitude), lat: String(locValue.latitude), name: placemarks?[0].locality ?? "Ne moze bas tolko..", geoName: 1)
+            self.locationManager.stopUpdatingLocation()
+            self.input.writeToRealmSubject.onNext(.lastLocation(true))
+            self.input.getDataSubject.onNext(true)
+        })
+        
     }
+    
+    
 }
