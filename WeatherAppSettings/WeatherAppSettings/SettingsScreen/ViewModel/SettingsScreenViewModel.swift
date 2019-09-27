@@ -18,6 +18,7 @@ class SettingsScreenViewModel: ViewModelType{
         let getSettingsSubject: PublishSubject<Bool>
         let deleteLocationSubject: PublishSubject<Int>
         let saveSettingsSubject: PublishSubject<SettingsData>
+        let saveLastLocationSubject: PublishSubject<Locations>
     }
     
     struct Output{
@@ -25,7 +26,6 @@ class SettingsScreenViewModel: ViewModelType{
         let popUpSubject: PublishSubject<Bool>
         var locations: [Locations]
         var settings: SettingsData
-        let tableReloadSubject: PublishSubject<Bool>
         let locationDeletedSubject: PublishSubject<Locations>
         var disposables: [Disposable]
     }
@@ -53,8 +53,9 @@ class SettingsScreenViewModel: ViewModelType{
         disposables.append(loadLocations(for: input.getLocationsSubject))
         disposables.append(saveSettings(for: input.saveSettingsSubject))
         disposables.append(deleteLocation(for: input.deleteLocationSubject))
+        disposables.append(saveLastLocation(for: input.saveLastLocationSubject))
         
-        self.output = Output(settingsLoadedSubject: PublishSubject(), popUpSubject: PublishSubject(), locations: [], settings: SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric), tableReloadSubject: PublishSubject(), locationDeletedSubject: PublishSubject(), disposables: disposables)
+        self.output = Output(settingsLoadedSubject: PublishSubject(), popUpSubject: PublishSubject(), locations: [], settings: SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric), locationDeletedSubject: PublishSubject(), disposables: disposables)
         return output
     }
     
@@ -86,7 +87,6 @@ class SettingsScreenViewModel: ViewModelType{
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[unowned self] (locations) in
                 self.output.locations = locations
-                self.output.tableReloadSubject.onNext(true)
                 }, onError: {[unowned self] (error) in
                     self.output.popUpSubject.onNext(true)
                     print(error)
@@ -121,6 +121,23 @@ class SettingsScreenViewModel: ViewModelType{
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {(locations) in
                 print(locations)
+            }, onError: {[unowned self] (error) in
+                self.output.popUpSubject.onNext(true)
+                print(error)
+            })
+    }
+    
+    //MARK: Save last location
+    func saveLastLocation(for subject: PublishSubject<Locations>) -> Disposable{
+        return subject.flatMap({[unowned self] (location) -> Observable<String> in
+            _ = self.dependencies.realmManager.deleteLastLocation()
+            let location = self.dependencies.realmManager.saveLastLocation(location: location)
+            return location
+        })
+            .subscribeOn(dependencies.subscribeScheduler)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {(location) in
+                print(location)
             }, onError: {[unowned self] (error) in
                 self.output.popUpSubject.onNext(true)
                 print(error)

@@ -35,10 +35,11 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     public var settingsDelegate: SetupSettingsDelegate?
     let disposeBag = DisposeBag()
     public weak var coordinatorDelegate: CoordinatorDelegate?
+    public weak var openLocationDelegate: OpenLocationFromSettingsDelegate?
     
     init(viewModel: SettingsScreenViewModel){
         self.viewModel = viewModel
-        let input = SettingsScreenViewModel.Input(getLocationsSubject: PublishSubject(), getSettingsSubject: PublishSubject(), deleteLocationSubject: PublishSubject(), saveSettingsSubject: PublishSubject())
+        let input = SettingsScreenViewModel.Input(getLocationsSubject: PublishSubject(), getSettingsSubject: PublishSubject(), deleteLocationSubject: PublishSubject(), saveSettingsSubject: PublishSubject(), saveLastLocationSubject: PublishSubject())
         let output = viewModel.transform(input: input)
         for disposable in output.disposables{
             disposable.disposed(by: disposeBag)
@@ -59,6 +60,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
         addTargets()
         setupSubscriptions()
         viewModel.input.getSettingsSubject.onNext(true)
+        viewModel.input.getLocationsSubject.onNext(true)
     }
     
     override public func viewDidDisappear(_ animated: Bool) {
@@ -120,14 +122,16 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     
     //MARK: TableView
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.output.locations.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? WeatherTableViewCell  else {
             fatalError("The dequeued cell is not an instance of WeatherTableViewCell.")
         }
+        cell.setupCell(letter: "X", location: viewModel.output.locations[indexPath.row].name)
         cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -136,6 +140,12 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
             return nil
         }
         return headerView
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        openLocationDelegate?.openLocation(location: viewModel.output.locations[indexPath.row])
+        viewModel.input.saveLastLocationSubject.onNext(viewModel.output.locations[indexPath.row])
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Add targets

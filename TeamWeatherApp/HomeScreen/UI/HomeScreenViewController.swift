@@ -181,8 +181,16 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
 }
 
 //MARK: Settings delegate
-extension HomeScreenViewController: SetupSettingsDelegate{
+extension HomeScreenViewController: SetupSettingsDelegate, OpenLocationFromSettingsDelegate{
     
+    func openLocation(location: Locations) {
+        let geoLocation = location.lat + "," + location.lng
+        viewModel.location = geoLocation
+        viewModel.locationName = location.name
+        viewModel.locationData = location
+        viewModel.input.getDataSubject.onNext(true)
+    }
+  
     func setupScreenBasedOn(settings: SettingsData) {
         self.homeScreenView.conditionsView.humidityView.isHidden = !settings.displayHumidity
         self.homeScreenView.conditionsView.windView.isHidden = !settings.displayWind
