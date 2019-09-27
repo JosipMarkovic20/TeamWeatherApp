@@ -23,10 +23,10 @@ class HomeScreenViewModel: ViewModelType{
         self.input = input
         
         disposables.append(getData(subject: input.getDataSubject))
-        disposables.append(getSettings(subject: input.getSettingsSubject))
+        disposables.append(loadSettings(for: input.getSettingsSubject))
         disposables.append(getLocation(subject: input.getLocationsSubject))
         
-        self.output = Output(dataIsReadySubject: PublishSubject(), locationIsMissingSubject: PublishSubject(),loaderSubject:  PublishSubject(),disposables: disposables)
+        self.output = Output(dataIsReadySubject: PublishSubject(), locationIsMissingSubject: PublishSubject(),loaderSubject:  PublishSubject(), settings: SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric), settingsLoadedSubject: PublishSubject(), popUpSubject: PublishSubject(),disposables: disposables)
         
         return output
     }
@@ -34,7 +34,7 @@ class HomeScreenViewModel: ViewModelType{
     //MARK: Defining Structs
     
     struct Input {
-        var getSettingsSubject: ReplaySubject<Bool>
+        var getSettingsSubject: PublishSubject<Bool>
         var getDataSubject: ReplaySubject<Bool>
         var getLocationsSubject: ReplaySubject<Bool>
         var writeToRealmSubject: PublishSubject<WriteToRealmEnum>
@@ -44,6 +44,9 @@ class HomeScreenViewModel: ViewModelType{
         var dataIsReadySubject: PublishSubject<LayoutSetupEnum>
         var locationIsMissingSubject: PublishSubject<Bool>
         var loaderSubject: PublishSubject<Bool>
+        var settings: SettingsData
+        let settingsLoadedSubject: PublishSubject<Bool>
+        let popUpSubject: PublishSubject<Bool>
         var disposables: [Disposable]
     }
     
@@ -51,6 +54,7 @@ class HomeScreenViewModel: ViewModelType{
         var alamofireRepository: AlamofireRepository
         var realmManager: RealmManager
         var scheduler: SchedulerType
+        let realmManager: RealmManager
     }
     
     var dependencies: Dependencies
@@ -77,23 +81,10 @@ class HomeScreenViewModel: ViewModelType{
                 self.mainWeatherData = bool
                 self.setupCurrentWeatherState(weatherDataIcon: bool.currently.icon)
                 self.output.loaderSubject.onNext(false)
+                self.input.getSettingsSubject.onNext(true)
             })
     }
-    //MARK: Get Settings
-    func getSettings(subject: ReplaySubject<Bool>) -> Disposable {
-        return subject
-            .flatMap({ bool -> Observable<Bool> in
-                return Observable.just(bool)
-            })
-        .observeOn(MainScheduler.instance)
-        .subscribeOn(dependencies.scheduler)
-            .map({ bool in
-                #warning("Ako postoje settingsi, nastavi, inace triggeraj subject za kreaciju istih")
-                print("mapSettings")
-            })
-        .subscribe(onNext: {bool in
-        })
-    }
+
     //MARK: Get Location
     func getLocation(subject: ReplaySubject<Bool>) -> Disposable {
         return subject
@@ -148,6 +139,23 @@ class HomeScreenViewModel: ViewModelType{
             }
         }
         return temperature
+    }
+    
+    //MARK: Load settings
+    func loadSettings(for subject: PublishSubject<Bool>) -> Disposable{
+        return subject.flatMap({[unowned self] (bool) -> Observable<SettingsData> in
+            let settings = self.dependencies.realmManager.getSettings()
+            return Observable.just(settings)
+        })
+            .subscribeOn(dependencies.scheduler)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {[unowned self] (settings) in
+                self.output.settings = settings
+                self.output.settingsLoadedSubject.onNext(true)
+                }, onError: {[unowned self] (error) in
+                    self.output.popUpSubject.onNext(true)
+                    print(error)
+            })
     }
     
     

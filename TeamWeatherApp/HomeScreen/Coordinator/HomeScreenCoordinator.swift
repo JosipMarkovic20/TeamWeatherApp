@@ -23,7 +23,7 @@ class HomeScreenCoordinator: Coordinator{
     let presenter: UINavigationController
     
     init(presenter: UINavigationController){
-        self.viewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), realmManager: RealmManager(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
+        self.viewModel = HomeScreenViewModel(dependencies: HomeScreenViewModel.Dependencies(alamofireRepository: AlamofireRepository(), scheduler: ConcurrentDispatchQueueScheduler(qos: .background), realmManager: RealmManager()))
             
         self.viewController = HomeScreenViewController(viewModel: viewModel)
         self.presenter = presenter
@@ -39,12 +39,23 @@ class HomeScreenCoordinator: Coordinator{
 }
 
 
-extension HomeScreenCoordinator: OpenSettingsDelegate{
+extension HomeScreenCoordinator: ParentCoordinatorDelegate, CoordinatorDelegate, OpenSettingsDelegate{
     
     func openSettings() {
         let settingsCoordinator = SettingsScreenCoordinator(presenter: presenter)
         settingsCoordinator.viewController.settingsDelegate = self.viewController
+        self.store(coordinator: settingsCoordinator)
+        settingsCoordinator.viewController.coordinatorDelegate = self
         settingsCoordinator.start()
+    }
+    
+    func childHasFinished(coordinator: Coordinator) {
+        free(coordinator: coordinator)
+    }
+    
+    func viewControllerHasFinished() {
+        childCoordinators.removeAll()
+        childHasFinished(coordinator: self)
     }
 
 }

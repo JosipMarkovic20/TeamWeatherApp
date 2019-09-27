@@ -26,6 +26,10 @@ public class SettingsScreenCoordinator: Coordinator{
         self.presenter = presenter
     }
     
+    deinit {
+        print ("deinit: \(self)")
+    }
+    
     
     //MARK: Start
     public func start() {
