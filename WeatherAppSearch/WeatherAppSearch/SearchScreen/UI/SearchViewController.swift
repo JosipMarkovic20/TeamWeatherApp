@@ -11,6 +11,7 @@ import UIKit
 import Shared
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 
 public class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
@@ -92,8 +93,20 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
         
         refreshTableView(subject: output.dataReadySubject).disposed(by: disposeBag)
         
-        
-        viewModel.output.loaderSubject
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        prepareLoader(subject: output.loaderSubject).disposed(by: disposeBag)
+    }
+    
+    //MARK: Did select row at
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        closingScreenDelegate.screenWillClose(location: (viewModel.dataForView?.geonames[indexPath.row])!)
+        self.dismiss(animated: false) {
+        }
+    }
+    
+    //MARK: Loader function
+    func prepareLoader(subject: PublishSubject<Bool>) -> Disposable {
+        return subject
         .observeOn(MainScheduler.instance)
         .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)).subscribe(onNext: { [unowned self] (bool) in
             if bool{
@@ -108,14 +121,7 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
             }
             }, onError: { (error) in
                 print("Error displaying loader ", error)
-        }).disposed(by: disposeBag)
-    }
-    
-    //MARK: Did select row at
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        closingScreenDelegate.screenWillClose(location: (viewModel.dataForView?.geonames[indexPath.row])!)
-        self.dismiss(animated: false) {
-        }
+        })
     }
     //MARK: UISettings
     func setupUI(){

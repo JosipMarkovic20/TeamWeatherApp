@@ -40,6 +40,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
         for disposable in output.disposables{
             disposable.disposed(by: disposeBag)
         }
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -143,6 +144,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: Subscriptions
     
     func setupSubscriptions(){
+        viewModel.writeToRealm(subject: viewModel.input.writeToRealmSubject).disposed(by: disposeBag)
         
         viewModel.output.dataIsReadySubject
             .observeOn(MainScheduler.instance)
@@ -196,6 +198,8 @@ extension HomeScreenViewController: SearchScreenClosingDelegate {
         let geoLocation = location.lat + "," + location.lng
         viewModel.location = geoLocation
         viewModel.locationName = location.name
+        viewModel.locationData = location
         viewModel.input.getDataSubject.onNext(true)
+        viewModel.input.writeToRealmSubject.onNext(.location(true))
     }
 }

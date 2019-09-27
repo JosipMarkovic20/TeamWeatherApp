@@ -37,7 +37,7 @@ public class RealmManager {
         realmLocation.createRealmLocation(location: location)
         do{
             try realm?.write {
-                realm?.add(realmLocation)
+                realm?.add(realmLocation, update: .all)
             }
         }catch{
             return Observable.just("Error saving object!")
@@ -51,7 +51,7 @@ public class RealmManager {
         realmLocation.createLastRealmLocation(location: location)
         do{
             try realm?.write {
-                realm?.add(realmLocation)
+                realm?.add(realmLocation, update: .all)
             }
         }catch{
             return Observable.just("Error saving object!")
