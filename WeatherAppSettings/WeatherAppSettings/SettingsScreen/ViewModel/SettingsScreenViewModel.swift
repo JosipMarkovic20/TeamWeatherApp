@@ -18,15 +18,15 @@ class SettingsScreenViewModel: ViewModelType{
         let getSettingsSubject: PublishSubject<Bool>
         let deleteLocationSubject: PublishSubject<Int>
         let saveSettingsSubject: PublishSubject<SettingsData>
-        let saveLastLocationSubject: PublishSubject<Locations>
+        let saveLastLocationSubject: PublishSubject<LocationsClass>
     }
     
     struct Output{
         let settingsLoadedSubject: PublishSubject<Bool>
         let popUpSubject: PublishSubject<Bool>
-        var locations: [Locations]
+        var locations: [LocationsClass]
         var settings: SettingsData
-        let locationDeletedSubject: PublishSubject<Locations>
+        let locationDeletedSubject: PublishSubject<LocationsClass>
         var disposables: [Disposable]
     }
     
@@ -86,7 +86,11 @@ class SettingsScreenViewModel: ViewModelType{
             .subscribeOn(dependencies.subscribeScheduler)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[unowned self] (locations) in
-                self.output.locations = locations
+                var locationsLocal = [LocationsClass]()
+                for location in locations {
+                    locationsLocal.append(LocationsClass(lng: location.lng, lat: location.lat, name: location.name, geoName: location.geonameId))
+                }
+                self.output.locations = locationsLocal
                 }, onError: {[unowned self] (error) in
                     self.output.popUpSubject.onNext(true)
                     print(error)
@@ -128,7 +132,7 @@ class SettingsScreenViewModel: ViewModelType{
     }
     
     //MARK: Save last location
-    func saveLastLocation(for subject: PublishSubject<Locations>) -> Disposable{
+    func saveLastLocation(for subject: PublishSubject<LocationsClass>) -> Disposable{
         return subject.flatMap({[unowned self] (location) -> Observable<String> in
             _ = self.dependencies.realmManager.deleteLastLocation()
             let location = self.dependencies.realmManager.saveLastLocation(location: location)
