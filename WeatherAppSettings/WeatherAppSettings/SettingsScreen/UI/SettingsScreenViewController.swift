@@ -34,7 +34,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     let viewModel: SettingsScreenViewModel
     public var settingsDelegate: SetupSettingsDelegate?
     let disposeBag = DisposeBag()
-    
+    public weak var coordinatorDelegate: CoordinatorDelegate?
     
     init(viewModel: SettingsScreenViewModel){
         self.viewModel = viewModel
@@ -50,11 +50,20 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("Deinit: \(self)")
+    }
+    
     override public func viewDidLoad() {
         setupUI()
         addTargets()
         setupSubscriptions()
         viewModel.input.getSettingsSubject.onNext(true)
+    }
+    
+    override public func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinatorDelegate?.viewControllerHasFinished()
     }
     
     //MARK: UI Setup
