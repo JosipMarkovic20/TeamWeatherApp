@@ -35,7 +35,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: Init
     init(viewModel: HomeScreenViewModel){
         self.viewModel = viewModel
-        let input = HomeScreenViewModel.Input(getSettingsSubject: ReplaySubject.create(bufferSize: 1), getDataSubject: ReplaySubject.create(bufferSize: 1), getLocationsSubject: ReplaySubject.create(bufferSize: 1), writeToRealmSubject: PublishSubject())
+        let input = HomeScreenViewModel.Input(getSettingsSubject: PublishSubject(), getDataSubject: ReplaySubject.create(bufferSize: 1), getLocationsSubject: ReplaySubject.create(bufferSize: 1), writeToRealmSubject: PublishSubject())
         let output = viewModel.transform(input: input)
         for disposable in output.disposables{
             disposable.disposed(by: disposeBag)
@@ -168,6 +168,13 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
                 }, onError: { (error) in
                     print("Error displaying loader ", error)
             }).disposed(by: disposeBag)
+        
+        viewModel.output.settingsLoadedSubject
+        .observeOn(MainScheduler.instance)
+        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+        .subscribe(onNext: {[unowned self] (enumCase) in
+            self.setupScreenBasedOn(settings: self.viewModel.output.settings)
+        }).disposed(by: disposeBag)
     }
 }
 
