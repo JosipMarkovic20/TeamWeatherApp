@@ -32,7 +32,7 @@ public class RealmManager {
     }
     
     //MARK: Save location
-    public func saveLocation(location: Locations) -> Observable<String>{
+    public func saveLocation(location: LocationsClass) -> Observable<String>{
         let realmLocation = RealmLocation()
         realmLocation.createRealmLocation(location: location)
         do{
@@ -46,7 +46,7 @@ public class RealmManager {
     }
     
     //MARK: Save last location
-    public func saveLastLocation(location: Locations) -> Observable<String>{
+    public func saveLastLocation(location: LocationsClass) -> Observable<String>{
         let realmLocation = LastRealmLocation()
         realmLocation.createLastRealmLocation(location: location)
         do{
@@ -74,7 +74,7 @@ public class RealmManager {
     }
     
     //MARK: Get last location
-    public func getLastLocation() -> Locations{
+    public func getLastLocation() -> Observable<Locations>{
         let backThreadRealm = try! Realm()
         let lastRealmLocation = backThreadRealm.objects(LastRealmLocation.self)
         var lastLocation = Locations(lng: "", lat: "", name: "", geonameId: 0)
@@ -84,7 +84,7 @@ public class RealmManager {
             lastLocation.name = location.name
             lastLocation.geonameId = location.geonameId
         }
-        return lastLocation
+        return Observable.just(lastLocation)
     }
     
     //MARK: Get all locations

@@ -15,7 +15,7 @@ class LastRealmLocation: Object{
     @objc dynamic var lat: String = ""
     @objc dynamic var geonameId: Int = 0
     
-    func createLastRealmLocation(location: Locations){
+    func createLastRealmLocation(location: LocationsClass){
         self.name = location.name
         self.lng = location.lng
         self.lat = location.lat

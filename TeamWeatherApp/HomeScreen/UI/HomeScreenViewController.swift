@@ -117,7 +117,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: Get data
     
     func getData(){
-        viewModel.input.getDataSubject.onNext(true)
+        viewModel.input.getLocationsSubject.onNext(true)
     }
     
     //MARK: Setup screen
@@ -127,7 +127,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
         guard let weatherData = viewModel.mainWeatherData else { return }
         let screenData = viewModel.convertUnits(unitType: viewModel.units, data: weatherData)
         
-        homeScreenView.locationMinAndMaxView.locationLabel.text = viewModel.locationName
+        homeScreenView.locationMinAndMaxView.locationLabel.text = viewModel.locationData.name
         
         homeScreenView.temperatureView.temperatureLabel.text = screenData.currentTemperature
         homeScreenView.temperatureView.summaryLabel.text = weatherData.currently.summary
@@ -196,10 +196,9 @@ extension HomeScreenViewController: SetupSettingsDelegate{
 extension HomeScreenViewController: SearchScreenClosingDelegate {
     func screenWillClose(location: Locations) {
         let geoLocation = location.lat + "," + location.lng
-        viewModel.location = geoLocation
-        viewModel.locationName = location.name
-        viewModel.locationData = location
+        viewModel.locationData = LocationsClass(lng: location.lng, lat: location.lat, name: location.name, geoName: location.geonameId)
         viewModel.input.getDataSubject.onNext(true)
         viewModel.input.writeToRealmSubject.onNext(.location(true))
+        viewModel.input.writeToRealmSubject.onNext(.lastLocation(true))
     }
 }

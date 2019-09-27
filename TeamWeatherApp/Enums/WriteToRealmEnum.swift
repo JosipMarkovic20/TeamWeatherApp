@@ -11,4 +11,5 @@ import Foundation
 enum WriteToRealmEnum {
     case location(Bool)
     case settings(Bool)
+    case lastLocation(Bool)
 }
