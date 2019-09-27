@@ -197,7 +197,7 @@ extension HomeScreenViewController: SetupSettingsDelegate, OpenLocationFromSetti
     }
     
 }
-
+//MARK: SearchScreen Delegate
 extension HomeScreenViewController: SearchScreenClosingDelegate {
     
     func screenWillClose(location: LocationsClass) {
