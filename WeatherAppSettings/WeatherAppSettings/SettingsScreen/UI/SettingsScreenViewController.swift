@@ -37,6 +37,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     public weak var coordinatorDelegate: CoordinatorDelegate?
     public weak var openLocationDelegate: OpenLocationFromSettingsDelegate?
     
+    //MARK: Init
     init(viewModel: SettingsScreenViewModel){
         self.viewModel = viewModel
         let input = SettingsScreenViewModel.Input(getLocationsSubject: PublishSubject(), getSettingsSubject: PublishSubject(), deleteLocationSubject: PublishSubject(), saveSettingsSubject: PublishSubject(), saveLastLocationSubject: PublishSubject())
@@ -55,6 +56,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
         print("Deinit: \(self)")
     }
     
+    //MARK: Lifecycle methods
     override public func viewDidLoad() {
         setupUI()
         addTargets()
@@ -76,7 +78,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(SettingsScreenTableCell.self, forCellReuseIdentifier: "Cell")
         tableView.register(SettingsScreenHeader.self, forHeaderFooterViewReuseIdentifier: "Header")
         
         settingsView.doneButton.addTarget(self, action: #selector(dismissSettings), for: .touchUpInside)
@@ -126,10 +128,12 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? WeatherTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of WeatherTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? SettingsScreenTableCell  else {
+            fatalError("The dequeued cell is not an instance of SettingsScreenTableCell.")
         }
-        cell.setupCell(letter: "X", location: viewModel.output.locations[indexPath.row].name)
+        cell.geonameId = viewModel.output.locations[indexPath.row].geonameId
+        cell.configureCell(name: viewModel.output.locations[indexPath.row].name)
+        cell.deleteLocationDelegate = self
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         return cell
@@ -214,4 +218,13 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
             }).disposed(by: disposeBag)
     }
     
+}
+
+
+extension SettingsScreenViewController: DeleteLocationDelegate{
+    
+    public func deleteLocation(geonameId: Int) {
+        print("Delete this boi")
+    }
+  
 }
