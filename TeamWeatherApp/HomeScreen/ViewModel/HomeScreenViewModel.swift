@@ -191,7 +191,7 @@ class HomeScreenViewModel: ViewModelType{
             let currentTemperature = Double((data.currently.temperature * 1.8 + 32))
             let lowTemperature = (((lowAndHighTemp.temperatureLow * 1.8 + 32) * 10).rounded() / 10)
             let highTemperature = (((lowAndHighTemp.temperatureHigh * 1.8 + 32) * 10).rounded() / 10)
-            let windSpeed = ((((data.currently.windSpeed) * 1.6 ) * 10).rounded() / 10)
+            let windSpeed = ((((data.currently.windSpeed) / 1.6 ) * 10).rounded() / 10)
             
             
             return ("\(Int(currentTemperature))°", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph", "\(data.currently.humidity * 100)%", "\(Int(data.currently.pressure)) hpa")
