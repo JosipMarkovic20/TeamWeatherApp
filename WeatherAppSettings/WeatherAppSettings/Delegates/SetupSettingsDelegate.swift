@@ -9,6 +9,6 @@
 import Foundation
 import Shared
 
-public protocol SetupSettingsDelegate{
+public protocol SetupSettingsDelegate: class{
     func setupScreenBasedOn(settings: SettingsData)
 }

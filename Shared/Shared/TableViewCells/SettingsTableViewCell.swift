@@ -74,6 +74,8 @@ public class SettingsScreenTableCell: UITableViewCell{
         squareView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         squareView.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
+        self.contentView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
         letterLabel.centerXAnchor.constraint(equalTo: squareView.centerXAnchor).isActive = true
         letterLabel.centerYAnchor.constraint(equalTo: squareView.centerYAnchor).isActive = true
         
