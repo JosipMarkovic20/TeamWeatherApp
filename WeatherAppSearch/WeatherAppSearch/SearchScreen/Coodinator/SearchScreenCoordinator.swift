@@ -26,7 +26,7 @@ public class SearchScreenCoordinator: Coordinator   {
     
     public func start() {
         viewController.modalPresentationStyle = .overCurrentContext
-        presenter.present(viewController, animated: true)
+        presenter.present(viewController, animated: false)
     }
     
     deinit {

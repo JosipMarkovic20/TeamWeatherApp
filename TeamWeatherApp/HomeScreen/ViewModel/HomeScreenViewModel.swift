@@ -8,14 +8,19 @@
 
 import Foundation
 import RxSwift
+import CoreLocation
 import RxCocoa
 import Shared
 
-class HomeScreenViewModel: NSObject, ViewModelType{
+class HomeScreenViewModel: NSObject, ViewModelType, CLLocationManagerDelegate   {
     
     init(dependencies: HomeScreenViewModel.Dependencies){
         self.dependencies = dependencies
+        locationManager.requestWhenInUseAuthorization()
+        super.init()
+        setupLocationManager()
     }
+  
     
     //MARK: Transform
     func transform(input: HomeScreenViewModel.Input) -> HomeScreenViewModel.Output {
@@ -61,6 +66,7 @@ class HomeScreenViewModel: NSObject, ViewModelType{
     var output: Output!
     var mainWeatherData: MainWeatherClass?
     var locationData: LocationsClass!
+    let locationManager = CLLocationManager()
     
     var units: UnitsEnum = .metric
     
@@ -70,7 +76,6 @@ class HomeScreenViewModel: NSObject, ViewModelType{
         return subject
             .flatMap({[unowned self] bool -> Observable<MainWeatherClass> in
                 self.output.loaderSubject.onNext(true)
-                
                 let location = self.locationData.lat + "," + self.locationData.lng
                 return self.dependencies.alamofireRepository.alamofireRequest(location)
             })
@@ -99,14 +104,14 @@ class HomeScreenViewModel: NSObject, ViewModelType{
             .map({ bool in
                 if bool.geonameId != 0 {
                     self.locationData = LocationsClass(lng: bool.lng, lat: bool.lat, name: bool.name, geoName: bool.geonameId)
+                    self.input.getDataSubject.onNext(true)
                 }
                 else {
-                    self.locationData = LocationsClass(lng: "17.39763", lat: "45.82176", name: "Virovitica", geoName: 0)
-                    self.input.writeToRealmSubject.onNext(.lastLocation(true))
+                    self.locationManager.startUpdatingLocation()
                 }
             })
             .subscribe(onNext: {bool in
-                self.input.getDataSubject.onNext(true)
+                
             },  onError: {[unowned self] (error) in
                     self.output.popUpSubject.onNext(true)
                     print(error)
@@ -118,7 +123,7 @@ class HomeScreenViewModel: NSObject, ViewModelType{
         return subject
         .flatMap({ [unowned self]enumType -> Observable<(String, String)> in
             switch enumType {
-            case let .location(_):
+            case .location(_):
                 return Observable.zip(self.dependencies.realmManager.saveLocation(location: self.locationData), Observable.just(""))
             case let .settings(bool):
                 if bool == true {
@@ -227,5 +232,21 @@ class HomeScreenViewModel: NSObject, ViewModelType{
         default:
             return ("\(Int((data.currently.temperature)))°", "\(lowAndHighTemp.temperatureLow)°C", "\(lowAndHighTemp.temperatureHigh)°C", "\(data.currently.windSpeed) km/h", "\(Int(data.currently.humidity * 100))%", "\(Int(data.currently.pressure)) hpa")
         }
+    }
+    
+    //MARK: SetupLocationManager
+      func setupLocationManager(){
+          if CLLocationManager.locationServicesEnabled() {
+              locationManager.delegate = self
+              locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+          }
+      }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.locationData = LocationsClass(lng: String(locValue.longitude), lat: String(locValue.latitude), name: "Ne moze bas tolko..", geoName: 1)
+        locationManager.stopUpdatingLocation()
+        self.input.writeToRealmSubject.onNext(.lastLocation(true))
+        self.input.getDataSubject.onNext(true)
     }
 }
