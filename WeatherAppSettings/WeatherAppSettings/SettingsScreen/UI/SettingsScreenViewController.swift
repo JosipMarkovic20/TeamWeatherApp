@@ -224,8 +224,23 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
             let indexPath = IndexPath(row: row, section: 0)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }).disposed(by: disposeBag)
+        
+        viewModel.output.popUpSubject
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .subscribe(onNext: {[unowned self] (bool) in
+                self.showPopUp()
+            }).disposed(by: disposeBag)
     }
     
+    //MARK: PopUp
+    func showPopUp(){
+        let alert = UIAlertController(title: "Error", message: "Something went wrong.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
+    }
 }
 
 
