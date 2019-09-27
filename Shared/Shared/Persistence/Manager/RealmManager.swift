@@ -11,12 +11,14 @@ import RealmSwift
 import RxSwift
 
 
-class RealmManager {
+public class RealmManager {
     
     let realm = try? Realm()
     
+    public init(){}
+    
     //MARK: Delete location
-    func deleteLocation(geonameId: Int) -> Observable<String>{
+    public func deleteLocation(geonameId: Int) -> Observable<String>{
         guard let realmLocation = self.realm?.object(ofType: RealmLocation.self, forPrimaryKey: geonameId) else { return Observable.just("Object not found!")}
         
         do{
@@ -30,7 +32,7 @@ class RealmManager {
     }
     
     //MARK: Save location
-    func saveLocation(location: Locations) -> Observable<String>{
+    public func saveLocation(location: Locations) -> Observable<String>{
         let realmLocation = RealmLocation()
         realmLocation.createRealmLocation(location: location)
         do{
@@ -44,7 +46,7 @@ class RealmManager {
     }
     
     //MARK: Save last location
-    func saveLastLocation(location: Locations) -> Observable<String>{
+    public func saveLastLocation(location: Locations) -> Observable<String>{
         let realmLocation = LastRealmLocation()
         realmLocation.createLastRealmLocation(location: location)
         do{
@@ -58,7 +60,7 @@ class RealmManager {
     }
     
     //MARK: Delete last location
-    func deleteLastLocation() -> Observable<String>{
+    public func deleteLastLocation() -> Observable<String>{
         let backThreadRealm = try? Realm()
         guard let allLastLocations = backThreadRealm?.objects(LastRealmLocation.self) else { return Observable.just("Object not found!") }
         do{
@@ -72,20 +74,34 @@ class RealmManager {
     }
     
     //MARK: Get last location
-    func getLastLocation() -> Results<LastRealmLocation>{
+    public func getLastLocation() -> Locations{
         let backThreadRealm = try! Realm()
-        return backThreadRealm.objects(LastRealmLocation.self)
+        let lastRealmLocation = backThreadRealm.objects(LastRealmLocation.self)
+        var lastLocation = Locations(lng: "", lat: "", name: "", geonameId: 0)
+        for location in lastRealmLocation{
+            lastLocation.lng = location.lng
+            lastLocation.lat = location.lat
+            lastLocation.name = location.name
+            lastLocation.geonameId = location.geonameId
+        }
+        return lastLocation
     }
     
     //MARK: Get all locations
-    func getLocations() -> Results<RealmLocation>{
+    public func getLocations() -> [Locations]{
         let backThreadRealm = try! Realm()
-        return backThreadRealm.objects(RealmLocation.self)
+        let realmLocations = backThreadRealm.objects(RealmLocation.self)
+        var locations: [Locations] = []
+        for realmLocation in realmLocations{
+            let location = Locations(lng: realmLocation.lng, lat: realmLocation.lat, name: realmLocation.name, geonameId: realmLocation.geonameId)
+            locations.append(location)
+        }
+        return locations
     }
     
     
     //MARK: Delete settings
-    func deleteSettings() -> Observable<String>{
+    public func deleteSettings() -> Observable<String>{
         let backThreadRealm = try? Realm()
         guard let allSettingsObjects = backThreadRealm?.objects(RealmSettings.self) else { return Observable.just("Object not found!") }
         do{
@@ -100,7 +116,7 @@ class RealmManager {
     
     
     //MARK: Save settings
-    func saveSettings(settings: SettingsData) -> Observable<String>{
+    public func saveSettings(settings: SettingsData) -> Observable<String>{
         let backThreadRealm = try? Realm()
         let settingsToSave = RealmSettings()
         settingsToSave.createRealmSettings(settings: settings)
@@ -116,9 +132,17 @@ class RealmManager {
     
     
     //MARK: Get settings
-    func getSettings() -> Results<RealmSettings>{
+    public func getSettings() -> SettingsData{
         let backThreadRealm = try! Realm()
-        return backThreadRealm.objects(RealmSettings.self)
+        let realmSettings = backThreadRealm.objects(RealmSettings.self)
+        var settingsData = SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric)
+        for settings in realmSettings{
+            settingsData.displayHumidity = settings.humidityIsHidden
+            settingsData.displayPressure = settings.pressureIsHidden
+            settingsData.displayWind = settings.windIsHidden
+            settingsData.unitsType = settings.unitsType == "Metric" ? UnitsEnum.metric : UnitsEnum.imperial
+        }
+        return settingsData
     }
     
 }
