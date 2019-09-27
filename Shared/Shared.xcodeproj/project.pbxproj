@@ -22,6 +22,9 @@
 		5FA1DEA7233CAB11002A1C61 /* LastRealmLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA6233CAB11002A1C61 /* LastRealmLocation.swift */; };
 		5FA1DEA9233CAB26002A1C61 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA1DEA8233CAB26002A1C61 /* RealmManager.swift */; };
 		5FAE4305233DFB9200306563 /* CoordinatorDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAE4304233DFB9200306563 /* CoordinatorDelegates.swift */; };
+		5FAE4307233E00AB00306563 /* OpenLocationFromSettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAE4306233E00AB00306563 /* OpenLocationFromSettingsDelegate.swift */; };
+		5FAE4309233E170100306563 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAE4308233E170100306563 /* SettingsTableViewCell.swift */; };
+		5FAE430B233E175000306563 /* DeleteLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAE430A233E175000306563 /* DeleteLocationDelegate.swift */; };
 		F0028B97233DF07300638C54 /* SearchScreenClosingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0028B96233DF07300638C54 /* SearchScreenClosingDelegate.swift */; };
 		F8AA45D7D5CCA112E431BC45 /* Pods_Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4EDF9EDD0241029AA24BB1F /* Pods_Shared.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		5FA1DEA8233CAB26002A1C61 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		5FA1DEAE233CBD99002A1C61 /* WeatherAppSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherAppSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FAE4304233DFB9200306563 /* CoordinatorDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorDelegates.swift; sourceTree = "<group>"; };
+		5FAE4306233E00AB00306563 /* OpenLocationFromSettingsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLocationFromSettingsDelegate.swift; sourceTree = "<group>"; };
+		5FAE4308233E170100306563 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		5FAE430A233E175000306563 /* DeleteLocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLocationDelegate.swift; sourceTree = "<group>"; };
 		6EF2E05FEE8352B5B8C91135 /* Pods-Shared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared.debug.xcconfig"; path = "Target Support Files/Pods-Shared/Pods-Shared.debug.xcconfig"; sourceTree = "<group>"; };
 		80C70F67D6CE417D68617C11 /* Pods-Shared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared.release.xcconfig"; path = "Target Support Files/Pods-Shared/Pods-Shared.release.xcconfig"; sourceTree = "<group>"; };
 		D4EDF9EDD0241029AA24BB1F /* Pods_Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				5F643001233B7D7A000E1C83 /* TableViewCell.swift */,
+				5FAE4308233E170100306563 /* SettingsTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -220,6 +227,8 @@
 			children = (
 				F0028B96233DF07300638C54 /* SearchScreenClosingDelegate.swift */,
 				5FAE4304233DFB9200306563 /* CoordinatorDelegates.swift */,
+				5FAE4306233E00AB00306563 /* OpenLocationFromSettingsDelegate.swift */,
+				5FAE430A233E175000306563 /* DeleteLocationDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -360,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FAE4307233E00AB00306563 /* OpenLocationFromSettingsDelegate.swift in Sources */,
 				5FAE4305233DFB9200306563 /* CoordinatorDelegates.swift in Sources */,
 				5FA1DEA5233CAAFD002A1C61 /* RealmLocation.swift in Sources */,
 				5FA1DEA3233CAAEE002A1C61 /* RealmSettings.swift in Sources */,
@@ -367,11 +377,13 @@
 				5FA1DEA9233CAB26002A1C61 /* RealmManager.swift in Sources */,
 				5F5502EE233CD5CB009CD610 /* SearchDataModel.swift in Sources */,
 				5FA1DEA7233CAB11002A1C61 /* LastRealmLocation.swift in Sources */,
+				5FAE4309233E170100306563 /* SettingsTableViewCell.swift in Sources */,
 				5F643009233B8170000E1C83 /* Coordinator.swift in Sources */,
 				5FA1DE98233CA23D002A1C61 /* UnitsEnum.swift in Sources */,
 				F0028B97233DF07300638C54 /* SearchScreenClosingDelegate.swift in Sources */,
 				5F642FE7233B76F8000E1C83 /* Loader.swift in Sources */,
 				5F643002233B7D7A000E1C83 /* TableViewCell.swift in Sources */,
+				5FAE430B233E175000306563 /* DeleteLocationDelegate.swift in Sources */,
 				5F642FE5233B76ED000E1C83 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

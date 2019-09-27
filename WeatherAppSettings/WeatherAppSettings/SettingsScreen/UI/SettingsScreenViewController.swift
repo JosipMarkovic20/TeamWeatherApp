@@ -35,10 +35,12 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     public var settingsDelegate: SetupSettingsDelegate?
     let disposeBag = DisposeBag()
     public weak var coordinatorDelegate: CoordinatorDelegate?
+    public weak var openLocationDelegate: OpenLocationFromSettingsDelegate?
     
+    //MARK: Init
     init(viewModel: SettingsScreenViewModel){
         self.viewModel = viewModel
-        let input = SettingsScreenViewModel.Input(getLocationsSubject: PublishSubject(), getSettingsSubject: PublishSubject(), deleteLocationSubject: PublishSubject(), saveSettingsSubject: PublishSubject())
+        let input = SettingsScreenViewModel.Input(getLocationsSubject: PublishSubject(), getSettingsSubject: PublishSubject(), deleteLocationSubject: PublishSubject(), saveSettingsSubject: PublishSubject(), saveLastLocationSubject: PublishSubject())
         let output = viewModel.transform(input: input)
         for disposable in output.disposables{
             disposable.disposed(by: disposeBag)
@@ -54,11 +56,13 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
         print("Deinit: \(self)")
     }
     
+    //MARK: Lifecycle methods
     override public func viewDidLoad() {
         setupUI()
         addTargets()
         setupSubscriptions()
         viewModel.input.getSettingsSubject.onNext(true)
+        viewModel.input.getLocationsSubject.onNext(true)
     }
     
     override public func viewDidDisappear(_ animated: Bool) {
@@ -74,7 +78,7 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(SettingsScreenTableCell.self, forCellReuseIdentifier: "Cell")
         tableView.register(SettingsScreenHeader.self, forHeaderFooterViewReuseIdentifier: "Header")
         
         settingsView.doneButton.addTarget(self, action: #selector(dismissSettings), for: .touchUpInside)
@@ -120,14 +124,18 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
     
     //MARK: TableView
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.output.locations.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? WeatherTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of WeatherTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? SettingsScreenTableCell  else {
+            fatalError("The dequeued cell is not an instance of SettingsScreenTableCell.")
         }
+        cell.geonameId = viewModel.output.locations[indexPath.row].geonameId
+        cell.configureCell(name: viewModel.output.locations[indexPath.row].name)
+        cell.deleteLocationDelegate = self
         cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -136,6 +144,12 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
             return nil
         }
         return headerView
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        openLocationDelegate?.openLocation(location: viewModel.output.locations[indexPath.row])
+        viewModel.input.saveLastLocationSubject.onNext(viewModel.output.locations[indexPath.row])
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Add targets
@@ -204,4 +218,13 @@ public class SettingsScreenViewController: UIViewController, UITableViewDelegate
             }).disposed(by: disposeBag)
     }
     
+}
+
+
+extension SettingsScreenViewController: DeleteLocationDelegate{
+    
+    public func deleteLocation(geonameId: Int) {
+        print("Delete this boi")
+    }
+  
 }

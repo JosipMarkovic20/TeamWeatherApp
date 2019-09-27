@@ -46,6 +46,7 @@ extension HomeScreenCoordinator: ParentCoordinatorDelegate, CoordinatorDelegate,
         settingsCoordinator.viewController.settingsDelegate = self.viewController
         self.store(coordinator: settingsCoordinator)
         settingsCoordinator.viewController.coordinatorDelegate = self
+        settingsCoordinator.viewController.openLocationDelegate = self.viewController
         settingsCoordinator.start()
     }
     
