@@ -27,6 +27,7 @@ class SettingsScreenViewModel: ViewModelType{
         var locations: [LocationsClass]
         var settings: SettingsData
         let locationDeletedSubject: PublishSubject<LocationsClass>
+        let reloadRowSubject: PublishSubject<Int>
         var disposables: [Disposable]
     }
     
@@ -55,7 +56,7 @@ class SettingsScreenViewModel: ViewModelType{
         disposables.append(deleteLocation(for: input.deleteLocationSubject))
         disposables.append(saveLastLocation(for: input.saveLastLocationSubject))
         
-        self.output = Output(settingsLoadedSubject: PublishSubject(), popUpSubject: PublishSubject(), locations: [], settings: SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric), locationDeletedSubject: PublishSubject(), disposables: disposables)
+        self.output = Output(settingsLoadedSubject: PublishSubject(), popUpSubject: PublishSubject(), locations: [], settings: SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric), locationDeletedSubject: PublishSubject(), reloadRowSubject: PublishSubject(), disposables: disposables)
         return output
     }
     
@@ -119,6 +120,12 @@ class SettingsScreenViewModel: ViewModelType{
         
         return subject.flatMap({[unowned self] (location) -> Observable<String> in
             let locations = self.dependencies.realmManager.deleteLocation(geonameId: location)
+            if let indexOfLocation = self.output?.locations.enumerated().first(where: {(data) -> Bool in
+                data.element.geonameId == location
+            }) {
+                self.output.locations.remove(at: indexOfLocation.offset)
+                self.output.reloadRowSubject.onNext(indexOfLocation.offset)
+            }
             return locations
         })
             .subscribeOn(dependencies.subscribeScheduler)
