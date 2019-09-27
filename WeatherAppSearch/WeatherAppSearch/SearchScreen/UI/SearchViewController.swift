@@ -124,6 +124,9 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
                 print("Error displaying loader ", error)
         })
     }
+    deinit {
+        print("Deinit: \(self)")
+    }
     //MARK: UISettings
     func setupUI(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

@@ -28,6 +28,10 @@ public class SearchScreenCoordinator: Coordinator   {
         viewController.modalPresentationStyle = .overCurrentContext
         presenter.present(viewController, animated: true)
     }
+    
+    deinit {
+        print("Deinit: \(self)")
+    }
 
    
 }
