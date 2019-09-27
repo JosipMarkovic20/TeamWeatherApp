@@ -72,7 +72,7 @@ class HomeScreenViewModel: ViewModelType{
                 self.output.loaderSubject.onNext(true)
                 
                 let location = self.locationData.lat + "," + self.locationData.lng
-                return self.dependencies.alamofireRepository.alamofireRequest(self.units.rawValue, location)
+                return self.dependencies.alamofireRepository.alamofireRequest(location)
             })
             .observeOn(MainScheduler.instance)
             .subscribeOn(dependencies.scheduler)
@@ -96,7 +96,6 @@ class HomeScreenViewModel: ViewModelType{
             .map({ bool in
                 if bool.geonameId != 0 {
                     self.locationData = LocationsClass(lng: bool.lng, lat: bool.lat, name: bool.name, geoName: bool.geonameId)
-                    self.input.getDataSubject.onNext(true)
                 }
                 else {
                     self.locationData = LocationsClass(lng: "17.39763", lat: "45.82176", name: "Virovitica", geoName: 0)
@@ -215,9 +214,9 @@ class HomeScreenViewModel: ViewModelType{
             let windSpeed = ((((data.currently.windSpeed) / 1.6 ) * 10).rounded() / 10)
             
             
-            return ("\(Int(currentTemperature))°", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph", "\(data.currently.humidity * 100)%", "\(Int(data.currently.pressure)) hpa")
+            return ("\(Int(currentTemperature))°", "\(lowTemperature)°F", "\(highTemperature)°F", "\(windSpeed) mph", "\(Int(data.currently.humidity * 100))%", "\(data.currently.pressure) hpa")
         default:
-            return ("\(Int((data.currently.temperature)))°", "\(lowAndHighTemp.temperatureLow)°C", "\(lowAndHighTemp.temperatureHigh)°C", "\(data.currently.windSpeed) km/h", "\(data.currently.humidity * 100)%", "\(Int(data.currently.pressure)) hpa")
+            return ("\(Int((data.currently.temperature)))°", "\(lowAndHighTemp.temperatureLow)°C", "\(lowAndHighTemp.temperatureHigh)°C", "\(data.currently.windSpeed) km/h", "\(Int(data.currently.humidity * 100))%", "\(Int(data.currently.pressure)) hpa")
         }
     }
 }
