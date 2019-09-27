@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: WeatherAppSearch/Networking/Repository/LocationRepository.swift at 2019-09-27 06:36:08 +0000
+// MARK: - Mocks generated from file: WeatherAppSearch/Networking/Repository/LocationRepository.swift at 2019-09-27 07:30:12 +0000
 
 //
 //  LocationRepository.swift

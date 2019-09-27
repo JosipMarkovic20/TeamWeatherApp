@@ -123,6 +123,7 @@ public class RealmManager {
         do{
             try backThreadRealm?.write {
                 backThreadRealm?.add(settingsToSave)
+                print(backThreadRealm?.configuration.fileURL ?? "")
             }
         }catch{
             return Observable.just("Error saving settings!")
