@@ -71,6 +71,7 @@ profile
 ####
 # Custom generated files
 *.generated.swift
+GeneratedMocks.swift
 
 ####
 # CocoaPods
