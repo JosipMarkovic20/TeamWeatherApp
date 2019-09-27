@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Shared
+import RxSwift
 
 public class SettingsScreenCoordinator: Coordinator{
     
@@ -20,7 +21,7 @@ public class SettingsScreenCoordinator: Coordinator{
     
     //MARK: Init
     public init(presenter: UINavigationController){
-        self.viewModel = SettingsScreenViewModel(dependencies: SettingsScreenViewModel.Dependencies())
+        self.viewModel = SettingsScreenViewModel(dependencies: SettingsScreenViewModel.Dependencies(realmManager: RealmManager(), subscribeScheduler: ConcurrentDispatchQueueScheduler(qos: .background)))
         self.viewController = SettingsScreenViewController(viewModel: self.viewModel)
         self.presenter = presenter
     }
