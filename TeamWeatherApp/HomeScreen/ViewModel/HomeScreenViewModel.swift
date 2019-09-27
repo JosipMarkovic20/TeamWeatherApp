@@ -54,7 +54,6 @@ class HomeScreenViewModel: ViewModelType{
         var alamofireRepository: AlamofireRepository
         var realmManager: RealmManager
         var scheduler: SchedulerType
-        let realmManager: RealmManager
     }
     
     var dependencies: Dependencies
