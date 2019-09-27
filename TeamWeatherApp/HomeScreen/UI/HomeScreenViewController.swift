@@ -126,6 +126,8 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
         guard let weatherData = viewModel.mainWeatherData else { return }
         let screenData = viewModel.convertUnits(unitType: viewModel.units, data: weatherData)
         
+        homeScreenView.locationMinAndMaxView.locationLabel.text = viewModel.locationName
+        
         homeScreenView.temperatureView.temperatureLabel.text = screenData.currentTemperature
         homeScreenView.temperatureView.summaryLabel.text = weatherData.currently.summary
         
@@ -180,4 +182,13 @@ extension HomeScreenViewController: SetupSettingsDelegate{
         setupScreenData()
     }
     
+}
+
+extension HomeScreenViewController: SearchScreenClosingDelegate {
+    func screenWillClose(location: Locations) {
+        let geoLocation = location.lat + "," + location.lng
+        viewModel.location = geoLocation
+        viewModel.locationName = location.name
+        viewModel.input.getDataSubject.onNext(true)
+    }
 }
