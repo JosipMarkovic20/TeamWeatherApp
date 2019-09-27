@@ -58,7 +58,8 @@ class HomeScreenViewModel: ViewModelType{
     var mainWeatherData: MainWeatherClass?
     
     var units: UnitsEnum = .metric
-    let location: String = "45.82176,17.39763"
+    var location: String = "45.82176,17.39763"
+    var locationName: String = "Virovitica"
     
     
     //MARK: Get Data

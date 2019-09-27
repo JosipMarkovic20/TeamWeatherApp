@@ -13,19 +13,20 @@ import RxSwift
 import RxCocoa
 
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+public class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     //MARK: TableView DataSource
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.dataForView?.geonames.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = viewModel.dataForView!.geonames[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "da") as? WeatherTableViewCell {
             cell.backgroundColor = .clear
             cell.setupCell(letter: data.name.first?.uppercased() ?? "s", location: data.name)
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()
@@ -37,6 +38,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var searchBar: UISearchBar!
     let disposeBag = DisposeBag()
     var bottomConstraint: NSLayoutConstraint?
+    public var closingScreenDelegate: SearchScreenClosingDelegate!
     var loader = LoaderViewController()
     
     var tableView: UITableView = {
@@ -64,7 +66,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fatalError("init(coder:) has not been implemented")
     }
     //MARK: viewDidLoad
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
@@ -73,12 +75,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     //MARK: ViewDidAppear
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         setupSearchBar()
         super.viewDidAppear(animated)
         searchBar.becomeFirstResponder()
     }
-    
+    //MARK: prepare For View Model
     func prepareForViewModel(){
         let input = SearchViewModel.Input(getDataSubject: ReplaySubject<String>.create(bufferSize: 1))
         
@@ -107,6 +109,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }, onError: { (error) in
                 print("Error displaying loader ", error)
         }).disposed(by: disposeBag)
+    }
+    
+    //MARK: Did select row at
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        closingScreenDelegate.screenWillClose(location: (viewModel.dataForView?.geonames[indexPath.row])!)
+        self.dismiss(animated: false) {
+        }
     }
     //MARK: UISettings
     func setupUI(){
