@@ -11,6 +11,7 @@ import UIKit
 import Shared
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 
 public class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
@@ -92,7 +93,7 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
         
         refreshTableView(subject: output.dataReadySubject).disposed(by: disposeBag)
         
-        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         prepareLoader(subject: output.loaderSubject).disposed(by: disposeBag)
     }
     

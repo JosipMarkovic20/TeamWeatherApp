@@ -49,6 +49,7 @@ class HomeScreenViewModel: ViewModelType{
     
     struct Dependencies {
         var alamofireRepository: AlamofireRepository
+        var realmManager: RealmManager
         var scheduler: SchedulerType
     }
     
@@ -56,6 +57,7 @@ class HomeScreenViewModel: ViewModelType{
     var input: Input!
     var output: Output!
     var mainWeatherData: MainWeatherClass?
+    var locationData: Locations!
     
     var units: UnitsEnum = .metric
     var location: String = "45.82176,17.39763"
@@ -110,11 +112,10 @@ class HomeScreenViewModel: ViewModelType{
     //MARK: Write To Realm
     func writeToRealm(subject: PublishSubject<WriteToRealmEnum>) -> Disposable {
         return subject
-        .flatMap({ enumType -> Observable<Bool> in
+        .flatMap({ enumType -> Observable<String> in
             switch enumType {
             case let .location(bool):
-                    #warning("create novog objekta jer je prvo zapisivanje")
-                return Observable.just(bool)
+                return self.dependencies.realmManager.saveLocation(location: self.locationData)
             case let .settings(bool):
                 if bool == true {
                     #warning("create novog objekta jer je prvo zapisivanje")
@@ -122,7 +123,7 @@ class HomeScreenViewModel: ViewModelType{
                 else {
                     #warning("zapisivanje uredenog objekta")
                 }
-                return Observable.just(bool)
+                return Observable.just("bool")
             }
         })
         .observeOn(MainScheduler.instance)
