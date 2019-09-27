@@ -52,6 +52,7 @@ extension HomeScreenCoordinator: OpenSettingsDelegate{
 extension HomeScreenCoordinator: OpenSearchDelegate{
     func openSearch(searchBar: UISearchBar) {
         let searchCoordinator = SearchScreenCoordinator(presenter: presenter, searchBar: searchBar)
+        searchCoordinator.viewController.closingScreenDelegate = self.viewController
         searchCoordinator.start()
     }
     
