@@ -39,7 +39,7 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
     var searchBar: UISearchBar!
     let disposeBag = DisposeBag()
     var bottomConstraint: NSLayoutConstraint?
-    public var closingScreenDelegate: SearchScreenClosingDelegate!
+    public weak var closingScreenDelegate: SearchScreenClosingDelegate?
     public weak var coordinatorDelegate: CoordinatorDelegate?
     var loader = LoaderViewController()
     
@@ -98,12 +98,29 @@ public class SearchViewController: UIViewController, UITableViewDelegate, UITabl
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         prepareLoader(subject: output.loaderSubject).disposed(by: disposeBag)
+        
+        viewModel.output.errorPopup
+        .observeOn(MainScheduler.instance)
+        .subscribeOn(viewModel.dependencies.scheduler)
+        .subscribe(onNext: {[unowned self] (bool) in
+            self.showPopUp()
+        }).disposed(by: disposeBag)
+    }
+     
+    
+    //MARK: PopUp
+    func showPopUp(){
+        let alert = UIAlertController(title: "Error", message: "Something went wrong.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
     }
     
     //MARK: Did select row at
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = viewModel.dataForView?.geonames[indexPath.row]
-        closingScreenDelegate.screenWillClose(location: LocationsClass(lng: data!.lng, lat: data!.lat, name: data!.name, geoName: data!.geonameId))
+        closingScreenDelegate!.screenWillClose(location: LocationsClass(lng: data!.lng, lat: data!.lat, name: data!.name, geoName: data!.geonameId))
         self.dismiss(animated: false) {
         }
     }

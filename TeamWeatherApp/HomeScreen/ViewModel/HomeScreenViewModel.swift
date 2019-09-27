@@ -30,6 +30,7 @@ class HomeScreenViewModel: NSObject, ViewModelType, CLLocationManagerDelegate   
         disposables.append(getData(subject: input.getDataSubject))
         disposables.append(loadSettings(for: input.getSettingsSubject))
         disposables.append(getLocation(subject: input.getLocationsSubject))
+        disposables.append(writeToRealm(subject: input.writeToRealmSubject))
         
         self.output = Output(dataIsReadySubject: PublishSubject(), locationIsMissingSubject: PublishSubject(),loaderSubject:  PublishSubject(), settings: SettingsData(displayHumidity: true, displayWind: true, displayPressure: true, unitsType: .metric), settingsLoadedSubject: PublishSubject(), popUpSubject: PublishSubject(),disposables: disposables)
         
@@ -64,7 +65,7 @@ class HomeScreenViewModel: NSObject, ViewModelType, CLLocationManagerDelegate   
     var dependencies: Dependencies
     var input: Input!
     var output: Output!
-    var mainWeatherData: MainWeatherClass?
+    var mainWeatherData: MainWeatherDataClass?
     var locationData: LocationsClass!
     let locationManager = CLLocationManager()
     
@@ -74,7 +75,7 @@ class HomeScreenViewModel: NSObject, ViewModelType, CLLocationManagerDelegate   
     //MARK: Get Data
     func getData(subject: ReplaySubject<Bool>) -> Disposable  {
         return subject
-            .flatMap({[unowned self] bool -> Observable<MainWeatherClass> in
+            .flatMap({[unowned self] bool -> Observable<MainWeatherModel> in
                 self.output.loaderSubject.onNext(true)
                 let location = self.locationData.lat + "," + self.locationData.lng
                 return self.dependencies.alamofireRepository.alamofireRequest(location)
@@ -82,7 +83,11 @@ class HomeScreenViewModel: NSObject, ViewModelType, CLLocationManagerDelegate   
             .observeOn(MainScheduler.instance)
             .subscribeOn(dependencies.scheduler)
             .subscribe(onNext: {[unowned self]  bool in
-                self.mainWeatherData = bool
+                var dailyLocalArray = [DailyDataStruct]()
+                for daily in bool.daily.data {
+                    dailyLocalArray.append(DailyDataStruct(temperatureHigh: daily.temperatureHigh, temperatureLow: daily.temperatureLow, time: daily.time))
+                }
+                self.mainWeatherData = MainWeatherDataClass(currently: CurrentlyStruct(time: bool.currently.time, summary: bool.currently.summary, icon: bool.currently.icon, temperature: bool.currently.temperature, humidity: bool.currently.humidity, pressure: bool.currently.pressure, windSpeed: bool.currently.windSpeed), daily: DailyStruct(data: dailyLocalArray))
                 self.setupCurrentWeatherState(weatherDataIcon: bool.currently.icon)
                 self.output.loaderSubject.onNext(false)
                 self.input.getSettingsSubject.onNext(true)
@@ -150,7 +155,7 @@ class HomeScreenViewModel: NSObject, ViewModelType, CLLocationManagerDelegate   
         })
     }
     //MARK: Compare Day In Data
-    func compareDayInData(weatherData: MainWeatherClass) -> (temperatureLow: Double, temperatureHigh: Double) {
+    func compareDayInData(weatherData: MainWeatherDataClass) -> (temperatureLow: Double, temperatureHigh: Double) {
         var temperature = (0.9, 1.1)
         let calendar = Calendar.current
         let currentDay = calendar.component(.day, from: NSDate(timeIntervalSince1970: Double(weatherData.currently.time)) as Date)
@@ -218,7 +223,7 @@ class HomeScreenViewModel: NSObject, ViewModelType, CLLocationManagerDelegate   
     }
     
     //MARK: Unit Coversion function
-    func convertUnits(unitType: UnitsEnum, data: MainWeatherClass) -> (currentTemperature: String, lowTemperature: String, highTemperature: String, windSpeed: String, humidity: String, pressure: String){
+    func convertUnits(unitType: UnitsEnum, data: MainWeatherDataClass) -> (currentTemperature: String, lowTemperature: String, highTemperature: String, windSpeed: String, humidity: String, pressure: String){
         let lowAndHighTemp = compareDayInData(weatherData: data)
         switch unitType {
         case .imperial:

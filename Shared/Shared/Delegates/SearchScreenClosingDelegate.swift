@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol SearchScreenClosingDelegate {
+public protocol SearchScreenClosingDelegate: class {
     func screenWillClose(location: LocationsClass)
 }

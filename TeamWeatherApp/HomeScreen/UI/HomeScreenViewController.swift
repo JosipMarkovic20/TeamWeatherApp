@@ -27,9 +27,9 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: Properties
     let viewModel: HomeScreenViewModel
     let disposeBag = DisposeBag()
-    var openSettingsDelegate: OpenSettingsDelegate?
+    weak var openSettingsDelegate: OpenSettingsDelegate?
     let loader = LoaderViewController()
-    var openSearchDelegate: OpenSearchDelegate?
+    weak var openSearchDelegate: OpenSearchDelegate?
     
     
     //MARK: Init
@@ -148,7 +148,14 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
     //MARK: Subscriptions
     
     func setupSubscriptions(){
-        viewModel.writeToRealm(subject: viewModel.input.writeToRealmSubject).disposed(by: disposeBag)
+
+        let input = HomeScreenViewModel.Input(getSettingsSubject: PublishSubject(), getDataSubject: ReplaySubject.create(bufferSize: 1), getLocationsSubject: ReplaySubject.create(bufferSize: 1), writeToRealmSubject: PublishSubject())
+        
+            let output = viewModel.transform(input: input)
+        
+            for disposable in output.disposables{
+                   disposable.disposed(by: disposeBag)
+               }
         
         viewModel.output.dataIsReadySubject
             .observeOn(MainScheduler.instance)
@@ -158,7 +165,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate{
                 self.setupScreenData()
             }).disposed(by: disposeBag)
         
-        viewModel.output.loaderSubject
+       viewModel.output.loaderSubject
             .observeOn(MainScheduler.instance)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)).subscribe(onNext: { [unowned self] (bool) in
                 if bool{
@@ -221,7 +228,6 @@ extension HomeScreenViewController: SetupSettingsDelegate, OpenLocationFromSetti
 extension HomeScreenViewController: SearchScreenClosingDelegate {
     
     func screenWillClose(location: LocationsClass) {
-        //let geoLocation = location.lat + "," + location.lng
         viewModel.locationData = LocationsClass(lng: location.lng, lat: location.lat, name: location.name, geoName: location.geonameId)
         viewModel.input.getDataSubject.onNext(true)
         viewModel.input.writeToRealmSubject.onNext(.location(true))
