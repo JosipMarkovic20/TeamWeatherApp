@@ -60,11 +60,9 @@ class HomeScreenViewModel: ViewModelType{
     var input: Input!
     var output: Output!
     var mainWeatherData: MainWeatherClass?
-    var locationData: Locations!
+    var locationData: LocationsClass!
     
     var units: UnitsEnum = .metric
-    var location: String = "45.82176,17.39763"
-    var locationName: String = "Virovitica"
     
     
     //MARK: Get Data
@@ -72,7 +70,9 @@ class HomeScreenViewModel: ViewModelType{
         return subject
             .flatMap({[unowned self] bool -> Observable<MainWeatherClass> in
                 self.output.loaderSubject.onNext(true)
-                return self.dependencies.alamofireRepository.alamofireRequest(self.units.rawValue, self.location)
+                
+                let location = self.locationData.lat + "," + self.locationData.lng
+                return self.dependencies.alamofireRepository.alamofireRequest(self.units.rawValue, location)
             })
             .observeOn(MainScheduler.instance)
             .subscribeOn(dependencies.scheduler)
@@ -87,25 +87,33 @@ class HomeScreenViewModel: ViewModelType{
     //MARK: Get Location
     func getLocation(subject: ReplaySubject<Bool>) -> Disposable {
         return subject
-            .flatMap({ bool -> Observable<Bool> in
-                return Observable.just(bool)
+            .flatMap({ [unowned self] bool -> Observable<Locations> in
+                
+                return self.dependencies.realmManager.getLastLocation()
             })
             .observeOn(MainScheduler.instance)
             .subscribeOn(dependencies.scheduler)
             .map({ bool in
-                #warning("Ako postoje locationi, nastavi, inace triggeraj subject za kreaciju istih")
-                print("mapLocations")
+                if bool.geonameId != 0 {
+                    self.locationData = LocationsClass(lng: bool.lng, lat: bool.lat, name: bool.name, geoName: bool.geonameId)
+                    self.input.getDataSubject.onNext(true)
+                }
+                else {
+                    self.locationData = LocationsClass(lng: "17.39763", lat: "45.82176", name: "Virovitica", geoName: 0)
+                    self.input.writeToRealmSubject.onNext(.lastLocation(true))
+                }
             })
             .subscribe(onNext: {bool in
+                self.input.getDataSubject.onNext(true)
             })
     }
     //MARK: Write To Realm
     func writeToRealm(subject: PublishSubject<WriteToRealmEnum>) -> Disposable {
         return subject
-        .flatMap({ enumType -> Observable<String> in
+        .flatMap({ [unowned self]enumType -> Observable<(String, String)> in
             switch enumType {
             case let .location(bool):
-                return self.dependencies.realmManager.saveLocation(location: self.locationData)
+                return Observable.zip(self.dependencies.realmManager.saveLocation(location: self.locationData), Observable.just(""))
             case let .settings(bool):
                 if bool == true {
                     #warning("create novog objekta jer je prvo zapisivanje")
@@ -113,7 +121,11 @@ class HomeScreenViewModel: ViewModelType{
                 else {
                     #warning("zapisivanje uredenog objekta")
                 }
-                return Observable.just("bool")
+                return Observable.zip(Observable.just("bool"), Observable.just(""))
+            case .lastLocation(_):
+                return Observable.zip(self.dependencies.realmManager.deleteLastLocation(), self.dependencies.realmManager.saveLastLocation(location: self.locationData))
+                
+                
             }
         })
         .observeOn(MainScheduler.instance)
@@ -151,7 +163,7 @@ class HomeScreenViewModel: ViewModelType{
             .subscribe(onNext: {[unowned self] (settings) in
                 self.output.settings = settings
                 self.output.settingsLoadedSubject.onNext(true)
-                }, onError: {[unowned self] (error) in
+                },  onError: {[unowned self] (error) in
                     self.output.popUpSubject.onNext(true)
                     print(error)
             })
