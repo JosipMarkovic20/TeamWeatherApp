@@ -19,7 +19,7 @@ import Shared
 class HomeScreenViewModelTest: QuickSpec {
     override func spec() {
         describe("setup Data"){
-            var mainWeatherData: MainWeatherModel!
+            var mainWeatherData: MainWeatherDataClass!
             let mockedAlamofireRepo = MockAlamofireRepository()
             var testScheduler: TestScheduler!
             var homeScreenViewModel: HomeScreenViewModel!
@@ -31,8 +31,11 @@ class HomeScreenViewModelTest: QuickSpec {
                     let dataFromLocation = try! Data(contentsOf: path)
                     let weather = try! JSONDecoder().decode(MainWeatherModel.self, from: dataFromLocation)
                     when(mock.alamofireRequest(any())).thenReturn(Observable.just(weather))
-                    
-                    mainWeatherData = weather
+                    var dailyLocalArray = [DailyDataStruct]()
+                    for daily in weather.daily.data {
+                        dailyLocalArray.append(DailyDataStruct(temperatureHigh: daily.temperatureHigh, temperatureLow: daily.temperatureLow, time: daily.time))
+                    }
+                    mainWeatherData = MainWeatherDataClass(currently: CurrentlyStruct(time: weather.currently.time, summary: weather.currently.summary, icon: weather.currently.icon, temperature: weather.currently.temperature, humidity: weather.currently.humidity, pressure: weather.currently.pressure, windSpeed: weather.currently.windSpeed), daily: DailyStruct(data: dailyLocalArray))
                 }
             }
             context("Initialize HomeScreenViewModel"){
@@ -61,16 +64,16 @@ class HomeScreenViewModelTest: QuickSpec {
                 it("Check if dataReady subject is triggered"){
                     testScheduler.start()
                     homeScreenViewModel.input.getDataSubject.onNext(true)
-                expect(dataReadySubject.events.count).toEventually(equal(1))
+                    expect(dataReadySubject.events.count).toEventually(equal(1))
                 }
                 //MARK: Data test
                 it("Check if viewModel is getting correct Data"){
                     testScheduler.start()
                     homeScreenViewModel.locationData = LocationsClass(lng: "17.39763", lat: "45.82176", name: "Virovitica", geoName: 0)
                     homeScreenViewModel.input.getDataSubject.onNext(true)
-
+                    
                     expect(homeScreenViewModel.mainWeatherData?.daily.data.count).toEventually(equal(mainWeatherData.daily.data.count))
-
+                    
                 }
                 //MARK: High and low temps Test
                 it("Check if function returns a good High and Low temperatures"){
