@@ -50,11 +50,13 @@ class SearchViewModelTest: QuickSpec {
                 dataReadySubject = testScheduler.createObserver(Bool.self)
                 searchScreenViewModel.output.dataReadySubject.subscribe(dataReadySubject).disposed(by: disposeBag)
             }
+                //MARK: Data ready subject test
                 it("check if dataReady subject is triggered"){
                     testScheduler.start()
                     searchScreenViewModel.input.getDataSubject.onNext("true")
                     expect(dataReadySubject.events[0].value.element).toEventually(equal(true))
                 }
+                //MARK: Data test
                 it("check if correct data is loaded into the viewModel"){
                     testScheduler.start()
                     searchScreenViewModel.input.getDataSubject.onNext("s")

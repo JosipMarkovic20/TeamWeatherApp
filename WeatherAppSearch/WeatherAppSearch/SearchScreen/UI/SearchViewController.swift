@@ -34,9 +34,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: Variables
     let viewModel: SearchViewModel
     var customView: SearchView!
-    let searchBar: UISearchBar!
+    var searchBar: UISearchBar!
     let disposeBag = DisposeBag()
     var bottomConstraint: NSLayoutConstraint?
+    var loader = LoaderViewController()
     
     var tableView: UITableView = {
         let view = UITableView()
@@ -56,7 +57,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: init
     init(viewModel: SearchViewModel, searchBar: UISearchBar) {
         self.viewModel = viewModel
-        self.searchBar = searchBar
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -66,9 +66,17 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.delegate = self
+        
         setupUI()
         prepareForViewModel()
+        bindTextFieldWithRx()
+        
+    }
+    //MARK: ViewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        setupSearchBar()
+        super.viewDidAppear(animated)
+        searchBar.becomeFirstResponder()
     }
     
     func prepareForViewModel(){
@@ -82,15 +90,33 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         refreshTableView(subject: output.dataReadySubject).disposed(by: disposeBag)
         
-        viewModel.input.getDataSubject.onNext("virovitica")
+        
+        viewModel.output.loaderSubject
+        .observeOn(MainScheduler.instance)
+        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background)).subscribe(onNext: { [unowned self] (bool) in
+            if bool{
+                self.addChild(self.loader)
+                self.loader.view.frame = self.view.frame
+                self.view.addSubview(self.loader.view)
+                self.loader.didMove(toParent: self)
+            }else{
+                self.loader.willMove(toParent: nil)
+                self.loader.view.removeFromSuperview()
+                self.loader.removeFromParent()
+            }
+            }, onError: { (error) in
+                print("Error displaying loader ", error)
+        }).disposed(by: disposeBag)
     }
     //MARK: UISettings
     func setupUI(){
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         tableView.delegate = self
         tableView.dataSource = self
         customView = SearchView(frame: UIScreen.main.bounds, tableView: tableView)
         
+        searchBar = customView.searchBar
+        searchBar.delegate = self
         cancelButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         view.addSubview(customView)
         view.addSubview(tableView)
@@ -103,7 +129,25 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setupConstraints()
     }
     
-    
+    //MARK: SearchBar setup
+    func setupSearchBar(){
+        let searchTextField = customView.searchBar.value(forKey: "searchField") as! UITextField
+        searchTextField.textAlignment = NSTextAlignment.left
+        let image:UIImage = UIImage(named: "search_icon")!
+        let imageView:UIImageView = UIImageView.init(image: image)
+        imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = UIColor(red: 109/255, green: 161/255, blue: 51/255, alpha: 1)
+        searchTextField.leftView = nil
+        searchTextField.placeholder = "Search"
+        searchTextField.rightView = imageView
+        searchTextField.rightViewMode = UITextField.ViewMode.always
+        
+        if let backgroundview = searchTextField.subviews.first {
+            backgroundview.layer.cornerRadius = 18;
+            backgroundview.clipsToBounds = true;
+        }
+    }
+    //MARK: Constraints setup
     func setupConstraints(){
         NSLayoutConstraint.activate([
             customView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -148,11 +192,26 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             .debounce(.milliseconds(300), scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
             .bind(to: viewModel.input.getDataSubject)
     }
+    
     //MARK: Action for button
     @objc func buttonPressed(){
         print("dismiss")
         self.dismiss(animated: false) {
         }
+    }
+    //MARK: Animation handle
+    @objc func keyboardWillShow(notification: NSNotification){
+          UIView.setAnimationsEnabled(true)
+              if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                  let keyboardHeight = keyboardFrame.cgRectValue.height
+                  
+                  let isKeyboardShown = notification.name == UIResponder.keyboardWillShowNotification
+                  self.bottomConstraint?.constant = isKeyboardShown ? -keyboardHeight : -60
+                  
+                  UIView.animate(withDuration: 1) {
+                      self.view.layoutIfNeeded()
+                  }
+              }
     }
     
     //MARK: Refresh Table View

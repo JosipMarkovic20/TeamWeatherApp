@@ -19,6 +19,7 @@ class SearchViewModel: ViewModelType {
     
     struct Output {
         var dataReadySubject: PublishSubject<Bool>
+        var loaderSubject: PublishSubject<Bool>
         var disposables: [Disposable]
     }
     
@@ -39,7 +40,7 @@ class SearchViewModel: ViewModelType {
         
         disposables.append(getLocations(subject: input.getDataSubject))
         
-        self.output = Output(dataReadySubject: PublishSubject<Bool>(), disposables: disposables)
+        self.output = Output(dataReadySubject: PublishSubject<Bool>(), loaderSubject: PublishSubject<Bool>(), disposables: disposables)
         return output
     }
     
@@ -51,6 +52,7 @@ class SearchViewModel: ViewModelType {
     func getLocations(subject: ReplaySubject<String>) -> Disposable {
         return subject
         .flatMap({[unowned self] bool -> Observable<SearchDataModel> in
+            self.output.loaderSubject.onNext(true)
             return self.dependencies.alamofireManager.alamofireRequest(bool)
         })
         .observeOn(MainScheduler.instance)
@@ -58,6 +60,7 @@ class SearchViewModel: ViewModelType {
         .subscribe(onNext: {[unowned self]  bool in
             self.output.dataReadySubject.onNext(true)
             self.dataForView = bool
+            self.output.loaderSubject.onNext(false)
             print("d")
         })
     }
